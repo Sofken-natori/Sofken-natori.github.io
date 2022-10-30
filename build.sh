@@ -13,7 +13,7 @@ rm -rf $BASE_DIR/out/{.git{,hub},.idea,README.md,build.sh,components,lib/common.
 echo Compile SCSS
 yarn exec sass lib/:out/lib/ --no-source-map
 echo Expand Components
-find out -name '*.html' | xargs sed -i '/\{\{HEADER\}\}/r components/header.html'
-find out -name '*.html' | xargs sed -i '/\{\{NAVIGATION\}\}/r components/navigation.html'
-find out -name '*.html' | xargs sed -i '/\{\{FOOTER\}\}/r components/footer.html'
+find out -name '*.html' | xargs -i sed -i -e '/\{\{HEADER\}\}/r components/header.html' {} -e '/\{\{HEADER\}\}/d'
+find out -name '*.html' | xargs -i sed -i -e '/\{\{NAVIGATION\}\}/r components/navigation.html' {} -e '/\{\{NAVIGATION\}\}/d'
+find out -name '*.html' | xargs -i sed -i -e '/\{\{FOOTER\}\}/r components/footer.html' {} -e '/\{\{FOOTER\}\}/d'
 exit 0
