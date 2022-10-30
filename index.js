@@ -1,3 +1,4 @@
+/*
 $(document).ready(function () {
     $("main").css("min-height", $(window).height());
     $(".slider").css("cursor", "pointer").click(function () {
@@ -10,3 +11,4 @@ $(document).ready(function () {
         }
     });
 });
+*/

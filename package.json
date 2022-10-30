@@ -1,0 +1,30 @@
+{
+    "author": {
+        "email": "sofken.natori@gmail.com",
+        "name": "SNCT Natori Software Research and Development Group",
+        "url": "https://sofken-natori.github.io/"
+    },
+    "bugs": {
+        "url": "https://github.com/ms0503/Sofken-natori.github.io/issues"
+    },
+    "description": "A Web site of SNCT Natori Software Research and Development Group.",
+    "devDependencies": {
+        "@types/jquery": "^3.5.14",
+        "eslint": "^8.26.0",
+        "sass": "^1.55.0",
+        "scsslint": "^0.0.3"
+    },
+    "homepage": "https://github.com/ms0503/Sofken-natori.github.io#readme",
+    "license": "UNLICENSED",
+    "main": "",
+    "name": "sofken-hp",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ms0503/Sofken-natori.github.io.git"
+    },
+    "scripts": {
+        "build": "./build.sh",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "version": "1.0.0"
+}
