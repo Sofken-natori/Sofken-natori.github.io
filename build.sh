@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # shellcheck disable=SC2038
 # shellcheck disable=SC2046
 # shellcheck disable=SC2086
@@ -13,7 +13,7 @@ rm -rf $BASE_DIR/out/{.git{,hub},.idea,README.md,build.sh,components,lib/common.
 echo Compile SCSS
 yarn exec sass lib/:out/lib/ --no-source-map
 echo Expand Components
-find out -name '*.html' | xargs -i sed -i -e '/\{\{HEADER\}\}/r components/header.html' {} -e '/\{\{HEADER\}\}/d'
-find out -name '*.html' | xargs -i sed -i -e '/\{\{NAVIGATION\}\}/r components/navigation.html' {} -e '/\{\{NAVIGATION\}\}/d'
-find out -name '*.html' | xargs -i sed -i -e '/\{\{FOOTER\}\}/r components/footer.html' {} -e '/\{\{FOOTER\}\}/d'
+find out -name '*.html' | xargs -i sed -i -e '/{{HEADER}}/r components/header.html' {} -e '/{{HEADER}}/d'
+find out -name '*.html' | xargs -i sed -i -e '/{{NAVIGATION}}/r components/navigation.html' {} -e '/{{NAVIGATION}}/d'
+find out -name '*.html' | xargs -i sed -i -e '/{{FOOTER}}/r components/footer.html' {} -e '/{{FOOTER}}/d'
 exit 0
