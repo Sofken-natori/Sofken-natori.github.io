@@ -20,6 +20,9 @@
                     </div>
                 </div>
                 <div class="copyright">
-                    Copyright © 2019-2022 SNCT Natori Software Research and Development Group. All rights reserved.
+                    Copyright © 2019-<span id="copyright-this-year"></span> SNCT Natori Software Research and Development Group. All rights reserved.
                 </div>
             </footer>
+            <script>
+                document.getElementById('copyright-this-year').innerHTML = new Date().getFullYear();
+            </script>

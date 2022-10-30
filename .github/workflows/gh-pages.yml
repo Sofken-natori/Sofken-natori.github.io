@@ -26,8 +26,11 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: build
         run: yarn run build
+<<<<<<< HEAD
         env:
           TYPE: ${{ secrets.TYPE }}
+=======
+>>>>>>> d2219a0 (より新しいWeb標準に合わせて改修。特にCSSはSCSSを用いて開発しやすく。)
       - name: add nojekyll
         run: touch ./out/.nojekyll
       - name: deploy
