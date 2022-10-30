@@ -18,7 +18,7 @@ body {
         margin: auto;
         background-color: #669fed;
 
-        .header {
+        header {
             height: 100px;
             width: inherit;
             font-style: italic;
@@ -48,6 +48,16 @@ body {
             flex-wrap: nowrap;
             flex-direction: row;
 
+            .nav_button {
+                width: calc(100% - 8px);
+                display: block;
+                background-color: #9fc4f7;
+                padding: 8px 4px;
+                @media screen and (min-width: 800px) {
+                    display: none;
+                }
+            }
+
             .navigation {
                 width: 100%;
                 flex: 0 1 auto;
@@ -58,48 +68,36 @@ body {
                     display: block;
                 }
 
-                .nav_button {
-                    width: calc(100% - 8px);
+                h3 {
                     display: block;
-                    background-color: #9fc4f7;
-                    padding: 8px 4px;
-                    @media screen and (min-width: 800px) {
-                        display: none;
+                    width: calc(100% - 8px);
+                    vertical-align: middle;
+                    margin: 0 0 0 8px;
+                    padding: 10px 0;
+                }
+
+                ol {
+                    margin-left: 30px;
+                }
+
+                a {
+                    &, &:visited {
+                        display: block;
+                        width: calc(100% - 8px);
+                        text-decoration: none;
+                        border-bottom: 1px solid #121212;
+                        color: #fff;
+                        padding: 8px 4px;
+                    }
+
+                    &:hover {
+                        background-color: #3059fa;
                     }
                 }
 
-                .navigation-list {
-                    h3 {
-                        display: block;
-                        width: calc(100% - 8px);
-                        vertical-align: middle;
-                        margin: 0 0 0 8px;
-                        padding: 10px 0;
-                    }
-
-                    ol {
-                        margin-left: 30px;
-                    }
-
-                    a {
-                        &, &:visited {
-                            display: block;
-                            width: calc(100% - 8px);
-                            text-decoration: none;
-                            border-bottom: 1px solid #121212;
-                            color: #fff;
-                            padding: 8px 4px;
-                        }
-
-                        &:hover {
-                            background-color: #3059fa;
-                        }
-                    }
-
-                    li {
-                        list-style: none;
-                        border-top: 1px solid #121212;
-                    }
+                li {
+                    list-style: none;
+                    border-top: 1px solid #121212;
                 }
             }
 
