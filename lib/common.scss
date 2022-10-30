@@ -1,12 +1,19 @@
 ﻿@charset "UTF-8";
 
+$navigation_bg_color: #669fed;
+$navigation_hover_bg_color: darken($navigation_bg_color, 25%);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 img {
     margin: 10px 0;
 }
 
 body {
-    width: 100vw;
-    min-height: 100vh;
+    width: 100%;
     background-color: #fff;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     line-height: 1.5rem;
@@ -44,12 +51,16 @@ body {
         }
 
         .content-container {
+            min-height: 100vh;
             display: flex;
             flex-wrap: nowrap;
-            flex-direction: row;
+            flex-direction: column;
+            @media screen and (min-width: 800px) {
+                flex-direction: row;
+            }
 
             .nav_button {
-                width: calc(100% - 8px);
+                width: 100%;
                 display: block;
                 background-color: #9fc4f7;
                 padding: 8px 4px;
@@ -61,7 +72,7 @@ body {
             .navigation {
                 width: 100%;
                 flex: 0 1 auto;
-                background-color: #669fed;
+                background-color: $navigation_bg_color;
                 display: none;
                 @media screen and (min-width: 800px) {
                     width: 200px;
@@ -70,34 +81,42 @@ body {
 
                 h3 {
                     display: block;
-                    width: calc(100% - 8px);
+                    width: 100%;
                     vertical-align: middle;
-                    margin: 0 0 0 8px;
-                    padding: 10px 0;
+                    margin: 0;
+                    padding: 10px 8px;
                 }
 
                 ol {
                     margin-left: 30px;
+
+                    li {
+                        list-style: none;
+                        &:first-child {
+                            border-top: 1px solid #000;
+                        }
+                    }
                 }
 
                 a {
                     &, &:visited {
                         display: block;
-                        width: calc(100% - 8px);
+                        width: 100%;
+                        border-bottom: 1px solid #000;
                         text-decoration: none;
-                        border-bottom: 1px solid #121212;
                         color: #fff;
                         padding: 8px 4px;
                     }
 
                     &:hover {
-                        background-color: #3059fa;
+                        background-color: $navigation_hover_bg_color;
                     }
                 }
 
-                li {
-                    list-style: none;
-                    border-top: 1px solid #121212;
+                .slider {
+                    &:active, &:focus, &:hover {
+                        background-color: $navigation_hover_bg_color;
+                    }
                 }
             }
 
@@ -107,7 +126,7 @@ body {
                 flex: 0 1 auto;
                 background-color: #fff;
                 @media screen and (min-width: 800px) {
-                    width: calc(100% - 220px);
+                    width: calc(100% - 200px);
                 }
 
                 h2 {
@@ -115,7 +134,7 @@ body {
                     background-color: #7af674;
                     padding: 10px;
                     font-size: 1.3rem;
-                    margin-bottom: 4px;
+                    margin: 0 0 4px 0;
                     @media screen and (min-width: 800px) {
                         font-size: 1.5rem;
                     }
@@ -125,7 +144,7 @@ body {
                     width: calc(100% - 56px);
                     background-color: #7af674;
                     padding: 8px;
-                    margin-bottom: 4px;
+                    margin: 0 0 4px 0;
                 }
 
                 p {
@@ -189,7 +208,7 @@ body {
                 background-color: #111111;
                 text-align: center;
                 color: white;
-                margin: 0 auto;
+                margin: 0;
                 clear: left;
             }
         }
