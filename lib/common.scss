@@ -56,11 +56,12 @@ body {
 
         .content-container {
             flex: 0 1 auto;
-            min-height: calc(100vh - 244.59px);
+            min-height: calc(100vh - 500.53px);
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
             @media screen and (min-width: 800px) {
+                min-height: calc(100vh - 244.59px);
                 flex-direction: row;
             }
 
@@ -71,6 +72,10 @@ body {
                 padding: 8px 4px;
                 @media screen and (min-width: 800px) {
                     display: none;
+                }
+
+                p {
+                    margin: 0;
                 }
             }
 
@@ -128,7 +133,7 @@ body {
             }
 
             main {
-                width: calc(100% - 20px);
+                width: 100%;
                 padding: 10px;
                 flex: 0 1 auto;
                 background-color: #fff;
@@ -181,10 +186,10 @@ body {
                 }
 
                 .rationale {
-                    width: calc(100% - 10px);
+                    width: 100%;
                     aspect-ratio: 1 / 1.35;
                     @media screen and (min-width: 800px) {
-                        width: calc(100% - 20px);
+                        width: 75%;
                     }
                 }
             }
@@ -201,11 +206,16 @@ body {
             .footer-info {
                 display: flex;
                 flex-wrap: nowrap;
-                flex-direction: row;
+                flex-direction: column;
+                @media screen and (min-width: 800px) {
+                    flex-direction: row;
+                }
+
                 .foot {
                     flex: 0 1 auto;
-                    margin: 0 auto 5px auto;
+                    margin: 0 10px 5px 10px;
                     padding: 5px 15px;
+
                     li {
                         list-style: none;
                         padding-left: 5px;
