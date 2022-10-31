@@ -8,8 +8,13 @@ $navigation_hover_bg_color: darken($navigation_bg_color, 25%);
     padding: 0;
 }
 
-img {
-    margin: 10px 0;
+a {
+    text-decoration: none;
+    transition: text-decoration .3s linear;
+
+    &:active, &:focus, &:hover {
+        text-decoration: underline;
+    }
 }
 
 body {
@@ -203,6 +208,10 @@ body {
             background-color: #a2a2a2;
             clear: left;
 
+            a {
+                color: darken(#0d6efd, 10%)
+            }
+
             .footer-info {
                 display: flex;
                 flex-wrap: nowrap;
@@ -224,9 +233,9 @@ body {
             }
 
             .copyright {
-                background-color: #111111;
+                background-color: #111;
                 text-align: center;
-                color: white;
+                color: #fff;
                 margin: 0;
                 clear: left;
             }
