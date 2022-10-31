@@ -28,7 +28,7 @@
         "url": "git+https://github.com/ms0503/Sofken-natori.github.io.git"
     },
     "scripts": {
-        "build": "./build.sh",
+        "build": "./build.sh unofficial",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "version": "1.0.0"

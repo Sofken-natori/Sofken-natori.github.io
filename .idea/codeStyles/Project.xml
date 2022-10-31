@@ -1,0 +1,19 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <JavaCodeStyleSettings>
+      <option name="CLASS_NAMES_IN_JAVADOC" value="3" />
+      <option name="IMPORT_LAYOUT_TABLE">
+        <value>
+          <package name="" withSubpackages="true" static="false" />
+          <emptyLine />
+          <package name="" withSubpackages="true" static="true" />
+        </value>
+      </option>
+    </JavaCodeStyleSettings>
+    <codeStyleSettings language="JSON">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="4" />
+      </indentOptions>
+    </codeStyleSettings>
+  </code_scheme>
+</component>

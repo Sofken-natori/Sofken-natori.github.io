@@ -12,6 +12,11 @@ echo 'rm out/lib/common.css';rm out/lib/common.css
 echo 'yarn exec -- sass lib/common.scss:out/lib/common-1.css --no-source-map';yarn exec -- sass lib/common.scss:out/lib/common-1.css --no-source-map
 echo 'yarn exec -- postcss out/lib/common-1.css -o out/lib/common.css --no-map';yarn exec -- postcss out/lib/common-1.css -o out/lib/common.css --no-map
 echo 'Expand Components'
+if [[ "$1" = "unofficial" ]]; then
+    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' components/navigation.html';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' components/navigation.html
+else
+    echo 'sed -i '\''s/{{ROOT}}//g'\'' components/navigation.html';sed -i 's/{{ROOT}}//g' components/navigation.html
+fi
 echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{HEADER}}/r components/header.html'\'' {} -e '\''/{{HEADER}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{HEADER}}/r components/header.html' {} -e '/{{HEADER}}/d'
 echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{NAVIGATION}}/r components/navigation.html'\'' {} -e '\''/{{NAVIGATION}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{NAVIGATION}}/r components/navigation.html' {} -e '/{{NAVIGATION}}/d'
 echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{FOOTER}}/r components/footer.html'\'' {} -e '\''/{{FOOTER}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{FOOTER}}/r components/footer.html' {} -e '/{{FOOTER}}/d'
