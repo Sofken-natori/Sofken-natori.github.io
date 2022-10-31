@@ -21,11 +21,15 @@ body {
     color: #000;
 
     #wrap {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
         width: 100%;
         margin: auto;
         background-color: #669fed;
 
         header {
+            flex: 0 1 auto;
             height: 100px;
             width: inherit;
             font-style: italic;
@@ -51,7 +55,8 @@ body {
         }
 
         .content-container {
-            min-height: 100vh;
+            flex: 0 1 auto;
+            min-height: calc(100vh - 244.59px);
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
@@ -183,6 +188,7 @@ body {
         }
 
         footer {
+            flex: 0 1 auto;
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
