@@ -119,6 +119,8 @@ body {
                 }
 
                 .slider {
+                    cursor: pointer;
+
                     &:active, &:focus, &:hover {
                         background-color: $navigation_hover_bg_color;
                     }
@@ -180,6 +182,7 @@ body {
 
                 .rationale {
                     width: calc(100% - 10px);
+                    aspect-ratio: 1 / 1.35;
                     @media screen and (min-width: 800px) {
                         width: calc(100% - 20px);
                     }
