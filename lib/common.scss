@@ -18,6 +18,12 @@ a {
     }
 }
 
+abbr {
+    &, &[title] {
+        text-decoration: none;
+    }
+}
+
 body {
     width: 100%;
     background-color: #fff;
