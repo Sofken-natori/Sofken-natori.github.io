@@ -26,6 +26,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: build
         run: yarn run build
+        env:
+          TYPE: ${{ secrets.TYPE }}
       - name: add nojekyll
         run: touch ./out/.nojekyll
       - name: deploy

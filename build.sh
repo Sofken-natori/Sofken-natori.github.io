@@ -16,7 +16,7 @@ echo 'Minify JavaScript'
 echo 'rm out/lib/slider.js';rm out/lib/slider.js
 echo 'yarn exec -- uglifyjs lib/slider.js -c -o out/lib/slider.js';yarn exec -- uglifyjs lib/slider.js -c -o out/lib/slider.js
 echo 'Expand Components'
-if [[ "$1" = "unofficial" ]]; then
+if [[ "$TYPE" = "unofficial" ]]; then
     echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' components/navigation.html';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' components/navigation.html
 else
     echo 'sed -i '\''s/{{ROOT}}//g'\'' components/navigation.html';sed -i 's/{{ROOT}}//g' components/navigation.html
