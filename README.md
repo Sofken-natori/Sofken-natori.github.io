@@ -7,4 +7,4 @@ https://bit.ly/sofken
 本家とはデザインなどが異なります。
 
 - [本家](https://sofken-natori.github.io/)
-- [当リポジトリ](https://ms0503.github.io/sofken-natori.github.io/)
+- [当リポジトリ](https://ms0503.github.io/Sofken-natori.github.io/)
