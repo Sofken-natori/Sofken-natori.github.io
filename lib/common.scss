@@ -11,7 +11,7 @@ $navigation_hover_bg_color: darken($navigation_bg_color, 25%);
 
 a {
     text-decoration: none;
-    transition: text-decoration .3s linear;
+    transition: text-decoration 1s linear;
 
     &:active, &:focus, &:hover {
         text-decoration: underline;
@@ -21,7 +21,7 @@ a {
 body {
     width: 100%;
     background-color: #fff;
-    font-family: 'Noto Sans JP', 'Noto Sans CJK JP', Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans JP', 'Noto Sans CJK JP', Verdana, Arial, Helvetica, -apple-system, sans-serif;
     line-height: 1.5rem;
     font-size: 1rem;
     color: #000;
