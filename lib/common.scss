@@ -1,4 +1,5 @@
 ﻿@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
 $navigation_bg_color: #669fed;
 $navigation_hover_bg_color: darken($navigation_bg_color, 25%);
@@ -20,7 +21,7 @@ a {
 body {
     width: 100%;
     background-color: #fff;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans JP', 'Noto Sans CJK JP', Verdana, Arial, Helvetica, sans-serif;
     line-height: 1.5rem;
     font-size: 1rem;
     color: #000;
