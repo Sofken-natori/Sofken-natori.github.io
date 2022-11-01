@@ -38,22 +38,14 @@ body {
             flex: 0 1 auto;
             height: 100px;
             width: inherit;
-            font-style: italic;
             background-color: #5fe3eb;
-            position: relative;
 
             p {
                 width: inherit;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
                 font-size: 2rem;
                 text-align: center;
                 vertical-align: middle;
                 line-height: 6rem;
-                margin: auto;
                 @media screen and (min-width: 800px) {
                     font-size: 4rem;
                 }
