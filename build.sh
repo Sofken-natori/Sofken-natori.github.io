@@ -17,13 +17,13 @@ echo 'rm out/lib/slider.js';rm out/lib/slider.js
 echo 'yarn exec -- uglifyjs lib/slider.js -c -o out/lib/slider.js';yarn exec -- uglifyjs lib/slider.js -c -o out/lib/slider.js
 echo 'Expand Components'
 if [[ "$TYPE" = "unofficial" ]]; then
-    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' components/navigation.html';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' components/navigation.html
+    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/components/navigation.html';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/components/navigation.html
 else
-    echo 'sed -i '\''s/{{ROOT}}//g'\'' components/navigation.html';sed -i 's/{{ROOT}}//g' components/navigation.html
+    echo 'sed -i '\''s/{{ROOT}}//g'\'' out/components/navigation.html';sed -i 's/{{ROOT}}//g' out/components/navigation.html
 fi
-echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{HEADER}}/r components/header.html'\'' {} -e '\''/{{HEADER}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{HEADER}}/r components/header.html' {} -e '/{{HEADER}}/d'
-echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{NAVIGATION}}/r components/navigation.html'\'' {} -e '\''/{{NAVIGATION}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{NAVIGATION}}/r components/navigation.html' {} -e '/{{NAVIGATION}}/d'
-echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{FOOTER}}/r components/footer.html'\'' {} -e '\''/{{FOOTER}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{FOOTER}}/r components/footer.html' {} -e '/{{FOOTER}}/d'
+echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{HEADER}}/r out/components/header.html'\'' {} -e '\''/{{HEADER}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{HEADER}}/r out/components/header.html' {} -e '/{{HEADER}}/d'
+echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{NAVIGATION}}/r out/components/navigation.html'\'' {} -e '\''/{{NAVIGATION}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{NAVIGATION}}/r out/components/navigation.html' {} -e '/{{NAVIGATION}}/d'
+echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{FOOTER}}/r out/components/footer.html'\'' {} -e '\''/{{FOOTER}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{FOOTER}}/r out/components/footer.html' {} -e '/{{FOOTER}}/d'
 echo 'Delete unnecessary files'
 echo 'rm -rf out/{.git{,hub},.idea,README.md,build.sh,components,lib/common-{1,2}.css{,.map},lib/common.scss,node_modules,package.json,template,yarn.lock}';rm -rf out/{.git{,hub},.idea,README.md,build.sh,components,lib/common-{1,2}.css{,.map},lib/common.scss,node_modules,package.json,template,yarn.lock}
 exit 0
