@@ -3,37 +3,37 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://sofken-natori.github.io</loc>
+        <loc>https://{{ROOT}}</loc>
         <lastmod>2022-10-30T09:50:00.000Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sofken-natori.github.io/vol32</loc>
+        <loc>https://{{ROOT}}/vol32</loc>
         <lastmod>2022-10-30T09:50:00.000Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sofken-natori.github.io/vol33</loc>
+        <loc>https://{{ROOT}}/vol33</loc>
         <lastmod>2022-10-30T09:50:00.000Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sofken-natori.github.io/vol34</loc>
+        <loc>https://{{ROOT}}/vol34</loc>
         <lastmod>2022-10-30T09:50:00.000Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sofken-natori.github.io/vol35</loc>
+        <loc>https://{{ROOT}}/vol35</loc>
         <lastmod>2022-10-30T09:50:00.000Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sofken-natori.github.io/vol36</loc>
+        <loc>https://{{ROOT}}/vol36</loc>
         <lastmod>2022-10-30T09:50:00.000Z</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>

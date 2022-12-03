@@ -18,8 +18,14 @@ echo 'yarn exec -- uglifyjs lib/slider.js -c -o out/lib/slider.js';yarn exec -- 
 echo 'Expand Components'
 if [[ "$TYPE" = "unofficial" ]]; then
     echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/components/navigation.html';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/components/navigation.html
+    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/manifest.webmanifest';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/manifest.webmanifest
+    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/robots.txt';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/robots.txt
+    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/sitemap*';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/sitemap*
 else
     echo 'sed -i '\''s/{{ROOT}}//g'\'' out/components/navigation.html';sed -i 's/{{ROOT}}//g' out/components/navigation.html
+    echo 'sed -i '\''s/{{ROOT}}//g'\'' out/manifest.webmanifest';sed -i 's/{{ROOT}}//g' out/manifest.webmanifest
+    echo 'sed -i '\''s/{{ROOT}}//g'\'' out/robots.txt';sed -i 's/{{ROOT}}//g' out/robots.txt
+    echo 'sed -i '\''s/{{ROOT}}//g'\'' out/sitemap*';sed -i 's/{{ROOT}}//g' out/sitemap*
 fi
 echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{HEADER}}/r out/components/header.html'\'' {} -e '\''/{{HEADER}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{HEADER}}/r out/components/header.html' {} -e '/{{HEADER}}/d'
 echo 'find out -name '\''*.html'\'' | xargs -i sed -i -e '\''/{{NAVIGATION}}/r out/components/navigation.html'\'' {} -e '\''/{{NAVIGATION}}/d'\';find out -name '*.html' | xargs -i sed -i -e '/{{NAVIGATION}}/r out/components/navigation.html' {} -e '/{{NAVIGATION}}/d'

@@ -3,6 +3,6 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
     <sitemap>
-        <loc>https://sofken-natori.github.io/sitemap-0.xml</loc>
+        <loc>https://{{ROOT}}/sitemap-0.xml</loc>
     </sitemap>
 </sitemapindex>
