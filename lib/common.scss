@@ -1,7 +1,12 @@
 ﻿@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
+$footer_bg_color: #a2a2a2;
+$footer_link_color: darken(#0d6efd, 10%);
+$h_bg_color: #7af674;
+$header_bg_color: #5fe3eb;
 $navigation_bg_color: #669fed;
+$navigation_button_color: #9fc4f7;
 $navigation_hover_bg_color: darken($navigation_bg_color, 25%);
 
 * {
@@ -40,10 +45,9 @@ body {
         margin: auto;
 
         header {
-            flex: 0 1 auto;
             height: 100px;
             width: inherit;
-            background-color: #5fe3eb;
+            background-color: $header_bg_color;
 
             p {
                 width: inherit;
@@ -58,7 +62,7 @@ body {
         }
 
         .content-container {
-            flex: 1 1 auto;
+            flex: auto;
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
@@ -70,7 +74,7 @@ body {
             .nav-button {
                 width: 100%;
                 display: block;
-                background-color: #9fc4f7;
+                background-color: $navigation_button_color;
                 padding: 8px 4px;
                 @media screen and (min-width: 800px) {
                     display: none;
@@ -83,7 +87,6 @@ body {
 
             .navigation {
                 width: 100%;
-                flex: 0 1 auto;
                 background-color: $navigation_bg_color;
                 display: none;
                 @media screen and (min-width: 800px) {
@@ -118,6 +121,7 @@ body {
                         text-decoration: none;
                         color: #fff;
                         padding: 8px 4px;
+                        transition: background-color 1s linear;
                     }
 
                     &:hover {
@@ -127,6 +131,7 @@ body {
 
                 .slider {
                     cursor: pointer;
+                    transition: background-color 1s linear;
 
                     &:active, &:focus, &:hover {
                         background-color: $navigation_hover_bg_color;
@@ -137,7 +142,7 @@ body {
             main {
                 width: 100%;
                 padding: 10px;
-                flex: 1 1 auto;
+                flex: auto;
                 background-color: #fff;
                 @media screen and (min-width: 800px) {
                     width: calc(100% - 200px);
@@ -145,7 +150,7 @@ body {
 
                 h2 {
                     width: calc(100% - 40px);
-                    background-color: #7af674;
+                    background-color: $h_bg_color;
                     padding: 10px;
                     font-size: 1.3rem;
                     margin: 0 0 4px 0;
@@ -156,7 +161,7 @@ body {
 
                 h3 {
                     width: calc(100% - 56px);
-                    background-color: #7af674;
+                    background-color: $h_bg_color;
                     padding: 8px;
                     margin: 0 0 4px 0;
                 }
@@ -198,15 +203,14 @@ body {
         }
 
         footer {
-            flex: 0 1 auto;
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
-            background-color: #a2a2a2;
+            background-color: $footer_bg_color;
             clear: left;
 
             a {
-                color: darken(#0d6efd, 10%)
+                color: $footer_link_color;
             }
 
             .footer-info {
@@ -218,7 +222,6 @@ body {
                 }
 
                 .foot {
-                    flex: 0 1 auto;
                     margin: 0 10px 5px 10px;
                     padding: 5px 15px;
 
