@@ -26,6 +26,7 @@ abbr {
 
 body {
     width: 100%;
+    min-height: 100svh;
     background-color: #fff;
     font-family: 'Noto Sans JP', 'Noto Sans CJK JP', Verdana, Arial, Helvetica, -apple-system, sans-serif;
     line-height: 1.5rem;
@@ -38,7 +39,6 @@ body {
         flex-direction: column;
         width: 100%;
         margin: auto;
-        background-color: #669fed;
 
         header {
             flex: 0 1 auto;
@@ -60,12 +60,10 @@ body {
 
         .content-container {
             flex: 0 1 auto;
-            min-height: calc(100vh - 500.53px);
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
             @media screen and (min-width: 800px) {
-                min-height: calc(100vh - 244.59px);
                 flex-direction: row;
             }
 
@@ -91,6 +89,8 @@ body {
                 @media screen and (min-width: 800px) {
                     width: 200px;
                     display: block;
+                    position: absolute;
+                    bottom: 0;
                 }
 
                 h3 {
