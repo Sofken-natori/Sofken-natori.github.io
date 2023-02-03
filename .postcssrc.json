@@ -1,0 +1,9 @@
+{
+    "map": false,
+    "plugins": {
+        "autoprefixer": {},
+        "cssnano": {
+            "preset": "default"
+        }
+    }
+}

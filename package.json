@@ -9,16 +9,14 @@
     },
     "description": "A Web site of SNCT Natori Software Research and Development Group.",
     "devDependencies": {
-        "@types/jquery": "^3.5.14",
-        "@types/node": "^18.11.10",
+        "@types/jquery": "^3.5.16",
+        "@types/node": "^18.11.18",
         "autoprefixer": "^10.4.13",
-        "clean-css": "^5.3.1",
-        "clean-css-cli": "^5.6.1",
-        "eslint": "^8.29.0",
-        "postcss": "^8.4.19",
+        "cssnano": "^5.1.14",
+        "eslint": "^8.33.0",
+        "postcss": "^8.4.21",
         "postcss-cli": "^10.1.0",
-        "postcss-scss": "^4.0.6",
-        "sass": "^1.56.1",
+        "sass": "^1.58.0",
         "scsslint": "^0.0.3",
         "uglify-es": "^3.3.9"
     },
@@ -26,6 +24,7 @@
     "license": "UNLICENSED",
     "main": "",
     "name": "sofken-hp",
+    "private": true,
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ms0503/Sofken-natori.github.io.git"
