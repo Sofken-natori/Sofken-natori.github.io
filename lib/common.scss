@@ -1,13 +1,15 @@
 ﻿@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
-$footer_bg_color: #a2a2a2;
-$footer_link_color: darken(#0d6efd, 10%);
-$h_bg_color: #7af674;
-$header_bg_color: #5fe3eb;
-$navigation_bg_color: #669fed;
-$navigation_button_color: #9fc4f7;
-$navigation_hover_bg_color: darken($navigation_bg_color, 25%);
+:root {
+    --footer_bg_color: hsl(0deg, 0%, 63.53%);
+    --footer_link_color: hsl(216deg, 98.36%, 48.24%);
+    --h_bg_color: hsl(117deg, 87.84%, 70.98%);
+    --header_bg_color: hsl(183deg, 77.78%, 64.71%);
+    --navigation_bg_color: hsl(215deg, 78.95%, 66.47%);
+    --navigation_button_color: hsl(215deg, 84.62%, 79.61%);
+    --navigation_hover_bg_color: hsl(215deg, 78.95%, 41.47%); // navigation_bg_color - hsl(0deg, 0%, 25%)
+}
 
 * {
     margin: 0;
@@ -31,11 +33,11 @@ abbr {
 
 body {
     width: 100%;
-    background-color: #fff;
+    background-color: hsl(0deg, 0%, 100%);
     font-family: 'Noto Sans JP', 'Noto Sans CJK JP', Verdana, Arial, Helvetica, -apple-system, sans-serif;
     line-height: 1.5rem;
     font-size: 1rem;
-    color: #000;
+    color: hsl(0deg, 0%, 0%);
 
     #wrap {
         display: flex;
@@ -47,7 +49,7 @@ body {
         header {
             height: 100px;
             width: inherit;
-            background-color: $header_bg_color;
+            background-color: var(--header_bg_color);
 
             p {
                 width: inherit;
@@ -74,7 +76,7 @@ body {
             .nav-button {
                 width: 100%;
                 display: block;
-                background-color: $navigation_button_color;
+                background-color: var(--navigation_button_color);
                 padding: 8px 4px;
                 @media screen and (min-width: 800px) {
                     display: none;
@@ -87,7 +89,7 @@ body {
 
             .navigation {
                 width: 100%;
-                background-color: $navigation_bg_color;
+                background-color: var(--navigation_bg_color);
                 display: none;
                 @media screen and (min-width: 800px) {
                     width: 200px;
@@ -108,7 +110,7 @@ body {
                     li {
                         list-style: none;
                         &:first-child {
-                            border-top: 1px solid #000;
+                            border-top: 1px solid hsl(0deg, 0%, 0%);
                         }
                     }
                 }
@@ -117,24 +119,24 @@ body {
                     &, &:visited {
                         display: block;
                         width: 100%;
-                        border-bottom: 1px solid #000;
+                        border-bottom: 1px solid hsl(0deg, 0%, 0%);
                         text-decoration: none;
-                        color: #fff;
+                        color: hsl(0deg, 0%, 100%);
                         padding: 8px 4px;
-                        transition: background-color 1s linear;
+                        transition: background-color .25s linear;
                     }
 
                     &:hover {
-                        background-color: $navigation_hover_bg_color;
+                        background-color: var(--navigation_hover_bg_color);
                     }
                 }
 
                 .slider {
                     cursor: pointer;
-                    transition: background-color 1s linear;
+                    transition: background-color .25s linear;
 
                     &:active, &:focus, &:hover {
-                        background-color: $navigation_hover_bg_color;
+                        background-color: var(--navigation_hover_bg_color);
                     }
                 }
             }
@@ -143,14 +145,14 @@ body {
                 width: 100%;
                 padding: 10px;
                 flex: auto;
-                background-color: #fff;
+                background-color: hsl(0deg, 0%, 100%);
                 @media screen and (min-width: 800px) {
                     width: calc(100% - 200px);
                 }
 
                 h2 {
                     width: calc(100% - 40px);
-                    background-color: $h_bg_color;
+                    background-color: var(--h_bg_color);
                     padding: 10px;
                     font-size: 1.3rem;
                     margin: 0 0 4px 0;
@@ -161,7 +163,7 @@ body {
 
                 h3 {
                     width: calc(100% - 56px);
-                    background-color: $h_bg_color;
+                    background-color: var(--h_bg_color);
                     padding: 8px;
                     margin: 0 0 4px 0;
                 }
@@ -206,11 +208,11 @@ body {
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
-            background-color: $footer_bg_color;
+            background-color: var(--footer_bg_color);
             clear: left;
 
             a {
-                color: $footer_link_color;
+                color: var(--footer_link_color);
             }
 
             .footer-info {
@@ -234,9 +236,9 @@ body {
             }
 
             .copyright {
-                background-color: #111;
+                background-color: hsl(0deg, 0%, 6.67%);
                 text-align: center;
-                color: #fff;
+                color: hsl(0deg, 0%, 100%);
                 margin: 0;
                 clear: left;
             }

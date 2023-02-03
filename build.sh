@@ -3,8 +3,9 @@
 # shellcheck disable=SC2038
 # shellcheck disable=SC2046
 # shellcheck disable=SC2164
-echo 'cd "$(realpath "$(dirname "$0")"; pwd)"';cd "$(realpath "$(dirname "$0")"; pwd)"
+echo 'cd "$(realpath "$(dirname "$0")")"';cd "$(realpath "$(dirname "$0")")"
 echo 'Copy resource files'
+echo 'rm -rf ./out';rm -rf ./out
 echo 'cp -r .{,./out}';cp -r .{,./out}
 echo 'mv .{.,}/out';mv .{.,}/out
 echo 'Compile and Minify SCSS'

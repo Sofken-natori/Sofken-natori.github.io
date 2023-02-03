@@ -21,11 +21,11 @@ jobs:
         with:
           cache: 'yarn'
           cache-dependency-path: yarn.lock
-          node-version: '18.x'
+          node-version: '19.x'
       - name: install
         run: yarn install --frozen-lockfile
       - name: build
-        run: yarn run build
+        run: yarn build
         env:
           TYPE: ${{ secrets.TYPE }}
       - name: add nojekyll
