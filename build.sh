@@ -1,35 +1,13 @@
 #!/bin/bash
-# shellcheck disable=SC2016
-# shellcheck disable=SC2038
-# shellcheck disable=SC2046
 # shellcheck disable=SC2164
-echo 'cd "$(realpath "$(dirname "$0")")"';cd "$(realpath "$(dirname "$0")")"
-echo 'Copy resource files'
-echo 'rm -rf ./out';rm -rf ./out
-echo 'cp -r .{,./out}';cp -r .{,./out}
-echo 'mv .{.,}/out';mv .{.,}/out
-echo 'Compile and Minify SCSS'
-echo 'rm out/lib/common.css';rm out/lib/common.css
-echo 'yarn sass lib/common.scss:out/lib/common-1.css --no-source-map';yarn sass lib/common.scss:out/lib/common-1.css --no-source-map
-echo 'yarn postcss out/lib/common-1.css -o out/lib/common.css';yarn postcss out/lib/common-1.css -o out/lib/common.css
-echo 'Minify JavaScript'
-echo 'rm out/lib/slider.js';rm out/lib/slider.js
-echo 'yarn uglifyjs lib/slider.js -c -o out/lib/slider.js';yarn uglifyjs lib/slider.js -c -o out/lib/slider.js
-echo 'Expand Components'
+cd "$(realpath "$(dirname "$0")")"
 if [[ "$TYPE" = "unofficial" ]]; then
-    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/components/navigation.html';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/components/navigation.html
-    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/manifest.webmanifest';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/manifest.webmanifest
-    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/robots.txt';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/robots.txt
-    echo 'sed -i '\''s/{{ROOT}}/\/Sofken-natori.github.io/g'\'' out/sitemap*';sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/sitemap*
+    sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' public/manifest.webmanifest
+    export ROOT="/Sofken-natori.github.io"
 else
-    echo 'sed -i '\''s/{{ROOT}}//g'\'' out/components/navigation.html';sed -i 's/{{ROOT}}//g' out/components/navigation.html
-    echo 'sed -i '\''s/{{ROOT}}//g'\'' out/manifest.webmanifest';sed -i 's/{{ROOT}}//g' out/manifest.webmanifest
-    echo 'sed -i '\''s/{{ROOT}}//g'\'' out/robots.txt';sed -i 's/{{ROOT}}//g' out/robots.txt
-    echo 'sed -i '\''s/{{ROOT}}//g'\'' out/sitemap*';sed -i 's/{{ROOT}}//g' out/sitemap*
+    sed -i 's/{{ROOT}}//g' public/manifest.webmanifest
+    export ROOT=""
 fi
-echo 'find out -name '\''*.html'\'' -print0 | xargs -0 sed -i -e '\''/{{HEADER}}/r out/components/header.html'\'' -e '\''/{{HEADER}}/d'\';find out -name '*.html' -print0 | xargs -0 sed -i -e '/{{HEADER}}/r out/components/header.html' -e '/{{HEADER}}/d'
-echo 'find out -name '\''*.html'\'' -print0 | xargs -0 sed -i -e '\''/{{NAVIGATION}}/r out/components/navigation.html'\'' -e '\''/{{NAVIGATION}}/d'\';find out -name '*.html' -print0 | xargs -0 sed -i -e '/{{NAVIGATION}}/r out/components/navigation.html' -e '/{{NAVIGATION}}/d'
-echo 'find out -name '\''*.html'\'' -print0 | xargs -0 sed -i -e '\''/{{FOOTER}}/r out/components/footer.html'\'' -e '\''/{{FOOTER}}/d'\';find out -name '*.html' -print0 | xargs -0 sed -i -e '/{{FOOTER}}/r out/components/footer.html' -e '/{{FOOTER}}/d'
-echo 'Delete unnecessary files'
-echo 'rm -rf out/{.git{,hub},.idea,README.md,build.sh,components,lib/common-1.css,lib/common.scss,node_modules,package.json,template,yarn.lock}';rm -rf out/{.git{,hub},.idea,README.md,build.sh,components,lib/common-1.css,lib/common.scss,node_modules,package.json,template,yarn.lock}
+yarn build
+yarn export
 exit 0

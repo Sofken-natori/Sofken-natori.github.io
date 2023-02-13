@@ -1,19 +1,20 @@
 name: github pages
-
 on:
   pull_request:
     branches:
       - main
+      - nextjs
   push:
     branches:
       - main
+      - nextjs
   workflow_dispatch:
-
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: setup node
         uses: actions/setup-node@v3
         with:
@@ -23,7 +24,7 @@ jobs:
       - name: install
         run: yarn install --frozen-lockfile
       - name: build
-        run: yarn build
+        run: ./build.sh
         env:
           TYPE: ${{ secrets.TYPE }}
       - name: add nojekyll
@@ -33,4 +34,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-

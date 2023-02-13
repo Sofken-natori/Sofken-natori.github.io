@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.audio {
+    width: 80%;
+    @media (768px <= width) {
+        width: 30%;
+    }
+}
+
+.extra-contents {
+    margin-left: 10px;
+
+    h3 {
+        margin-top: 10px;
+    }
+}
+
+.rationale {
+    width: 100%;
+    aspect-ratio: 1 / 1.35;
+    @media (768px <= width) {
+        width: 75%;
+    }
+}

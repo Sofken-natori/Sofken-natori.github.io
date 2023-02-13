@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectTasksOptions" suppressed-tasks="SCSS">
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="install" />
+      <option name="arguments" value="install --ignore-engines" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" />
       <option name="exitCodeBehavior" value="ERROR" />

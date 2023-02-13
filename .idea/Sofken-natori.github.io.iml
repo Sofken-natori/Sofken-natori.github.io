@@ -12,5 +12,6 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="widgets" level="application" />
+    <orderEntry type="library" name="pdfjs-dist" level="application" />
   </component>
 </module>
