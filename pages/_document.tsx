@@ -25,10 +25,10 @@ export default class MyDocument extends Document<{
                     <meta charSet="utf-8" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-                    <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="/favicon.ico" />
+                    <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href={`${process.env['ROOT']}/favicon.ico`} />
                     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-                    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png" />
-                    <link rel="manifest" type="text/webappmanifest" href="/manifest.webmanifest" />
+                    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href={`${process.env['ROOT']}/apple-touch-icon.png`} />
+                    <link rel="manifest" type="text/webappmanifest" href={`${process.env['ROOT']}/manifest.webmanifest`} />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" />
                     <meta name="viewport" content="width=device-width,initial-scale=1" />
                     <meta property="og:site_name" content="ソフトウェア研究部会" />
