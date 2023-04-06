@@ -41,6 +41,14 @@ export default function CPPEntType() : JSX.Element {
                 符号無し：<span className="inline-code">std::uintN_t</span><br />
                 (Nにはbit単位のサイズ(8・16・32。64)が入る)
             </p>
+            <p>
+                C++23からは小数型にもサイズが目で見て分かる物が追加されました。<wbr />
+                stdfloatのincludeが必要です。<br />
+                通常の浮動小数点数：<span className="inline-code">std::floatN_t</span><br />
+                brain floating point数：<span className="inline-code">std::bfloat16_t</span><br />
+                (Nにはbit単位のサイズ(16・32・64・128)が入る)<br />
+                (brain floating pointはGPUなどが使っている形式で通常の物と比べて指数の領域が大きい)
+            </p>
             <table>
                 <caption>基本的なデータ型(gccの場合)</caption>
                 <thead>
@@ -59,44 +67,63 @@ export default function CPPEntType() : JSX.Element {
                         <td>
                             文字型。組み込み開発では8bit整数型として使われる事が多い。<wbr />
                             ただ、半角モードのキーボードで打てる文字(ASCII文字と言う)以外は範囲外なので<wbr />
-                            別の文字型を使う必要がある(今回は一旦スルー)
+                            別の文字型を使う必要がある(今回は一旦スルー)<br />
+                            <span className="inline-code">std::int8_t</span>相当。
                         </td>
                     </tr>
                     <tr>
                         <td>short</td>
                         <td>2</td>
                         <td>-32768〜32767</td>
-                        <td>整数型。charを除いた正真正銘の整数型の中では最小。組み込み以外ではあまり見かけない。気がする。</td>
+                        <td>
+                            整数型。charを除いた正真正銘の整数型の中では最小。組み込み以外ではあまり見かけない。気がする。<br />
+                            <span className="inline-code">std::int16_t</span>相当。
+                        </td>
                     </tr>
                     <tr>
                         <td>int・long</td>
                         <td>4</td>
                         <td>-2147483648〜2147483647(約21億)</td>
-                        <td>整数型。多分最も使われてる型。gccの場合intとlongは同じ。プログラムにベタ書きした整数はこの型。</td>
+                        <td>
+                            整数型。多分最も使われてる型。gccの場合intとlongは同じ。プログラムにベタ書きした整数はこの型。<br />
+                            <span className="inline-code">std::int32_t</span>相当。
+                        </td>
                     </tr>
                     <tr>
                         <td>long long</td>
                         <td>8</td>
                         <td>-9223372036854775808〜9223372036854775807(約922京)</td>
-                        <td>整数型。何に使うのこんなサイズ。</td>
+                        <td>
+                            整数型。何に使うのこんなサイズ。<br />
+                            <span className="inline-code">std::int64_t</span>相当。
+                        </td>
                     </tr>
                     <tr>
                         <td>float</td>
                         <td>4</td>
                         <td>-3.40282&times;10<sup>38</sup>〜3.40282&times;10<sup>38</sup>(約340澗)</td>
-                        <td>実数型。実数型の中では最小。</td>
+                        <td>
+                            実数型。実数型の中では最小。<br />
+                            <span className="inline-code">std::float32_t</span>相当。
+                        </td>
                     </tr>
                     <tr>
                         <td>double</td>
                         <td>8</td>
                         <td>-1.79769&times;10<sup>308</sup>〜1.79769&times;10<sup>308</sup></td>
-                        <td>実数型。プログラムにベタ書きした実数はこの型。</td>
+                        <td>
+                            実数型。プログラムにベタ書きした実数はこの型。<br />
+                            <span className="inline-code">std::float64_t</span>相当。
+                        </td>
                     </tr>
                     <tr>
                         <td>long double</td>
                         <td>16</td>
                         <td>-1.18973&times;10<sup>4932</sup>〜1.18973&times;10<sup>4932</sup></td>
-                        <td>実数型。何に使うの16バイトも。</td>
+                        <td>
+                            実数型。何に使うの16バイトも。<br />
+                            <span className="inline-code">std::float128_t</span>相当。
+                        </td>
                     </tr>
                     <tr>
                         <td>bool</td>

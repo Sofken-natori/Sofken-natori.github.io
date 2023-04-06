@@ -23,6 +23,11 @@ export default function CPPEntHome(): JSX.Element {
                 煮るなり焼くなり好きに使う事が出来ます。<wbr />
                 是非ご活用下さい。
             </p>
+            <div>
+                <strong style={{ fontSize: '1.2', fontWeight: 'bold' }}>注意</strong>
+                このC++入門は特に記載のない限りC++11で動作します。それ以前のバージョンでの動作は保証出来ません。<wbr />
+                予めご了承下さい。
+            </div>
             <ol className="cpp-entrance-index">
                 <li><Link href={`${process.env['ROOT']}/cpp/type`}>データ型</Link></li>
                 <li><Link href={`${process.env['ROOT']}/cpp/variable`}>変数</Link></li>
