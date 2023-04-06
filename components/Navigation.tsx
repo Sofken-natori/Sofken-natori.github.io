@@ -15,17 +15,17 @@ export default function Navigation(): JSX.Element {
                             <li className="nav-sub">
                                 <h2 className="nav-sub-button" title="レーショナル(部誌)">Rationale</h2>
                                 <ul className="nav-list">
-                                    <li><Link href={`${(process.env['ROOT'] !== undefined) || ''}/rational/vol36/`} title="2022年発行 レーショナル 第36号">vol.36(2022)</Link></li>
-                                    <li><Link href={`${(process.env['ROOT'] !== undefined) || ''}/rational/vol35/`} title="2021年発行 レーショナル 第35号">vol.35(2021)</Link></li>
-                                    <li><Link href={`${(process.env['ROOT'] !== undefined) || ''}/rational/vol34/`} title="2020年発行 レーショナル 第34号">vol.34(2020)</Link></li>
-                                    <li><Link href={`${(process.env['ROOT'] !== undefined) || ''}/rational/vol33/`} title="2019年発行 レーショナル 第33号">vol.33(2019)</Link></li>
-                                    <li><Link href={`${(process.env['ROOT'] !== undefined) || ''}/rational/vol32/`} title="2018年発行 レーショナル 第32号">vol.32(2018)</Link></li>
+                                    <li><Link href={`${process.env['ROOT']}/rational/vol36/`} title="2022年発行 レーショナル 第36号">vol.36(2022)</Link></li>
+                                    <li><Link href={`${process.env['ROOT']}/rational/vol35/`} title="2021年発行 レーショナル 第35号">vol.35(2021)</Link></li>
+                                    <li><Link href={`${process.env['ROOT']}/rational/vol34/`} title="2020年発行 レーショナル 第34号">vol.34(2020)</Link></li>
+                                    <li><Link href={`${process.env['ROOT']}/rational/vol33/`} title="2019年発行 レーショナル 第33号">vol.33(2019)</Link></li>
+                                    <li><Link href={`${process.env['ROOT']}/rational/vol32/`} title="2018年発行 レーショナル 第32号">vol.32(2018)</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-sub">
                                 <h2 className="nav-sub-button" title="C++入門">C++入門</h2>
                                 <ul className="nav-list">
-                                    <li><Link href={`${(process.env['ROOT'] !== undefined) || ''}/cpp/`} title="C++入門 目次">目次</Link></li>
+                                    <li><Link href={`${process.env['ROOT']}/cpp/`} title="C++入門 目次">目次</Link></li>
                                 </ul>
                             </li>
                         </ul>
