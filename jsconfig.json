@@ -36,15 +36,7 @@
         "lib": [
             "DOM",
             "DOM.Iterable",
-            "ESNext",
-            "ESNext.Array",
-            "ESNext.AsyncIterable",
-            "ESNext.BigInt",
-            "ESNext.Intl",
-            "ESNext.Promise",
-            "ESNext.String",
-            "ESNext.Symbol",
-            "ESNext.WeakRef"
+            "ESNext"
         ],
         "listEmittedFiles": false,
         "listFiles": false,
@@ -72,7 +64,7 @@
         "noUnusedParameters": true,
         "plugins": [
             {
-                "name": "typescript-eslint-language-service"
+                "name": "next"
             }
         ],
         "preserveConstEnums": true,

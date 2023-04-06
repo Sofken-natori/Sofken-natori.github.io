@@ -8,7 +8,7 @@ export default function RationalVol32(): JSX.Element {
         <>
             <Head>
                 <meta name="description" content="2018年発行のRational vol.32の電子版です。" />
-                <meta property="og:url" content="https://sofken-natori.github.io/rational/vol32/" />
+                <meta property="og:url" content="https://sofken-natori.github.io/rational/vol32" />
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content="Rational vol.32(2018)" />
                 <meta property="og:description" content="2018年発行のRational vol.32の電子版です。" />

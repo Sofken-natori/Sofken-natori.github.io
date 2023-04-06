@@ -2,6 +2,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import '../styles/prism.css';
 import '../styles/globals.scss';
 import { AppProps } from 'next/app';
 

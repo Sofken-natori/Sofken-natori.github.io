@@ -23,8 +23,8 @@ export default class MyDocument extends Document<{
             <Html lang="ja" prefix={this.props.prefix}>
                 <Head>
                     <meta charSet="utf-8" />
-                    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="" />
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
                     <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="/favicon.ico" />
                     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
                     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png" />
