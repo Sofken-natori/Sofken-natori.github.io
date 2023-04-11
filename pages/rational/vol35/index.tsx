@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import styles from '../../../styles/components/Rational.module.scss';
+import { DOCUMENT_ROOT } from '../../../lib/contants';
 
 export default function RationalVol35(): JSX.Element {
     return (
@@ -16,7 +17,7 @@ export default function RationalVol35(): JSX.Element {
             </Head>
             <h2>レーショナル(2021/10/30発行)</h2>
             <p><small>Powered by PDF.js</small></p>
-            <iframe className={styles['rationale']} src={`${process.env['ROOT']}/pdfjs/web/viewer.html?file=${process.env['ROOT']}/rational/vol35/vol35.pdf`} title="2021年発行 レーショナル 第35号" />
+            <iframe className={styles['rationale']} src={`${DOCUMENT_ROOT}/pdfjs/web/viewer.html?file=${DOCUMENT_ROOT}/rational/vol35/vol35.pdf`} title="2021年発行 レーショナル 第35号" />
         </>
     );
 }

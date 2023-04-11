@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import Link from 'next/link';
+import { DOCUMENT_ROOT } from '../../lib/contants';
 
 export default function CPPEntHome(): JSX.Element {
     return (
@@ -29,9 +30,9 @@ export default function CPPEntHome(): JSX.Element {
                 予めご了承下さい。
             </div>
             <ol className="cpp-entrance-index">
-                <li><Link href={`${process.env['ROOT']}/cpp/type`}>データ型</Link></li>
-                <li><Link href={`${process.env['ROOT']}/cpp/variable`}>変数</Link></li>
-                <li><Link href={`${process.env['ROOT']}/cpp/logical`}>論理演算</Link></li>
+                <li><Link href={`${DOCUMENT_ROOT}/cpp/type`}>データ型</Link></li>
+                <li><Link href={`${DOCUMENT_ROOT}/cpp/variable`}>変数</Link></li>
+                <li><Link href={`${DOCUMENT_ROOT}/cpp/logical`}>論理演算</Link></li>
             </ol>
             <style jsx>{`
                 .cpp-entrance-index {

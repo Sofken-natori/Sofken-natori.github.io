@@ -3,6 +3,7 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import styles from '../../styles/components/CPPEnt.module.scss';
+import { DOCUMENT_ROOT } from '../../lib/contants';
 
 export default function CPPEntType() : JSX.Element {
     return (
@@ -185,7 +186,7 @@ export default function CPPEntType() : JSX.Element {
                     </tr>
                 </tbody>
             </table>
-            <Script async src={`${process.env['ROOT']}/prism.js`} strategy="lazyOnload" />
+            <Script async src={`${DOCUMENT_ROOT}/prism.js`} strategy="lazyOnload" />
         </>
     );
 }

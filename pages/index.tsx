@@ -3,6 +3,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Script from 'next/script';
+import { DOCUMENT_ROOT } from '../lib/contants';
 
 export default function Home(): JSX.Element {
     return (
@@ -17,7 +18,7 @@ export default function Home(): JSX.Element {
             </Head>
             <h2>2022年度のレーショナル</h2>
             <p>
-                <Link href={`${process.env['ROOT']}/rational/vol36`}>こちら</Link>のページで見ることができます。(メニューからも行けます)<br />
+                <Link href={`${DOCUMENT_ROOT}/rational/vol36`}>こちら</Link>のページで見ることができます。(メニューからも行けます)<br />
                 2022年の高専祭で公開したものと同じものです。ぜひご覧頂ければと思います。
             </p>
             <h2>ソフトウェア研究部会とは</h2>
