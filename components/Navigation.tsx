@@ -37,8 +37,8 @@ export default function Navigation(): JSX.Element {
                 </div>
             </nav>
             <style jsx>{`
-                .nav {
-                    @media (768px <= width) {
+                @media (768px <= width) {
+                    .nav {
                         padding: 0;
                         flex: 0 1 auto;
                     }
@@ -54,7 +54,10 @@ export default function Navigation(): JSX.Element {
                     margin: 0;
                     padding: 0;
                     width: 200px;
-                    @media (768px <= width) {
+                }
+
+                @media (768px <= width) {
+                    .nav-container {
                         position: relative;
                         top: 0;
                         left: 0;
@@ -74,20 +77,26 @@ export default function Navigation(): JSX.Element {
                     width: 200px;
                     box-shadow: 0 5px 5px hsl(0deg, 0%, 0%, 40%);
                     overflow: hidden auto;
-                    @media (768px <= width) {
+                }
+
+                @media (768px <= width) {
+                    .navigation {
                         position: relative;
                         top: 0;
                         left: 0;
                         width: 100%;
                         box-shadow: none;
                     }
+                }
 
-                    h2 {
-                        margin: 0;
-                        padding: 8.1px 20px;
-                        @media (768px <= width) {
-                            padding: 0.5rem;
-                        }
+                .navigation h2 {
+                    margin: 0;
+                    padding: 8.1px 20px;
+                }
+
+                @media (768px <= width) {
+                    .navigation h2 {
+                        padding: 0.5rem;
                     }
                 }
 
@@ -96,49 +105,51 @@ export default function Navigation(): JSX.Element {
                     margin: 0;
                     padding: 0;
                     transition: display .3s ease-out;
-                    @media (768px <= width) {
+                }
+
+                @media (768px <= width) {
+                    .nav-list {
                         display: flex;
                         flex-direction: column;
                         flex-wrap: nowrap;
                     }
+                }
 
-                    li {
-                        text-align: center;
-                        border-top: 1px solid hsl(0deg, 0%, 0%);
-                        @media (768px <= width) {
-                            flex: 0 0 auto;
-                        }
+                .nav-list li {
+                    text-align: center;
+                    border-top: 1px solid hsl(0deg, 0%, 0%);
+                }
 
-                        &:last-child {
-                            border-bottom: 1px solid hsl(0deg, 0%, 0%);
-                        }
-
-                        a {
-                            display: block;
-                            padding: 15px 20px;
-                            background-color: var(--navigation-item-bg-color);
-                            text-decoration: none;
-                            line-height: 1;
-                            color: var(--navigation-item-color);
-
-                            &:active, &:focus, &:hover {
-                                background-color: var(--navigation-item-hover-bg-color);
-                                transition: background-color .3s linear;
-                            }
-                        }
+                @media (768px <= width) {
+                    .nav-list li {
+                        flex: 0 0 auto;
                     }
                 }
 
-                .nav-sub {
-                    .nav-list {
-                        li {
-                            margin-left: 1.5rem;
+                .nav-list li:last-child {
+                    border-bottom: 1px solid hsl(0deg, 0%, 0%);
+                }
 
-                            &:last-child {
-                                border-bottom: none;
-                            }
-                        }
-                    }
+                .nav-list li a {
+                    display: block;
+                    padding: 15px 20px;
+                    background-color: var(--navigation-item-bg-color);
+                    text-decoration: none;
+                    line-height: 1;
+                    color: var(--navigation-item-color);
+                }
+
+                .nav-list li a:active, .nav-list li a:focus, .nav-list li a:hover {
+                    background-color: var(--navigation-item-hover-bg-color);
+                    transition: background-color .3s linear;
+                }
+
+                .nav-sub .nav-list li {
+                    margin-left: 1.5rem;
+                }
+
+                .nav-sub .nav-list li:last-child {
+                    border-bottom: none;
                 }
 
                 .nav-button {
@@ -150,16 +161,19 @@ export default function Navigation(): JSX.Element {
                     width: 62px;
                     height: 62px;
                     background-color: var(--navigation-button-bg-color);
-                    background-image: url(../../public/navbtn.avif), url(../../public/navbtn.webp), url(../../public/navbtn.png);
+                    background-image: url(../public/navbtn.avif), url(../public/navbtn.webp), url(../public/navbtn.png);
                     background-size: 62px;
-                    @media (768px <= width) {
+                }
+
+                @media (768px <= width) {
+                    .nav-button {
                         display: none;
                     }
+                }
 
-                    &:active, &:focus, &:hover {
-                        background-color: var(--navigation-button-hover-bg-color);
-                        transition: background-color .3s linear;
-                    }
+                .nav-button:active, .nav-button:focus, .nav-button:hover {
+                    background-color: var(--navigation-button-hover-bg-color);
+                    transition: background-color .3s linear;
                 }
 
                 .nav-sub-button {

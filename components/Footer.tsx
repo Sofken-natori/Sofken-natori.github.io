@@ -39,38 +39,41 @@ export default function Footer(): JSX.Element {
                     flex-direction: column;
                     background-color: var(--footer-bg-color);
                     clear: left;
+                }
 
-                    a {
-                        color: var(--footer-link-color);
-                    }
+                .footer a {
+                    color: var(--footer-link-color);
+                }
 
+                .footer-info {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: column;
+                }
+
+                @media (768px <= width) {
                     .footer-info {
-                        display: flex;
-                        flex-wrap: nowrap;
-                        flex-direction: column;
-                        @media (768px <= width) {
-                            flex-direction: row;
-                        }
-
-                        .foot {
-                            flex: auto;
-                            margin: 0 10px 5px 10px;
-                            padding: 5px 15px;
-
-                            li {
-                                list-style: none;
-                                padding-left: 5px;
-                            }
-                        }
+                        flex-direction: row;
                     }
+                }
 
-                    .copyright {
-                        background-color: hsl(0deg, 0%, 6.67%);
-                        text-align: center;
-                        color: hsl(0deg, 0%, 100%);
-                        margin: 0;
-                        clear: left;
-                    }
+                .foot {
+                    flex: auto;
+                    margin: 0 10px 5px 10px;
+                    padding: 5px 15px;
+                }
+
+                .foot li {
+                    list-style: none;
+                    padding-left: 5px;
+                }
+
+                .copyright {
+                    background-color: hsl(0deg, 0%, 6.67%);
+                    text-align: center;
+                    color: hsl(0deg, 0%, 100%);
+                    margin: 0;
+                    clear: left;
                 }
             `}</style>
         </>

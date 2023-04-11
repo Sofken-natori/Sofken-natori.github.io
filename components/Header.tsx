@@ -11,16 +11,19 @@ export default function Header(): JSX.Element {
                     height: 100px;
                     width: inherit;
                     background-color: var(--header-bg-color);
+                }
 
-                    p {
-                        width: inherit;
-                        font-size: 2rem;
-                        text-align: center;
-                        vertical-align: middle;
-                        line-height: 6rem;
-                        @media (768px <= width) {
-                            font-size: 4rem;
-                        }
+                .header p {
+                    width: inherit;
+                    font-size: 2rem;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 6rem;
+                }
+
+                @media (768px <= width) {
+                    .header p {
+                        font-size: 4rem;
                     }
                 }
             `}</style>
