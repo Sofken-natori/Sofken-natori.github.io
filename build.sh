@@ -8,6 +8,5 @@ else
     sed -i 's/{{ROOT}}//g' public/manifest.webmanifest
     export ROOT=""
 fi
-yarn build
-yarn export
+yarn build && yarn export
 exit 0

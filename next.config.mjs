@@ -1,5 +1,6 @@
 'use strict';
 
+import styledJSXWebpack from 'styled-jsx/webpack.js';
 import { join } from 'path';
 
 const optimizedImagesConfig = {
@@ -42,7 +43,7 @@ const nextConfig = {
     },
     swcMinify: true,
     trailingSlash: false,
-    webpack: config => {
+    webpack: (config, ctx) => {
         config.module.rules.push({
             test: /\.(eot|otf|ttf|woff|woff2)$/,
             use: 'raw-loader'
