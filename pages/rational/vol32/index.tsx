@@ -1,7 +1,7 @@
 'use strict';
 
 import Head from 'next/head';
-import styles from '../../../styles/components/Rational.module.scss';
+import { DOCUMENT_ROOT } from '../../../lib/contants';
 
 export default function RationalVol32(): JSX.Element {
     return (
@@ -16,16 +16,16 @@ export default function RationalVol32(): JSX.Element {
             </Head>
             <h2>レーショナル(2018/11/12発行)</h2>
             <p><small>Powered by PDF.js</small></p>
-            <iframe className={styles['rationale']} src={`${process.env['ROOT']}/pdfjs/web/viewer.html?file=${process.env['ROOT']}/rational/vol32/vol32_ver2.pdf`} title="2018年発行 レーショナル 第32号" />
+            <iframe className="rational" src={`${DOCUMENT_ROOT}/pdfjs/web/viewer.html?file=${DOCUMENT_ROOT}/rational/vol32/vol32_ver2.pdf`} title="2018年発行 レーショナル 第32号" />
             <h2>楽曲</h2>
-            <div className={styles['extraContents']}>
+            <div className="extra-contents">
                 <h3>Flicker composer:機械システム工学科 3年 木村竜輔</h3>
-                <audio className={styles['audio']} controls>
-                    <source src={`${process.env['ROOT']}/rational/vol32/Flicker-01.mp3`} type="audio/mpeg" />
+                <audio className="audio" controls>
+                    <source src={`${DOCUMENT_ROOT}/rational/vol32/Flicker-01.mp3`} type="audio/mpeg" />
                 </audio>
                 <h3>星海航路 composer:機械システム工学科 3年 hysk</h3>
-                <audio className={styles['audio']} controls>
-                    <source src={`${process.env['ROOT']}/rational/vol32/星海航路.mp3`} type="audio/mpeg" />
+                <audio className="audio" controls>
+                    <source src={`${DOCUMENT_ROOT}/rational/vol32/星海航路.mp3`} type="audio/mpeg" />
                 </audio>
             </div>
         </>

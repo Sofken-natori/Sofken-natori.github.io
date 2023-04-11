@@ -2,7 +2,6 @@
 
 import Head from 'next/head';
 import Script from 'next/script';
-import styles from '../../styles/components/CPPEnt.module.scss';
 import { DOCUMENT_ROOT } from '../../lib/contants';
 
 export default function CPPEntLogical(): JSX.Element {
@@ -35,7 +34,7 @@ export default function CPPEntLogical(): JSX.Element {
                     <tr>
                         <td>AND</td>
                         <td>論理積</td>
-                        <td><span className={styles['inlineCode']}>a && b</span></td>
+                        <td><span className="inline-code">a && b</span></td>
                         <td>
                             <table>
                                 <tbody>
@@ -61,7 +60,7 @@ export default function CPPEntLogical(): JSX.Element {
                     <tr>
                         <td>OR</td>
                         <td>論理和</td>
-                        <td><span className={styles['inlineCode']}>a || b</span></td>
+                        <td><span className="inline-code">a || b</span></td>
                         <td>
                             <table>
                                 <tbody>
@@ -87,7 +86,7 @@ export default function CPPEntLogical(): JSX.Element {
                     <tr>
                         <td>XOR・EOR・ExOR</td>
                         <td>排他的論理和</td>
-                        <td><span className={styles['inlineCode']}>a ^ b</span></td>
+                        <td><span className="inline-code">a ^ b</span></td>
                         <td>
                             <table>
                                 <tbody>
@@ -113,7 +112,7 @@ export default function CPPEntLogical(): JSX.Element {
                     <tr>
                         <td>NOT</td>
                         <td>論理否定</td>
-                        <td><span className={styles['inlineCode']}>!a</span></td>
+                        <td><span className="inline-code">!a</span></td>
                         <td>
                             <table>
                                 <tbody>
@@ -132,7 +131,7 @@ export default function CPPEntLogical(): JSX.Element {
                     <tr>
                         <td>NAND</td>
                         <td>否定論理積</td>
-                        <td><span className={styles['inlineCode']}>!(a && b)</span></td>
+                        <td><span className="inline-code">!(a && b)</span></td>
                         <td>
                             <table>
                                 <tbody>
@@ -158,7 +157,7 @@ export default function CPPEntLogical(): JSX.Element {
                     <tr>
                         <td>NOR</td>
                         <td>否定論理和</td>
-                        <td><span className={styles['inlineCode']}>!(a || b)</span></td>
+                        <td><span className="inline-code">!(a || b)</span></td>
                         <td>
                             <table>
                                 <tbody>
@@ -184,7 +183,7 @@ export default function CPPEntLogical(): JSX.Element {
                     <tr>
                         <td>XNOR</td>
                         <td>否定排他的論理和</td>
-                        <td><span className={styles['inlineCode']}>!(a ^ b)</span></td>
+                        <td><span className="inline-code">!(a ^ b)</span></td>
                         <td>
                             <table>
                                 <tbody>
