@@ -1,21 +1,10 @@
 'use strict';
 
-import Head from 'next/head';
-import Script from 'next/script';
-import { DOCUMENT_ROOT } from '../../lib/contants';
+import CPPEnt from '../../components/CPPEnt';
 
 export default function CPPEntType() : JSX.Element {
     return (
-        <>
-            <Head>
-                <meta name="description" content="C++のデータ型の入門です。" />
-                <meta property="og:url" content="https://sofken-natori.github.io/cpp/type" />
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content="データ型 - C++入門" />
-                <meta property="og:description" content="C++のデータ型の入門です。" />
-                <title>データ型 - C++入門 - ソフトウェア研究部会</title>
-            </Head>
-            <h2>C++入門「データ型」</h2>
+        <CPPEnt name="データ型" slug="type">
             <p>
                 データ型とは、そのデータがどのようなデータであるかを決めた種別の事です。<br />
                 基本的な物は大きく分けてブール(真偽値)・整数・小数・文字・文字列・配列があり、<wbr />
@@ -185,7 +174,6 @@ export default function CPPEntType() : JSX.Element {
                     </tr>
                 </tbody>
             </table>
-            <Script async src={`${DOCUMENT_ROOT}/prism.js`} strategy="lazyOnload" />
-        </>
+        </CPPEnt>
     );
 }

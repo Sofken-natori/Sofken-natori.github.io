@@ -1,21 +1,10 @@
 'use strict';
 
-import Head from 'next/head';
-import Script from 'next/script';
-import { DOCUMENT_ROOT } from '../../lib/contants';
+import CPPEnt from '../../components/CPPEnt';
 
 export default function CPPEntLogical(): JSX.Element {
     return (
-        <>
-            <Head>
-                <meta name="description" content="C++の変数の入門です。" />
-                <meta property="og:url" content="https://sofken-natori.github.io/cpp/logical" />
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content="論理演算 - C++入門" />
-                <meta property="og:description" content="C++の論理演算の入門です。" />
-                <title>論理演算 - C++入門 - ソフトウェア研究部会</title>
-            </Head>
-            <h2>C++入門「論理演算」</h2>
+        <CPPEnt name="論理演算" slug="logical">
             <p>
                 論理演算とは、1つか2つの真偽値を元に真偽値を出力する計算です。<wbr />
                 論理演算は基本的に全てC++上で表現可能です。
@@ -208,7 +197,6 @@ export default function CPPEntLogical(): JSX.Element {
                     </tr>
                 </tbody>
             </table>
-            <Script async src={`${DOCUMENT_ROOT}/prism.js`} strategy="lazyOnload" />
-        </>
+        </CPPEnt>
     );
 }

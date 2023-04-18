@@ -198,7 +198,8 @@
         "spaced-comment": "off",
         "strict": "off",
         "template-curly-spacing": "error",
-        "yield-star-spacing": "error"
+        "yield-star-spacing": "error",
+        "yoda": "off"
     },
     "settings": {
         "componentWrapperFunctions": [

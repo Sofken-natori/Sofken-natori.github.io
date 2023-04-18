@@ -30,9 +30,11 @@ export default function CPPEntHome(): JSX.Element {
                 予めご了承下さい。
             </div>
             <ol className="cpp-entrance-index">
+                <li><Link href={`${DOCUMENT_ROOT}/cpp/dictionary`}>単語集</Link></li>
                 <li><Link href={`${DOCUMENT_ROOT}/cpp/type`}>データ型</Link></li>
                 <li><Link href={`${DOCUMENT_ROOT}/cpp/variable`}>変数</Link></li>
                 <li><Link href={`${DOCUMENT_ROOT}/cpp/logical`}>論理演算</Link></li>
+                <li><Link href={`${DOCUMENT_ROOT}/cpp/function`}>関数</Link></li>
             </ol>
             <style jsx>{`
                 .cpp-entrance-index {
