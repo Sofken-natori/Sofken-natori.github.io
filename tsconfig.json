@@ -100,12 +100,15 @@
         "node_modules"
     ],
     "include": [
-        "components/**/*.ts",
-        "components/**/*.tsx",
+        ".next/types/**/*.ts",
+        "app/**/*.js",
+        "app/**/*.jsx",
+        "app/**/*.ts",
+        "app/**/*.tsx",
+        "lib/**/*.js",
+        "lib/**/*.jsx",
         "lib/**/*.ts",
         "lib/**/*.tsx",
-        "next-env.d.ts",
-        "pages/**/*.ts",
-        "pages/**/*.tsx"
+        "next-env.d.ts"
     ]
 }

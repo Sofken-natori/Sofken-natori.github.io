@@ -22,11 +22,11 @@ const nextConfig = {
     compress: true,
     eslint: {
         dirs: [
-            'components',
-            'pages'
+            'app'
         ]
     },
     experimental: {
+        appDir: true,
         esmExternals: true,
         optimizeCss: true,
     },
@@ -34,6 +34,7 @@ const nextConfig = {
     images: {
         disableStaticImages: true
     },
+    output: 'export',
     reactStrictMode: true,
     sassOptions: {
         includePaths: [

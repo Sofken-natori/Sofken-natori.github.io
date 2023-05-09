@@ -97,11 +97,9 @@
         "node_modules"
     ],
     "include": [
-        "components/**/*.js",
-        "components/**/*.jsx",
+        "app/**/*.js",
+        "app/**/*.jsx",
         "lib/**/*.js",
-        "lib/**/*.jsx",
-        "pages/**/*.js",
-        "pages/**/*.jsx"
+        "lib/**/*.jsx"
     ]
 }

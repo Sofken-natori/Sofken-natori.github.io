@@ -84,6 +84,7 @@
             "error",
             4
         ],
+        "jsdoc/newline-after-description": "off",
         "jsdoc/require-jsdoc": "off",
         "jsx-a11y/anchor-is-valid": "off",
         "jsx-a11y/click-events-have-key-events": "off",
@@ -112,6 +113,9 @@
                     "else": {
                         "after": true
                     },
+                    "export": {
+                        "after": true
+                    },
                     "from": {
                         "after": true
                     },
@@ -130,6 +134,7 @@
         "lines-around-comment": "off",
         "max-len": "off",
         "no-case-declarations": "off",
+        "no-console": "off",
         "no-duplicate-imports": "error",
         "no-multiple-empty-lines": [
             "error",
@@ -168,18 +173,13 @@
             "after-props"
         ],
         "react/jsx-closing-tag-location": "off",
+        "react/jsx-curly-brace-presence": "off",
         "react/jsx-first-prop-new-line": [
             "error",
             "never"
         ],
-        "react/jsx-indent": [
-            "error",
-            4,
-            {
-                "checkAttributes": true,
-                "indentLogicalExpressions": true
-            }
-        ],
+        "react/jsx-indent": "off",
+        "react/jsx-no-comment-textnodes": "off",
         "react/no-unknown-property": "off",
         "react/react-in-jsx-scope": "off",
         "rest-spread-spacing": "error",
