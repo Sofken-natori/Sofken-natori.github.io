@@ -13,7 +13,7 @@ export function Navigation(): JSX.Element {
                     <div className="nav-button" id="nav-button" />
                     <div className="navigation">
                         <ul className="nav-list" id="navigation">
-                            <li><Link href={`${DOCUMENT_ROOT}/`} title="トップページ">TOP</Link></li>
+                            <li><Link href={`${DOCUMENT_ROOT}/index`} title="トップページ">TOP</Link></li>
                             <li className="nav-sub">
                                 <h2 className="nav-sub-button" title="レーショナル(部誌)">Rationale</h2>
                                 <ul className="nav-list">
