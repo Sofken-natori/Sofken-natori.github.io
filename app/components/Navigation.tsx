@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import Script from 'next/script';
-import { DOCUMENT_ROOT } from '../../lib/contants';
 import { cppEntPages } from '.';
 
 export function Navigation(): JSX.Element {
@@ -13,21 +12,21 @@ export function Navigation(): JSX.Element {
                     <div className="nav-button" id="nav-button" />
                     <div className="navigation">
                         <ul className="nav-list" id="navigation">
-                            <li><Link href={`${DOCUMENT_ROOT}/index`} title="トップページ">TOP</Link></li>
+                            <li><Link href="/index" title="トップページ">TOP</Link></li>
                             <li className="nav-sub">
                                 <h2 className="nav-sub-button" title="レーショナル(部誌)">Rationale</h2>
                                 <ul className="nav-list">
-                                    {[36, 35, 34, 33, 32].map(num => <li key={`rational-${num}`}><Link href={`${DOCUMENT_ROOT}/rational/vol${num}`} title={`${num + 1986}年発行 レーショナル 第${num}号`}>vol.{num}({num + 1986})</Link></li>)}
+                                    {[36, 35, 34, 33, 32].map(num => <li key={`rational-${num}`}><Link href={`/rational/vol${num}`} title={`${num + 1986}年発行 レーショナル 第${num}号`}>vol.{num}({num + 1986})</Link></li>)}
                                 </ul>
                             </li>
                             <li className="nav-sub">
                                 <h2 className="nav-sub-button" title="C++入門">C++入門</h2>
                                 <ul className="nav-list">
-                                    <li><Link href={`${DOCUMENT_ROOT}/cpp`} title="C++入門 目次">目次</Link></li>
+                                    <li><Link href="/cpp" title="C++入門 目次">目次</Link></li>
                                     {(() => {
                                         const pages: JSX.Element[] = [];
                                         // eslint-disable-next-line guard-for-in
-                                        for(const page in cppEntPages) pages.push(<li key={`cpp-ent-${page}`}><Link href={`${DOCUMENT_ROOT}/cpp/${page}`} title={`C++入門 ${cppEntPages[page]}`}>{cppEntPages[page]}</Link></li>);
+                                        for(const page in cppEntPages) pages.push(<li key={`cpp-ent-${page}`}><Link href={`/cpp/${page}`} title={`C++入門 ${cppEntPages[page]}`}>{cppEntPages[page]}</Link></li>);
                                         return pages;
                                     })()}
                                 </ul>

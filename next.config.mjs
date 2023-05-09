@@ -18,7 +18,7 @@ const optimizedImagesConfig = {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    assetPrefix: process.env['ROOT'] || undefined,
+    assetPrefix: process.env['ROOT'],
     compress: true,
     eslint: {
         dirs: [
@@ -42,8 +42,8 @@ const nextConfig = {
         ]
     },
     swcMinify: true,
-    trailingSlash: false,
-    webpack: (config, ctx) => {
+    trailingSlash: true,
+    webpack: config => {
         config.module.rules.push({
             test: /\.(eot|otf|ttf|woff|woff2)$/,
             use: 'raw-loader'

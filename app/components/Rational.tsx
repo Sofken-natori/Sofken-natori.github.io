@@ -1,6 +1,5 @@
 'use strict';
 
-import { DOCUMENT_ROOT } from '../../lib/contants';
 import { DefaultHead } from '.';
 import { padding } from '../../lib/utils';
 import type { ReactNode } from 'react';
@@ -29,7 +28,7 @@ export function Rational({ children, pdfUrl, vol }: Props): JSX.Element {
         <>
             <h2>レーショナル({publishDate}発行)</h2>
             <p><small>Powered by PDF.js</small></p>
-            <iframe className="rational" src={`${DOCUMENT_ROOT}/pdfjs/web/viewer.html?file=${pdfUrl ?? getRationalMedia(vol, `vol${vol}.pdf`)}`} title={`${vol + 1986}年発行 レーショナル 第${vol}号`} />
+            <iframe className="rational" src={`/pdfjs/web/viewer.html?file=${pdfUrl ?? getRationalMedia(vol, `vol${vol}.pdf`)}`} title={`${vol + 1986}年発行 レーショナル 第${vol}号`} />
             {children}
         </>
     );
@@ -42,5 +41,5 @@ export function RationalHead({ vol }: { vol: keyof typeof rationalPublishDates }
 }
 
 export function getRationalMedia(vol: keyof typeof rationalPublishDates, name: string): string {
-    return `${DOCUMENT_ROOT}/rational/vol${vol}/${name}`;
+    return `/rational/vol${vol}/${name}`;
 }

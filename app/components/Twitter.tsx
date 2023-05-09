@@ -3,8 +3,8 @@
 'use strict';
 'use client';
 
-import { useEffect, useRef } from 'react';
 import Script from 'next/script';
+import { useEffect, useRef } from 'react';
 
 declare global {
     interface Window {

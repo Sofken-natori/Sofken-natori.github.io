@@ -1,7 +1,5 @@
 'use strict';
 
-import { DOCUMENT_ROOT } from '../../lib/contants';
-
 type Props = {
     description: string,
     path: string,
@@ -13,10 +11,10 @@ export function DefaultHead({ description, path, title, type = 'article' }: Prop
     return (
         <>
             <meta charSet="utf-8" />
-            <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href={`${DOCUMENT_ROOT}/favicon.ico`} />
-            <link rel="icon" type="image/svg+xml" href={`${DOCUMENT_ROOT}/icon.svg`} />
-            <link rel="apple-touch-icon" type="image/png" sizes="180x180" href={`${DOCUMENT_ROOT}/apple-touch-icon.png`} />
-            <link rel="manifest" type="text/webappmanifest" href={`${DOCUMENT_ROOT}/manifest.webmanifest`} />
+            <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="/favicon.ico" />
+            <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+            <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png" />
+            <link rel="manifest" type="text/webappmanifest" href="/manifest.webmanifest" />
             <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
             <meta name="description" content={description} />
             <meta property="og:site_name" content="ソフトウェア研究部会" />

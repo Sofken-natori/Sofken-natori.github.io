@@ -1,7 +1,6 @@
 'use strict';
 
 import Link from 'next/link';
-import { DOCUMENT_ROOT } from '../lib/contants';
 import { TwitterTimeline } from './components';
 
 export default function Home(): JSX.Element {
@@ -9,7 +8,7 @@ export default function Home(): JSX.Element {
         <>
             <h2>2022年度のレーショナル</h2>
             <p>
-                <Link href={`${DOCUMENT_ROOT}/rational/vol36`}>こちら</Link>のページで見ることができます。(メニューからも行けます)<br />
+                <Link href="/rational/vol36">こちら</Link>のページで見ることができます。(メニューからも行けます)<br />
                 2022年の高専祭で公開したものと同じものです。ぜひご覧頂ければと思います。
             </p>
             <h2>ソフトウェア研究部会とは</h2>

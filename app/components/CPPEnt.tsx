@@ -1,7 +1,6 @@
 'use strict';
 
 import Link from 'next/link';
-import { DOCUMENT_ROOT } from '../../lib/contants';
 import { DefaultHead } from '.';
 import type { ReactNode } from 'react';
 
@@ -39,7 +38,7 @@ export function CPPEnt({ children, slug }: Props): JSX.Element {
         <>
             <h2>C++入門「{name}」</h2>
             {children ?? ''}
-            <script async src={`${DOCUMENT_ROOT}/prism.js#${Date.now()}`} />
+            <script async src={`/prism.js#${Date.now()}`} />
         </>
     );
 }
@@ -53,6 +52,6 @@ export function CPPEntHead({ slug }: { slug: CppEntPageSlugs }): JSX.Element {
 
 export function CPPEntLink({ anchor, name, slug }: { anchor?: `#${string}`, name?: string, slug: CppEntPageSlugs }): JSX.Element {
     return (
-        <Link href={`${DOCUMENT_ROOT}/cpp/${slug}${anchor ?? ''}`}>{name ?? cppEntPages[slug] ?? cppEntHardPages[slug]}</Link>
+        <Link href={`/cpp/${slug}${anchor ?? ''}`}>{name ?? cppEntPages[slug] ?? cppEntHardPages[slug]}</Link>
     );
 }
