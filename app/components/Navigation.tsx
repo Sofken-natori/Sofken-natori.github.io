@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Script from 'next/script';
-import { cppEntPages } from '.';
+import { cppEntHardPages, cppEntPages } from '.';
 
 export function Navigation(): JSX.Element {
     return (
@@ -26,7 +26,9 @@ export function Navigation(): JSX.Element {
                                     {(() => {
                                         const pages: JSX.Element[] = [];
                                         // eslint-disable-next-line guard-for-in
-                                        for(const page in cppEntPages) pages.push(<li key={`cpp-ent-${page}`}><Link href={`/cpp/${page}`} title={`C++入門 ${cppEntPages[page]}`}>{cppEntPages[page]}</Link></li>);
+                                        for(const page in cppEntPages) pages.push(<li key={`cpp-ent-${page}`}><Link href={`/cpp/${page}`} title={`C++入門 入門(当社比)編 ${cppEntPages[page]}`}>{cppEntPages[page]}</Link></li>);
+                                        // eslint-disable-next-line guard-for-in
+                                        for(const page in cppEntHardPages) pages.push(<li key={`cpp-ent-${page}`} style={{ color: 'hsl(60deg, 100%, 50%)' }}><Link href={`/cpp/${page}`} title={`C++入門 上級編 ${cppEntHardPages[page]}`}>{cppEntHardPages[page]}</Link></li>);
                                         return pages;
                                     })()}
                                 </ul>

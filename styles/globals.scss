@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@forward "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@forward "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+@forward "prism.css";
 @forward "variables";
 @forward "base";
 @forward "components";

@@ -63,7 +63,7 @@ const words: Readonly<{ [word in string]: WordEntry }> = {
     'ブロック': {
         description: (
             <>
-                <C>&lbrace;&rbrace;</C>で囲まれている範囲。
+                <C>{`{}`}</C>で囲まれている範囲。
             </>
         )
     },

@@ -1,8 +1,5 @@
 'use strict';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import '../styles/prism.css';
 import '../styles/globals.scss';
 import { Footer, Header, Navigation } from './components';
 import { NotoSansJP } from './font';
