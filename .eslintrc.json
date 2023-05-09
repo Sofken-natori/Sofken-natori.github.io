@@ -150,6 +150,7 @@
         "no-useless-constructor": "error",
         "no-useless-rename": "error",
         "no-var": "error",
+        "no-void": "off",
         "node/no-missing-import": "off",
         "node/no-unpublished-import": "off",
         "node/no-unsupported-features/es-syntax": "off",

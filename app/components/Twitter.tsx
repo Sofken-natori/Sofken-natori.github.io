@@ -6,6 +6,16 @@
 import { useEffect, useRef } from 'react';
 import Script from 'next/script';
 
+declare global {
+    interface Window {
+        twttr: {
+            widgets: {
+                load: (HTMLElement) => Promise<unknown>;
+            };
+        };
+    }
+}
+
 type EmbedSetting = Partial<{
     height: number | string,
     lang: string,
@@ -15,7 +25,7 @@ type EmbedSetting = Partial<{
 export function TwitterTimeline({ username }: { username: string }): JSX.Element {
     const ref = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        window.twttr?.widgets.load(ref.current);
+        void window.twttr?.widgets.load(ref.current);
     }, [username]);
     return (
         <>
@@ -28,7 +38,7 @@ export function TwitterTimeline({ username }: { username: string }): JSX.Element
 export function TwitterTweet({ id }: { id: number | string }): JSX.Element {
     const ref = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        window.twttr?.widgets.load(ref.current);
+        void window.twttr?.widgets.load(ref.current);
     }, [id]);
     return (
         <>
@@ -43,6 +53,6 @@ function generateEmbedTimelineHtml(username: string, setting?: EmbedSetting): st
 }
 
 function generateEmbedTweetHtml(id: number | string): string {
-    if(!/^\d+$/u.test(id)) throw new Error(`Invalid tweet ID: ${id}`);
+    if(!/^\d+$/u.test(`${id}`)) throw new Error(`Invalid tweet ID: ${id}`);
     return `<blockquote class="twitter-tweet"><a href="https://twitter.com/i/status/${id}"></a></blockquote>`;
 }
