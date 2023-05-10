@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Script from 'next/script';
+import { IS_UNOFFICIAL_BUILD } from '../../lib/contants';
 import { cppEntHardPages, cppEntPages } from '.';
 
 export function Navigation(): JSX.Element {
@@ -12,7 +13,7 @@ export function Navigation(): JSX.Element {
                     <div className="nav-button" id="nav-button" />
                     <div className="navigation">
                         <ul className="nav-list" id="navigation">
-                            <li><Link href="/index" title="トップページ">TOP</Link></li>
+                            <li><Link href={`/${IS_UNOFFICIAL_BUILD && ''}`} title="トップページ">TOP</Link></li>
                             <li className="nav-sub">
                                 <h2 className="nav-sub-button" title="レーショナル(部誌)">Rationale</h2>
                                 <ul className="nav-list">

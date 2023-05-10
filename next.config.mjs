@@ -19,6 +19,7 @@ const optimizedImagesConfig = {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     assetPrefix: process.env['ROOT'],
+    basePath: process.env['ROOT'],
     compress: true,
     eslint: {
         dirs: [

@@ -1,6 +1,8 @@
 'use strict';
 
 import Link from 'next/link';
+import Script from 'next/script';
+import { DOCUMENT_ROOT } from '../../lib/contants';
 import { DefaultHead } from '.';
 import type { ReactNode } from 'react';
 
@@ -38,7 +40,7 @@ export function CPPEnt({ children, slug }: Props): JSX.Element {
         <>
             <h2>C++入門「{name}」</h2>
             {children ?? ''}
-            <script async src={`/prism.js#${Date.now()}`} />
+            <Script async src={`${DOCUMENT_ROOT}/prism.js#${Date.now()}`} />
         </>
     );
 }
