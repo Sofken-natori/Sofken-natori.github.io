@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use "variables" as v;
 
 * {
     margin: 0;
@@ -11,11 +12,12 @@ body {
 }
 
 a {
-    color: inherit;
+    color: var(--link-color);
     text-decoration: none;
-    transition: text-decoration 1s linear;
+    transition: color .3s linear;
 
     &:active, &:focus, &:hover {
+        color: darken(v.$link_color, 20%);
         text-decoration: underline;
     }
 }
