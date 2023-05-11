@@ -3,7 +3,6 @@
 'use strict';
 'use client';
 
-import Script from 'next/script';
 import { useEffect, useRef } from 'react';
 
 declare global {
@@ -28,10 +27,7 @@ export function TwitterTimeline({ username }: { username: string }): JSX.Element
         void window.twttr?.widgets.load(ref.current);
     }, [username]);
     return (
-        <>
-            <div ref={ref} dangerouslySetInnerHTML={{ __html: generateEmbedTimelineHtml(username) }} />
-            <Script async src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
-        </>
+        <div ref={ref} dangerouslySetInnerHTML={{ __html: generateEmbedTimelineHtml(username) }} />
     );
 }
 
@@ -41,10 +37,7 @@ export function TwitterTweet({ id }: { id: number | string }): JSX.Element {
         void window.twttr?.widgets.load(ref.current);
     }, [id]);
     return (
-        <>
-            <div ref={ref} dangerouslySetInnerHTML={{ __html: generateEmbedTweetHtml(id) }} />
-            <Script async src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
-        </>
+        <div ref={ref} dangerouslySetInnerHTML={{ __html: generateEmbedTweetHtml(id) }} />
     );
 }
 

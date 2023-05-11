@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { TwitterTimeline } from './components';
+import Script from 'next/script';
 
 export default function Home(): JSX.Element {
     return (
@@ -21,6 +22,7 @@ export default function Home(): JSX.Element {
             <p>高専祭時に配布している印刷版では部員全員の本名を公開していますが、Web版では個人のプライバシーに配慮して非公開にしてほしい方の名前はハンドルネームにしています。</p>
             <h2>タイムライン</h2>
             <TwitterTimeline username="sofken_natori" />
+            <Script async src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
         </>
     );
 }
