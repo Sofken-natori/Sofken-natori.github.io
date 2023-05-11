@@ -3,7 +3,7 @@
 'use strict';
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { JSX, useEffect, useRef } from 'react';
 
 declare global {
     interface Window {

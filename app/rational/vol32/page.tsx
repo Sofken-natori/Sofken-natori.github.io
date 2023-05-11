@@ -2,6 +2,7 @@
 
 import { DOCUMENT_ROOT } from '../../../lib/contants';
 import { Rational, getRationalMedia } from '../../components';
+import type { JSX } from 'react';
 
 export default function RationalVol32(): JSX.Element {
     return (

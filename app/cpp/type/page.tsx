@@ -1,6 +1,7 @@
 'use strict';
 
 import { C, CPPEnt, CPPEntLink } from '../../components';
+import type { JSX } from 'react';
 
 export default function CPPEntType(): JSX.Element {
     return (

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { DOCUMENT_ROOT } from '../../lib/contants';
 import { cppEntHardPages, cppEntPages } from '.';
+import type { JSX } from 'react';
 
 export function Navigation(): JSX.Element {
     return (

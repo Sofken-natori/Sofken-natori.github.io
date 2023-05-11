@@ -1,8 +1,9 @@
 'use strict';
 
 import Link from 'next/link';
-import { TwitterTimeline } from './components';
 import Script from 'next/script';
+import { TwitterTimeline } from './components';
+import type { JSX } from 'react';
 
 export default function Home(): JSX.Element {
     return (

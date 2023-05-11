@@ -1,6 +1,7 @@
 'use strict';
 
 import Link from 'next/link';
+import type { JSX } from 'react';
 
 export function Footer(): JSX.Element {
     const date = new Date();

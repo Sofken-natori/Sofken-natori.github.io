@@ -1,6 +1,7 @@
 'use strict';
 
 import { DefaultHead } from './components';
+import type { JSX } from 'react';
 
 export default function Head(): JSX.Element {
     return (

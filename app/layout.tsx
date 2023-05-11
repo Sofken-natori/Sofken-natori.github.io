@@ -3,7 +3,7 @@
 import '../styles/globals.scss';
 import { Footer, Header, Navigation } from './components';
 import { NotoSansJP } from './font';
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 type Props = {
     children: ReactNode

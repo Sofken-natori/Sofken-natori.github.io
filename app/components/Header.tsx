@@ -1,5 +1,7 @@
 'use strict';
 
+import type { JSX } from 'react';
+
 export function Header(): JSX.Element {
     return (
         <header className="header">

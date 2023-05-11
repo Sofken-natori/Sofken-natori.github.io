@@ -1,6 +1,7 @@
 'use strict';
 
 import { CPPEntLink, cppEntHardPages, cppEntPages, CppEntPages, CppEntPageSlugs } from '../components';
+import type { JSX } from 'react';
 
 export default function CPPEntHome(): JSX.Element {
     return (

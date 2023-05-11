@@ -3,7 +3,7 @@
 import { DOCUMENT_ROOT } from '../../lib/contants';
 import { DefaultHead } from '.';
 import { padding } from '../../lib/utils';
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 export const rationalPublishDates = {
     32: new Date(2018, 11, 12),

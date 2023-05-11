@@ -1,5 +1,7 @@
 'use strict';
 
+import type { JSX } from 'react';
+
 type Props = {
     description: string,
     path: string,

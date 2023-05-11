@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { C, CPPEnt, CPPEntLink, CppEntPageSlugs } from '../../components';
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 type WordEntry = Readonly<{
     description: ReactNode,

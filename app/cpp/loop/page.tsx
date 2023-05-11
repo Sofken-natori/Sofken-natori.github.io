@@ -1,6 +1,7 @@
 'use strict';
 
 import { C, CPPEnt, Code } from '../../components';
+import type { JSX } from 'react';
 
 export default function CPPEntLoop(): JSX.Element {
     return (

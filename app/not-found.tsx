@@ -1,6 +1,7 @@
 'use strict';
 
 import Link from 'next/link';
+import type { JSX } from 'react';
 
 export default function NotFound(): JSX.Element {
     return (

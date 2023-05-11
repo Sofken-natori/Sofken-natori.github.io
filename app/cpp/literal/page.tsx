@@ -1,6 +1,7 @@
 'use strict';
 
 import { C, CPPEnt } from '../../components';
+import type { JSX } from 'react';
 
 export default function CPPEntLiteral(): JSX.Element {
     return (

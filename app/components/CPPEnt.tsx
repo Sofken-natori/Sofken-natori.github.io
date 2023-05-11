@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { DOCUMENT_ROOT } from '../../lib/contants';
 import { DefaultHead } from '.';
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 export const cppEntPages = {
     dictionary: '単語集',

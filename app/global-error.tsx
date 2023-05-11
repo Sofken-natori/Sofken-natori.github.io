@@ -5,7 +5,7 @@
 
 import Link from 'next/link';
 import { Footer, Header, Navigation } from './components';
-import { useEffect } from 'react';
+import { JSX, useEffect } from 'react';
 
 type Props = {
     error: Error

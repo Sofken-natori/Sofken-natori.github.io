@@ -1,6 +1,7 @@
 'use strict';
 
 import { Rational, getRationalMedia } from '../../components';
+import type { JSX } from 'react';
 
 export default function RationalVol33(): JSX.Element {
     return (

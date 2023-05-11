@@ -1,6 +1,6 @@
 'use strict';
 
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 export type Language = 'cpp';
 

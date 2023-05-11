@@ -1,6 +1,7 @@
 'use strict';
 
 import { CPPEnt, Code } from '../../components';
+import type { JSX } from 'react';
 
 export default function CPPEntConditional(): JSX.Element {
     return (

@@ -1,6 +1,7 @@
 'use strict';
 
 import { CPPEnt, CPPEntLink, Code } from '../../components';
+import type { JSX } from 'react';
 
 export default function CPPEntVariable(): JSX.Element {
     return (
