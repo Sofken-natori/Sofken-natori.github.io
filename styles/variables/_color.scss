@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+$bg_color: hsl(0deg, 0%, 95%);
+$color: hsl(0deg, 0%, 5%);
+$footer_bg_color: hsl(0deg, 0%, 64%);
+$footer_link_color: hsl(216deg, 100%, 40%);
+$h_bg_color: hsl(117deg, 88%, 71%);
+$header_bg_color: hsl(183deg, 78%, 65%);
+$link_color: hsl(228deg, 100%, 50%);
+$navigation_bg_color: hsl(215deg, 79%, 75%);
+$navigation_button_bg_color: hsl(215deg, 85%, 80%, 75%);
+$navigation_button_hover_bg_color: change-color($navigation_button_bg_color, $alpha: 1);
+$navigation_item_bg_color: darken($navigation_bg_color, 14%);
+$navigation_item_color: hsl(0deg, 0%, 95%);
+$navigation_item_hover_bg_color: darken($navigation_item_bg_color, 20%);
+
+:root {
+    --bg-color: #{$bg_color};
+    --color: #{$color};
+    --footer-bg-color: #{$footer_bg_color};
+    --footer-link-color: #{$footer_link_color};
+    --h-bg-color: #{$h_bg_color};
+    --header-bg-color: #{$header_bg_color};
+    --link-color: #{$link_color};
+    --navigation-bg-color: #{$navigation_bg_color};
+    --navigation-button-bg-color: #{$navigation_button_bg_color};
+    --navigation-button-hover-bg-color: #{$navigation_button_hover_bg_color};
+    --navigation-item-bg-color: #{$navigation_item_bg_color};
+    --navigation-item-color: #{$navigation_item_color};
+    --navigation-item-hover-bg-color: #{$navigation_item_hover_bg_color};
+}
+

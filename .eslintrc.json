@@ -1,0 +1,281 @@
+{
+    "env": {
+        "es2016": true,
+        "es2017": true,
+        "es2018": true,
+        "es2019": true,
+        "es2020": true,
+        "es2021": true,
+        "es2022": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint",
+        "eslint:recommended",
+        "next",
+        "next/core-web-vitals",
+        "plugin:@next/next/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "plugin:jsdoc/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:node/recommended",
+        "plugin:promise/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "standard",
+        "standard-jsx"
+    ],
+    "globals": {
+        "JSX": "readonly"
+    },
+    "ignorePatterns": [
+        "**/node_modules/*",
+        "next-sitemap.config.mjs",
+        "node_modules"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "project": [
+            "./tsconfig.json"
+        ],
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@next/next",
+        "@typescript-eslint",
+        "import",
+        "jsdoc",
+        "jsx-a11y",
+        "node",
+        "promise",
+        "react",
+        "react-hooks"
+    ],
+    "root": true,
+    "rules": {
+        "@typescript-eslint/no-unnecessary-type-assertion": "off",
+        "@typescript-eslint/restrict-template-expressions": "off",
+        "@typescript-eslint/strict-boolean-expressions": [
+            "error",
+            {
+                "allowNumber": false,
+                "allowString": false
+            }
+        ],
+        "arrow-body-style": "error",
+        "arrow-parens": "error",
+        "arrow-spacing": "error",
+        "curly": [
+            "error",
+            "multi"
+        ],
+        "dot-notation": "off",
+        "generator-star-spacing": "error",
+        "import/no-anonymous-default-export": "off",
+        "import/no-unresolved": "error",
+        "indent": [
+            "error",
+            4
+        ],
+        "jsdoc/check-param-names": "off",
+        "jsdoc/check-tag-names": "off",
+        "jsdoc/newline-after-description": "off",
+        "jsdoc/require-jsdoc": "off",
+        "jsdoc/require-param": "off",
+        "jsdoc/require-param-type": "off",
+        "jsdoc/require-returns": "off",
+        "jsdoc/require-returns-type": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/media-has-caption": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-quotes": [
+            "error",
+            "prefer-double"
+        ],
+        "keyword-spacing": [
+            "error",
+            {
+                "after": false,
+                "before": true,
+                "overrides": {
+                    "case": {
+                        "after": true
+                    },
+                    "const": {
+                        "after": true
+                    },
+                    "default": {
+                        "after": true
+                    },
+                    "else": {
+                        "after": true
+                    },
+                    "export": {
+                        "after": true
+                    },
+                    "from": {
+                        "after": true
+                    },
+                    "import": {
+                        "after": true
+                    },
+                    "return": {
+                        "after": true
+                    },
+                    "try": {
+                        "after": true
+                    }
+                }
+            }
+        ],
+        "lines-around-comment": "off",
+        "max-len": "off",
+        "no-case-declarations": "off",
+        "no-console": "off",
+        "no-duplicate-imports": "error",
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2,
+                "maxBOF": 0,
+                "maxEOF": 1
+            }
+        ],
+        "no-nested-ternary": "off",
+        "no-undefined": "off",
+        "no-unused-vars": "off",
+        "no-use-before-define": "off",
+        "no-useless-computed-key": "error",
+        "no-useless-constructor": "error",
+        "no-useless-rename": "error",
+        "no-var": "error",
+        "no-void": "off",
+        "node/no-missing-import": "off",
+        "node/no-unpublished-import": "off",
+        "node/no-unsupported-features/es-syntax": "off",
+        "object-shorthand": "error",
+        "padding-line-between-statements": "off",
+        "prefer-arrow-callback": "error",
+        "prefer-const": "error",
+        "prefer-rest-params": "error",
+        "prefer-spread": "error",
+        "prefer-template": "error",
+        "quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true,
+                "avoidEscape": true
+            }
+        ],
+        "react/jsx-closing-bracket-location": [
+            "error",
+            "after-props"
+        ],
+        "react/jsx-closing-tag-location": "off",
+        "react/jsx-curly-brace-presence": "off",
+        "react/jsx-first-prop-new-line": [
+            "error",
+            "never"
+        ],
+        "react/jsx-indent": "off",
+        "react/jsx-no-comment-textnodes": "off",
+        "react/no-unknown-property": "off",
+        "react/react-in-jsx-scope": "off",
+        "rest-spread-spacing": "error",
+        "semi": [
+            "error",
+            "always"
+        ],
+        "space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "never",
+                "asyncArrow": "always",
+                "named": "never"
+            }
+        ],
+        "spaced-comment": "off",
+        "strict": "off",
+        "template-curly-spacing": "error",
+        "yield-star-spacing": "error",
+        "yoda": "off"
+    },
+    "settings": {
+        "componentWrapperFunctions": [
+            "observer",
+            {
+                "property": "styled"
+            },
+            {
+                "object": "Mobx",
+                "property": "observer"
+            },
+            {
+                "object": "<pragma>",
+                "property": "observer"
+            }
+        ],
+        "formComponents": [
+            "CustomForm",
+            {
+                "formAttribute": "endpoint",
+                "name": "form"
+            }
+        ],
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx"
+            ]
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": "./tsconfig.json"
+            }
+        },
+        "linkComponents": [
+            "Hyperlink",
+            {
+                "linkAttribute": "to",
+                "name": "Link"
+            }
+        ],
+        "next": {
+            "rootDir": "."
+        },
+        "propWrapperFunctions": [
+            "forbidExtraProps",
+            {
+                "object": "Object",
+                "property": "freeze"
+            },
+            {
+                "property": "myFavoriteWrapper"
+            },
+            {
+                "exact": true,
+                "property": "forbidExtraProps"
+            }
+        ],
+        "react": {
+            "createClass": "createReactClass",
+            "flowVersion": "0.53",
+            "fragment": "Fragment",
+            "pragma": "React",
+            "version": "detect"
+        }
+    }
+}

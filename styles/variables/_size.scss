@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@use "font" as f;
+
+$base_navigation_item_height: calc(#{f.$base_font_size} + 15px * 2);
+$navigation_item_width: 200px;
+$navigation_sub_item_width: calc(#{$navigation_item_width} - 1.5rem);
+$pc_navigation_item_height: calc(#{f.$pc_font_size} + 15px * 2);
+
+:root {
+    --navigation-item-height: #{$base_navigation_item_height};
+    --navigation-item-width: #{$navigation_item_width};
+    --navigation-sub-item-width: #{$navigation_sub_item_width};
+    @media (768px <= width) {
+        --navigation-item-height: #{$pc_navigation_item_height};
+    }
+}

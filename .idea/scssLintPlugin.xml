@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScssLintProjectComponent">
+    <option name="scssLintExecutable" value="/var/lib/gems/3.0.0/gems/scss-lint-0.38.0/bin/scss-lint" />
+  </component>
+</project>

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.dictionary {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    @media (768px <= width) {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+
+    caption, tbody, tfoot, thead, tr {
+        display: contents;
+    }
+
+    td, th {
+        display: block;
+    }
+}

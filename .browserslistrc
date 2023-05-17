@@ -1,0 +1,6 @@
+defaults
+not ie <= 11
+maintained node versions
+> 50% in jp
+> 50%
+unreleased versions

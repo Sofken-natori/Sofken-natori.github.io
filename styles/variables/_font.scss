@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+$base_font_size: 1.1rem;
+$base_h2_font_size: 1.6rem;
+$base_h3_font_size: 1.3rem;
+$base_h4_font_size: 1;
+$base_header_font_size: 2.5rem;
+$pc_font_size: 1.25rem;
+$pc_h2_font_size: 1.75rem;
+$pc_h3_font_size: 1.5rem;
+$pc_h4_font_size: 1;
+$pc_header_font_size: 4rem;
+
+:root {
+    --font-size: #{$base_font_size};
+    --h2-font-size: #{$base_h2_font_size};
+    --h3-font-size: #{$base_h3_font_size};
+    --h4-font-size: #{$base_h4_font_size};
+    --header-font-size: #{$base_header_font_size};
+    @media (768px <= width) {
+        --font-size: #{$pc_font_size};
+        --h2-font-size: #{$pc_h2_font_size};
+        --h3-font-size: #{$pc_h3_font_size};
+        --h4-font-size: #{$pc_h4_font_size};
+        --header-font-size: #{$pc_header_font_size};
+    }
+}

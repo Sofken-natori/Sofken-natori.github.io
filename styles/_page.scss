@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+body {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    background-color: var(--bg-color);
+    font-family: 'Noto Sans JP', 'Noto Sans CJK JP', Verdana, Arial, Helvetica, -apple-system, sans-serif;
+    line-height: 1.75rem;
+    font-size: var(--font-size);
+    color: var(--color);
+    @media (768px <= width) {
+        line-height: 2rem;
+    }
+
+    .content-container {
+        flex: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        min-height: calc(100svh - 245px);
+        @media (768px <= width) {
+            flex-direction: row;
+        }
+
+        main {
+            width: 100%;
+            padding: 10px;
+            flex: auto;
+            background-color: var(--bg-color);
+            @media (768px <= width) {
+                width: calc(100% - 200px);
+            }
+
+            h2 {
+                width: 100%;
+                background-color: var(--h-bg-color);
+                padding: 10px;
+                font-size: var(--h2-font-size);
+                margin: 0.5rem 0;
+            }
+
+            h3 {
+                width: 100%;
+                background: linear-gradient(transparent 20%, var(--h-bg-color) 80%);
+                padding: 8px;
+                font-size: var(--h3-font-size);
+                margin: 0.5rem 0;
+            }
+
+            h4 {
+                width: 100%;
+                background: linear-gradient(transparent 30%, var(--h-bg-color) 70%);
+                padding: 6px;
+                font-size: var(--h4-font-size);
+                margin: 0.5rem 0;
+            }
+
+            p {
+                width: 100%;
+                margin: 0;
+                padding: 0.2em 0 0.8em 0;
+            }
+
+            ul {
+                margin-left: 10px;
+                list-style: none;
+            }
+
+            .inline-code {
+                background-color: hsl(0deg, 0%, 20%);
+                color: hsl(0deg, 0%, 80%);
+                font-family: monospace;
+                margin: 0 0.5rem;
+                padding: 0 0.25rem;
+            }
+        }
+    }
+}
