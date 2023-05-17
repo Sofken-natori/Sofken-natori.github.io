@@ -10,11 +10,11 @@ export default function CPPEntFunction(): JSX.Element {
                 関数とは、ある程度の処理をひとまとめにしたり、<wbr />
                 パッと見て分かりにくい処理に名前を付けて分かりやすくするための物です。
             </p>
-            <Code content={
-                `返り値の型 関数名(引数1の型 引数1, 引数2の型 引数2, ...) {\n` +
-                `    処理\n` +
-                `}`
-            } lang="cpp" />
+            <Code content={`
+                返り値の型 関数名(引数1の型 引数1, 引数2の型 引数2, ...) {
+                    処理
+                }
+            `} indent={16} lang="cpp" />
             <p>
                 関数名は基本的にunder_score記法かcamelCase記法で命名される事が多いです。<wbr />
                 (C言語にはunder_scoreが多いがその他の主要言語ではcamelCaseが多い)

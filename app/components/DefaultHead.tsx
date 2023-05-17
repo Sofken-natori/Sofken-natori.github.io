@@ -2,14 +2,15 @@
 
 import type { JSX } from 'react';
 
-type Props = {
-    description: string,
-    path: string,
-    title: string,
-    type?: string
-};
-
-export function DefaultHead({ description, path, title, type = 'article' }: Props): JSX.Element {
+/**
+ * デフォルトのヘッダ情報テンプレート
+ * @param description 説明文
+ * @param path ページへのパス
+ * @param title タイトル
+ * @param type ページのOGPタイプ
+ * @return ヘッダ情報
+ */
+export function DefaultHead({ description, path, title, type = 'article' }: { description: string, path: string, title: string, type?: string }): JSX.Element {
     return (
         <>
             <meta charSet="utf-8" />

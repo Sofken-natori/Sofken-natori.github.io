@@ -1,6 +1,8 @@
 'use strict';
 
 import '../styles/globals.scss';
+import Script from 'next/script';
+import { DOCUMENT_ROOT } from '../lib/contants';
 import { Footer, Header, Navigation } from './components';
 import { NotoSansJP } from './font';
 import type { JSX, ReactNode } from 'react';
@@ -22,6 +24,7 @@ export default function Layout({ children }: Props): JSX.Element {
                     </main>
                 </div>
                 <Footer />
+                <Script async strategy="lazyOnload" src={`${DOCUMENT_ROOT}/prism.js`} />
             </body>
         </html>
     );

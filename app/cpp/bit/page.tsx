@@ -19,28 +19,28 @@ export default function CPPEntBit(): JSX.Element {
                 特定のbitを抽出する、いわゆるマスク処理に使われます。<br />
                 記号は<C>&amp;</C>です。
             </p>
-            <Code content={
-                `// 例えば右から2進7桁の数値だけ抽出したい場合\n` +
-                `int a = 255 & 0b0111'1111;\n` +
-                `// 255は0b1111'1111で右から8桁目のみ「1 and 0」で0となるためaは127(0b0111'1111)`
-            } lang="cpp" />
+            <Code content={`
+                // 例えば右から2進7桁の数値だけ抽出したい場合
+                int a = 255 & 0b0111'1111;
+                // 255は0b1111'1111で右から8桁目のみ「1 and 0」で0となるためaは127(0b0111'1111)
+            `} indent={16} lang="cpp" />
             <h3 id="OR">OR</h3>
             <p>
                 各bitごとに<CPPEntLink anchor="#OR" name="OR演算" slug="logical" />を行います。<br />
                 フラグの合成に使われます。<br />
                 記号は<C>|</C>です。
             </p>
-            <Code content={
-                `// フラグのサンプル\n` +
-                `enum class Flag {\n` +
-                `    RUN       = 0b0001,\n` +
-                `    WAIT      = 0b0010,\n` +
-                `    EMERGENCY = 0b0100\n` +
-                `}\n` +
-                `\n` +
-                `int a = static_cast<int>(Flag::RUN) | static_cast<int>(Flag::EMERGENCY);\n` +
-                `// aには5(0b0101)(0b0001 or 0b0100)が入る`
-            } lang="cpp" />
+            <Code content={`
+                // フラグのサンプル
+                enum class Flag {
+                    RUN       = 0b0001,
+                    WAIT      = 0b0010,
+                    EMERGENCY = 0b0100
+                }
+
+                int a = static_cast&lt;int&gt;(Flag::RUN) | static_cast&lt;int&gt;(Flag::EMERGENCY);
+                // aには5(0b0101)(0b0001 or 0b0100)が入る
+            `} indent={16} lang="cpp" />
             <h3 id="XOR">XOR</h3>
             <p>
                 各bitごとに<CPPEntLink anchor="#XOR・EOR・ExOR" name="XOR演算" slug="logical" />を行います。<br />
@@ -48,21 +48,21 @@ export default function CPPEntBit(): JSX.Element {
                 具体的には1を立てたbitが反転します。<br />
                 記号は<C>^</C>です。
             </p>
-            <Code content={
-                `int a = 12; // 0b1100\n` +
-                `int b = a ^ 0b0110;\n` +
-                `// bには10(0b1010)が入る`
-            } lang="cpp" />
+            <Code content={`
+                int a = 12; // 0b1100
+                int b = a ^ 0b0110;
+                // bには10(0b1010)が入る
+            `} indent={16} lang="cpp" />
             <h3 id="NOT">NOT</h3>
             <p>
                 各bitごとに<CPPEntLink anchor="#NOT" name="NOT演算" slug="logical" />を行います。<br />
                 記号は<C>~</C>です。
             </p>
-            <Code content={
-                `int a = 5; // 0b0101\n` +
-                `int b = ~a;\n` +
-                `// bには-6(0b1111'1111'1111'1111'1111'1111'1111'1010)が入る`
-            } lang="cpp" />
+            <Code content={`
+                int a = 5; // 0b0101
+                int b = ~a;
+                // bには-6(0b1111'1111'1111'1111'1111'1111'1111'1010)が入る
+            `} indent={16} lang="cpp" />
             <h3 id="左シフト">左シフト</h3>
             <p>
                 各bitを指定された数だけ左に移動します。<wbr />
@@ -70,11 +70,11 @@ export default function CPPEntBit(): JSX.Element {
                 ただし、符号部分を保護したりもしないため、数によっては符号が反転します。<br />
                 記号は<C>&lt;&lt;</C>です。
             </p>
-            <Code content={
-                `int a = 10; // 0b0000'1010\n` +
-                `int b = a << 3;\n` +
-                `// bには80(0b0101'0000)が入る`
-            } lang="cpp" />
+            <Code content={`
+                int a = 10; // 0b0000'1010
+                int b = a << 3;
+                // bには80(0b0101'0000)が入る
+            `} indent={16} lang="cpp" />
             <h3 id="右シフト">右シフト</h3>
             <p>
                 各bitを指定された数だけ右に移動します。<wbr />
@@ -82,11 +82,11 @@ export default function CPPEntBit(): JSX.Element {
                 ただし、符号部分を保護したりもしないため、負の数は正の数になります。<br />
                 記号は<C>&gt;&gt;</C>です。
             </p>
-            <Code content={
-                `int a = 11; // 0b1011\n` +
-                `int b = a >> 2;\n` +
-                `// bには2(0b0010)が入る`
-            } lang="cpp" />
+            <Code content={`
+                int a = 11; // 0b1011
+                int b = a >> 2;
+                // bには2(0b0010)が入る
+            `} indent={16} lang="cpp" />
         </CPPEnt>
     );
 }

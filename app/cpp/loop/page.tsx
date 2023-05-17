@@ -16,41 +16,41 @@ export default function CPPEntLoop(): JSX.Element {
                 条件に合致している間処理を繰り返すループです。<wbr />
                 回数が特に決まってない・分からない場合に使います。
             </p>
-            <Code content={
-                `while(条件) {\n` +
-                `    処理\n` +
-                `}`
-            } lang="cpp" />
+            <Code content={`
+                while(条件) {
+                    処理
+                }
+            `} indent={16} lang="cpp" />
             <p>
                 「条件が真か」→「処理」→「条件が真か」→...と処理されます。<wbr />
                 そのため、条件によっては1回も実行されない場合があります。<br />
                 必ず1回は実行して欲しい場合はdo-while文を使います。
             </p>
-            <Code content={
-                `do {\n` +
-                `    処理\n` +
-                `} while(条件);`
-            } lang="cpp" />
+            <Code content={`
+                do {
+                    処理
+                } while(条件);
+            `} indent={16} lang="cpp" />
             <h3 id="for">for</h3>
             <p>
                 条件に合致している間処理を繰り返すループです。<wbr />
                 回数が決まっている・事前に分かる場合に使います。
             </p>
-            <Code content={
-                `for(初期化式; 条件; 更新式) {\n` +
-                `    処理\n` +
-                `}`
-            } lang="cpp" />
+            <Code content={`
+                for(初期化式; 条件; 更新式) {
+                    処理
+                }
+            `} indent={16} lang="cpp" />
             <p>
                 「初期化式」→「条件が真か」→「処理」→「更新式」→「条件が真か」→...と処理されます。<br />
                 一般に、以下のような使い方をします。
             </p>
-            <Code content={
-                `// 処理を"回数"だけ繰り返す処理。iはforの中でのみ使える。\n` +
-                `for(int i = 0; i < 回数; i++) {\n` +
-                `    処理\n` +
-                `}`
-            } lang="cpp" />
+            <Code content={`
+                // 処理を"回数"だけ繰り返す処理。iはforの中でのみ使える。
+                for(int i = 0; i < 回数; i++) {
+                    処理
+                }
+            `} indent={16} lang="cpp" />
             <p>
                 また、配列のi番目を使う、と言った感じで配列の中身を順番に処理する目的でも使われました。<br />
                 しかし、次に紹介する範囲for文(通称foreach文)の登場によってその用途ではあまり使われなくなりました。
@@ -59,11 +59,11 @@ export default function CPPEntLoop(): JSX.Element {
             <p>
                 配列の中身を1つずつ順番に処理するループです。
             </p>
-            <Code content={
-                `for(型 変数 : 配列) {\n` +
-                `    処理\n` +
-                `}`
-            } lang="cpp" />
+            <Code content={`
+                for(型 変数 : 配列) {
+                    処理
+                }
+            `} indent={16} lang="cpp" />
             <p>
                 型は配列の中身の型です。(<C>int</C>の配列であれば<C>int</C>)<wbr />
                 ですが大抵は<C>auto</C>を指定します。<br />
@@ -80,22 +80,22 @@ export default function CPPEntLoop(): JSX.Element {
                 終了条件を書いてループさせるのもいいですが、大抵は無限ループが用いられます。<br />
                 無限ループは<C>while</C>と<C>for</C>のどちらでも書けますが<C>while</C>で書かれる傾向があります。<sup>[要出典]</sup>
             </p>
-            <Code content={
-                `// boolが無い時代のC言語に見られる書き方(1は0ではないためtrue)\n` +
-                `while(1) {\n` +
-                `    処理\n` +
-                `}\n` +
-                `\n` +
-                `// C++にはboolが標準で実装されているため可視性を考えてもこっちを推奨\n` +
-                `while(true) {\n` +
-                `    処理\n` +
-                `}\n` +
-                `\n` +
-                `// forの式を省略できる事を利用した書き方\n` +
-                `for(;;) {\n` +
-                `    処理\n` +
-                `}`
-            } lang="cpp" />
+            <Code content={`
+                // boolが無い時代のC言語に見られる書き方(1は0ではないためtrue)
+                while(1) {
+                    処理
+                }
+
+                // C++にはboolが標準で実装されているため可視性を考えてもこっちを推奨
+                while(true) {
+                    処理
+                }
+
+                // forの式を省略できる事を利用した書き方
+                for(;;) {
+                    処理
+                }
+            `} indent={16} lang="cpp" />
             <p>
                 条件が設定されていないため抜けるには<C>break</C>文を使います。
             </p>

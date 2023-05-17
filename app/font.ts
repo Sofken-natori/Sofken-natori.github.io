@@ -4,6 +4,9 @@
 import { Noto_Sans_JP } from '@next/font/google';
 import type { NextFontWithVariable } from '@next/font';
 
+/**
+ * Noto Sans JP
+ */
 export const NotoSansJP: NextFontWithVariable = Noto_Sans_JP({
     display: 'swap',
     subsets: [

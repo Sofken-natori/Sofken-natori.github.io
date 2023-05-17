@@ -1,8 +1,30 @@
 @charset "UTF-8";
-@forward "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@forward "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
-@forward "prism.css";
-@forward "variables";
-@forward "base";
-@forward "components";
-@forward "page";
+@use "sass:meta";
+
+@layer foundation, app;
+
+@layer foundation {
+    @layer bootstrap, prism;
+
+    @layer bootstrap {
+        @include meta.load-css("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+        @include meta.load-css("../node_modules/bootstrap-icons/font/bootstrap-icons.min.css");
+    }
+
+    @layer prism {
+        @include meta.load-css("prism.css");
+    }
+}
+
+@layer app {
+    @layer base, page;
+
+    @layer base {
+        @include meta.load-css("variables");
+        @include meta.load-css("base");
+    }
+
+    @layer page {
+        @include meta.load-css("page");
+    }
+}

@@ -1,26 +1,33 @@
 'use strict';
 
-import type { JSX, ReactNode } from 'react';
+import type { DetailedHTMLProps, HTMLAttributes, JSX, ReactNode } from 'react';
 
-export type Language = 'cpp';
+export type Language = 'c' | 'clike' | 'cpp';
 
-type Props = {
-    content: string,
-    lang: Language
-};
-
-export function Code({ content, lang }: Props): JSX.Element {
+/**
+ * インラインコードブロック
+ * @param children コード
+ * @param attr 属性
+ * @return 要素
+ */
+export function C({ children, ...attr }: { children: ReactNode } & DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>): JSX.Element {
     return (
-        <pre className="line-numbers">
-            <code className={`language-${lang}`}>
-                {`${content}`}
-            </code>
-        </pre>
+        <span className="inline-code" {...attr}>{children}</span>
     );
 }
 
-export function C({ children }: { children: ReactNode }): JSX.Element {
+/**
+ * コードブロック
+ * @param content コード
+ * @param indent インデントオフセット
+ * @param lang 言語
+ * @param attr 属性
+ * @return 要素
+ */
+export function Code({ content, indent, lang, ...attr }: { content: string, indent: number, lang: Language } & DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement>): JSX.Element {
     return (
-        <span className="inline-code">{children}</span>
+        <pre className="line-numbers" style={{ margin: 0 }} {...attr}>
+            <code className={`language-${lang}`} dangerouslySetInnerHTML={{ __html: content.split('\n').map(v => v.slice(indent)).join('\n').slice(1) }} />
+        </pre>
     );
 }

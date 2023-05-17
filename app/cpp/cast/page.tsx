@@ -16,27 +16,27 @@ export default function CPPEntCast(): JSX.Element {
                 <C>void *</C>以外のポインタ型の変換の場合のみ他のキャストを使います。<br />
                 数値同士(int→float・double→long longなど)や<CPPEntLink slug="enum" />から整数型への変換を行います。
             </p>
-            <Code content={
-                `int a = 10;\n` +
-                `float b = static_cast<float>(a); // bの値は10.0f`
-            } lang="cpp" />
+            <Code content={`
+                int a = 10;
+                float b = static_cast&lt;float&gt;(a); // bの値は10.0f
+            `} indent={16} lang="cpp" />
             <h4>dynamic_cast</h4>
             <p>
                 継承関係にある<CPPEntLink slug="class" />の<CPPEntLink name="ポインタ" slug="reference" />の内、親クラスから子クラスへの変換に使います。<br />
                 ただし、これに関してはオブジェクト指向の概念の内、ポリモーフィズム(多態性)についての知識が必要になるため深くは解説しません。
             </p>
-            <Code content={
-                `class A {};\n` +
-                `class B : public A {};\n` +
-                `\n` +
-                `// OK\n` +
-                `A *a = new B; // BのインスタンスをA型の変数に代入\n` +
-                `B *b = dynamic_cast<B *>(a); // A型の変数aをB型にキャスト(中身はBのインスタンスなためOK)\n` +
-                `\n` +
-                `// NG\n` +
-                `A *aa = new A; // AのインスタンスをA型の変数に代入\n` +
-                `B *bb = dynamic_cast<B *>(aa); // A型の変数aaをB型にキャスト(中身がAのインスタンスなため実行時エラー)`
-            } lang="cpp" />
+            <Code content={`
+                class A {};
+                class B : public A {};
+
+                // OK
+                A *a = new B; // BのインスタンスをA型の変数に代入
+                B *b = dynamic_cast&lt;B *&gt;(a); // A型の変数aをB型にキャスト(中身はBのインスタンスなためOK)
+
+                // NG
+                A *aa = new A; // AのインスタンスをA型の変数に代入
+                B *bb = dynamic_cast&lt;B *&gt;(aa); // A型の変数aaをB型にキャスト(中身がAのインスタンスなため実行時エラー)
+            `} indent={16} lang="cpp" />
             <h4>reinterpret_cast</h4>
             <p>
                 様々な型から別の型への変換を行います。<wbr />
@@ -44,22 +44,22 @@ export default function CPPEntCast(): JSX.Element {
                 例えば、浮動小数点数型を整数型にキャストする場合、<C>static_cast</C>であれば小数点以下を切り捨てた整数に変換されますが、<wbr />
                 <C>reinterpret_cast</C>の場合、内部表現をそのまま整数として扱うため全く脈絡のない数となります。
             </p>
-            <Code content={
-                `float a = 1.1f;\n` +
-                `unsigned int b = *reinterpret_cast<unsigned int *>(&a);\n` +
-                `unsigned int c = static_cast<unsigned int>(a);\n` +
-                `// bの値は「0b00111111100011001100110011001101」(1.1のfloat型での内部表現)\n` +
-                `// cの値は「0b00000000000000000000000000000001」(整数の1)`
-            } lang="cpp" />
+            <Code content={`
+                float a = 1.1f;
+                unsigned int b = *reinterpret_cast&lt;unsigned int *&gt;(&amp;a);
+                unsigned int c = static_cast&lt;unsigned int&gt;(a);
+                // bの値は「0b00111111100011001100110011001101」(1.1のfloat型での内部表現)
+                // cの値は「0b00000000000000000000000000000001」(整数の1)
+            `} indent={16} lang="cpp" />
             <h4>const_cast</h4>
             <p>
                 <CPPEntLink name="const" slug="variable" />やvolatile修飾子が付いた変数をそれらがない型へ変換します。<wbr />
                 それ以外に用途がない上、そのような場面自体あまりないため使用頻度はかなり少ないです。
             </p>
-            <Code content={
-                `const int a = 1;\n` +
-                `int b = const_cast<int>(a);`
-            } lang="cpp" />
+            <Code content={`
+                const int a = 1;
+                int b = const_cast&lt;int&gt;(a);
+            `} indent={16} lang="cpp" />
             <h3>C言語からあるもの(絶対使うな)</h3>
             <h4>キャスト演算子</h4>
             <p>
@@ -68,11 +68,11 @@ export default function CPPEntCast(): JSX.Element {
                 このキャスト演算子を使わなければならない場面は基本的に根本的な部分から間違っているため、使ってはいけません。<br />
                 と言うか使わないで下さい。本当に。
             </p>
-            <Code content={
-                `// 本当にどうしても実験的にごく短期間に仕方なく使わなければならない場合にのみ計画的に使って下さい\n` +
-                `int a;\n` +
-                `float b = (float)a;`
-            } lang="cpp" />
+            <Code content={`
+                // 本当にどうしても実験的にごく短期間に仕方なく使わなければならない場合にのみ計画的に使って下さい
+                int a;
+                float b = (float)a;
+            `} indent={16} lang="cpp" />
         </CPPEnt>
     );
 }

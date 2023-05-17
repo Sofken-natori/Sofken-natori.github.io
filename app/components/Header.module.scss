@@ -1,18 +1,18 @@
 @charset "UTF-8";
 
 .header {
-    height: 100px;
-    width: inherit;
+    min-height: 100px;
     background-color: var(--header-bg-color);
 
     p {
-        width: inherit;
-        font-size: 2rem;
+        font-size: var(--header-font-size);
         text-align: center;
         vertical-align: middle;
-        line-height: 6rem;
+        line-height: 4rem;
+        margin: 0;
+        white-space: nowrap;
         @media (768px <= width) {
-            font-size: 4rem;
+            line-height: 6rem;
         }
     }
 }

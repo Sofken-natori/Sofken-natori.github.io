@@ -21,19 +21,19 @@ export default function CPPEntEnum(): JSX.Element {
                 別名「<CPPEntLink anchor="#スコープ" name="スコープ" slug="dictionary" />を持たない列挙型」と言い、その名の通り宣言された場所のスコープにそのまま展開されます。<br />
                 そのため、以下のようなコードはNG。
             </p>
-            <Code content={
-                `enum A {\n` +
-                `    ONE,\n` +
-                `    TWO\n` +
-                `};\n` +
-                `\n` +
-                `enum B {\n` +
-                `    ONE,\n` +
-                `    TWO\n` +
-                `};\n` +
-                `\n` +
-                `// この場合、利用時には「ONE」や「TWO」を使うがAの物かBの物かの区別が付かないためエラー`
-            } lang="cpp" />
+            <Code content={`
+                enum A {
+                    ONE,
+                    TWO
+                };
+
+                enum B {
+                    ONE,
+                    TWO
+                };
+
+                // この場合、利用時には「ONE」や「TWO」を使うがAの物かBの物かの区別が付かないためエラー
+            `} indent={16} lang="cpp" />
             <p>
                 このような理由から、現在では特に事情(〜C++03やC言語を使う場合など)のない限りは↓を使う事がほとんどです。
             </p>
@@ -46,21 +46,21 @@ export default function CPPEntEnum(): JSX.Element {
                 そして、C++03以前の<C>enum</C>とは異なり、↓のコードのように数値データに使う型を指定する事が出来るようになりました。<wbr />
                 (C++11以降であれば<C>enum</C>でも可能です。)
             </p>
-            <Code content={
-                `// 数値データの型は指定しない場合int(enumと同じ)\n` +
-                `enum class A {\n` +
-                `    ONE,\n` +
-                `    TWO\n` +
-                `}; \n` +
-                `\n` +
-                `// この場合、Bの数値データの型はunsigned short(std::uint16_t)\n` +
-                `enum class B : unsigned short {\n` +
-                `    ONE,\n` +
-                `    TWO\n` +
-                `};\n` +
-                `\n` +
-                `// この場合、利用時には「A::ONE」や「B::ONE」などを使うためAの物かBの物かの区別が付くためOK`
-            } lang="cpp" />
+            <Code content={`
+                // 数値データの型は指定しない場合int(enumと同じ)
+                enum class A {
+                    ONE,
+                    TWO
+                };
+
+                // この場合、Bの数値データの型はunsigned short(std::uint16_t)
+                enum class B : unsigned short {
+                    ONE,
+                    TWO
+                };
+
+                // この場合、利用時には「A::ONE」や「B::ONE」などを使うためAの物かBの物かの区別が付くためOK
+            `} indent={16} lang="cpp" />
         </CPPEnt>
     );
 }

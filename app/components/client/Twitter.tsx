@@ -3,7 +3,7 @@
 'use strict';
 'use client';
 
-import { JSX, useEffect, useRef } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, JSX, RefObject, useEffect, useRef } from 'react';
 
 declare global {
     interface Window {
@@ -21,23 +21,35 @@ type EmbedSetting = Partial<{
     width: number | string
 }>;
 
-export function TwitterTimeline({ username }: { username: string }): JSX.Element {
-    const ref = useRef<HTMLDivElement>(null);
+/**
+ * Twitterのタイムラインの埋め込み
+ * @param username ユーザー名
+ * @param attr 属性
+ * @return タイムライン要素
+ */
+export function TwitterTimeline({ username, ...attr }: { username: string } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>): JSX.Element {
+    const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
     useEffect(() => {
         void window.twttr?.widgets.load(ref.current);
     }, [username]);
     return (
-        <div ref={ref} dangerouslySetInnerHTML={{ __html: generateEmbedTimelineHtml(username) }} />
+        <div ref={ref} dangerouslySetInnerHTML={{ __html: generateEmbedTimelineHtml(username) }} {...attr} />
     );
 }
 
-export function TwitterTweet({ id }: { id: number | string }): JSX.Element {
-    const ref = useRef<HTMLDivElement>(null);
+/**
+ * Twitterのツイートの埋め込み
+ * @param id ツイートID
+ * @param attr 属性
+ * @return ツイート要素
+ */
+export function TwitterTweet({ id, ...attr }: { id: number | string } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>): JSX.Element {
+    const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
     useEffect(() => {
         void window.twttr?.widgets.load(ref.current);
     }, [id]);
     return (
-        <div ref={ref} dangerouslySetInnerHTML={{ __html: generateEmbedTweetHtml(id) }} />
+        <div ref={ref} dangerouslySetInnerHTML={{ __html: generateEmbedTweetHtml(id) }} {...attr} />
     );
 }
 

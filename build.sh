@@ -6,7 +6,7 @@ if [[ "$TYPE" = "unofficial" ]]; then
 else
     export ROOT=""
 fi
-yarn build && yarn export
+yarn build
 if [[ "$TYPE" = "unofficial" ]]; then
     sed -i 's/{{ROOT}}/\/Sofken-natori.github.io/g' out/manifest.webmanifest
 else

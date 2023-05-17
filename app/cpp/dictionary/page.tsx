@@ -2,6 +2,7 @@
 'use strict';
 
 import Link from 'next/link';
+import styles from './style.module.scss';
 import { C, CPPEnt, CPPEntLink, CppEntPageSlugs } from '../../components';
 import type { JSX, ReactNode } from 'react';
 
@@ -149,8 +150,7 @@ export default function CPPEntDictionary(): JSX.Element {
                 参照しながらの学習にご活用下さい。<br />
                 単語はUnicode順で並べてあります。
             </p>
-            <table>
-                <caption>単語集</caption>
+            <table className={styles['dictionary']}>
                 <thead>
                     <tr>
                         <th>単語</th>
@@ -164,9 +164,7 @@ export default function CPPEntDictionary(): JSX.Element {
                         // eslint-disable-next-line guard-for-in
                         for(const word in words) strWords.push(word);
                         return strWords.sort().map(word => (
-                            <Entry key={word} relations={words[word]?.relations?.map((rel, j) => (
-                                <CPPEntLink key={`${word}-rel-${j}`} slug={rel} />
-                            )) ?? []} word={word}>
+                            <Entry key={word} relations={words[word]?.relations?.map((rel, i) => <CPPEntLink key={`${word}-rel-${i}`} slug={rel} />) ?? []} word={word}>
                                 {words[word]?.description}
                             </Entry>
                         ));

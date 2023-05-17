@@ -25,7 +25,6 @@ export default function GlobalError({ error }: Props): JSX.Element {
                         <h2>Error</h2>
                         <p>
                             読み込み中にエラーが発生しました。<br />
-                            <a href="mailto:sofken.natori@gmail.com">こちら</a>までご一報頂けるとありがたいです。<br />
                             <button onClick={() => window.location.reload()}>再読み込み</button>
                             <Link href="/">トップに戻る</Link>
                         </p>
