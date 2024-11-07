@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="nofollow,noindex"
+            name="robots"
+        />
+        <title>404 - ソフトウェア研究部会</title>
+        <script>
+            (() => {
+                'use strict';
+                const SEGMENT_COUNT = 0;
+                const origin = location.origin;
+                const segments = location.href.slice(origin.length + 1).split('/');
+                const repo = segments.slice(0, SEGMENT_COUNT).join('/');
+                const param = segments.slice(SEGMENT_COUNT).join('/');
+                location.replace(`${origin}/${repo}?p=${encodeURIComponent(param)}`);
+            })();
+        </script>
+    </head>
+</html>

@@ -12,6 +12,22 @@
             name="viewport"
         />
         <title>ソフトウェア研究部会</title>
+        <script>
+            (() => {
+                'use strict';
+                const query = location.search;
+                if(query) {
+                    const GET = query.slice(1).split('&').reduce((prev, curr) => {
+                        const pair = curr.split('=');
+                        prev[pair[0]] = pair[1];
+                        return prev;
+                    }, {});
+                    if(GET['p']) {
+                        history.replaceState(null, null, decodeURIComponent(GET['p']));
+                    }
+                }
+            })();
+        </script>
     </head>
     <body>
         <div id="root"></div>
