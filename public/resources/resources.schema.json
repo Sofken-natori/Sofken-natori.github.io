@@ -1,0 +1,69 @@
+{
+    "$id": "https://sofken-natori.github.io/resources/resources.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "description": "An information of containing resources",
+    "properties": {
+        "resources": {
+            "description": "A list of containing resources",
+            "items": {
+                "additionalProperties": false,
+                "properties": {
+                    "description": {
+                        "description": "A description of resource, including copyright",
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "files": {
+                        "description": "A list of resource files",
+                        "items": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "filename": {
+                                    "description": "A filename of resource, which is relative path from resources.json",
+                                    "readOnly": true,
+                                    "type": "string"
+                                },
+                                "mime": {
+                                    "description": "A MIME Type of resource",
+                                    "pattern": "^[a-z]+/[\\-0-9a-z]+$",
+                                    "readOnly": true,
+                                    "type": "string"
+                                }
+                            },
+                            "readOnly": true,
+                            "required": [
+                                "filename",
+                                "mime"
+                            ],
+                            "type": "object"
+                        },
+                        "minItems": 1,
+                        "readOnly": true,
+                        "type": "array",
+                        "uniqueItems": true
+                    },
+                    "title": {
+                        "description": "A display name of resource",
+                        "readOnly": true,
+                        "type": "string"
+                    }
+                },
+                "readOnly": true,
+                "required": [
+                    "files"
+                ],
+                "type": "object"
+            },
+            "readOnly": true,
+            "type": "array",
+            "uniqueItems": true
+        }
+    },
+    "readOnly": true,
+    "required": [
+        "resources"
+    ],
+    "title": "Resources",
+    "type": "object"
+}

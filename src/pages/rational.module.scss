@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.rational-list {
+    @apply
+    gap-4
+    grid
+    grid-cols-3
+    mx-auto
+    mt-12;
+    @apply lg:grid-cols-4;
+    @apply xl:grid-cols-5;
+    @apply 2xl:grid-cols-7;
+
+    dt {
+        @apply text-left;
+    }
+
+    dd {
+        @apply
+        pb-4
+        px-2
+        text-right;
+    }
+}
+
+.extra-contents-container {
+    @apply
+    flex
+    flex-col
+    items-center;
+}

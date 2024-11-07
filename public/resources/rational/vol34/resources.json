@@ -1,0 +1,45 @@
+{
+    "$schema": "https://sofken-natori.github.io/resources/resources.schema.json",
+    "resources": [
+        {
+            "description": "Composer: 総合工学科Ⅱ類 1年 SingUp_009",
+            "files": [
+                {
+                    "filename": "メルト_きりたん.mp3",
+                    "mime": "audio/mpeg"
+                }
+            ],
+            "title": "メルト_きりたん"
+        },
+        {
+            "description": "Composer: 総合工学科Ⅱ類 1年 SingUp_009",
+            "files": [
+                {
+                    "filename": "いつも何度でも_きりたん.mp3",
+                    "mime": "audio/mpeg"
+                }
+            ],
+            "title": "いつも何度でも_きりたん"
+        },
+        {
+            "description": "Composer: 総合工学科Ⅱ類 1年 SingUp_009",
+            "files": [
+                {
+                    "filename": "友〜旅立ちの時〜_きりたん.mp3",
+                    "mime": "audio/mpeg"
+                }
+            ],
+            "title": "友〜旅立ちの時〜_きりたん"
+        },
+        {
+            "description": "Composer: ロボティクスコース 2年 yiu",
+            "files": [
+                {
+                    "filename": "時間のない○○.mp3",
+                    "mime": "audio/mpeg"
+                }
+            ],
+            "title": "時間のない○○"
+        }
+    ]
+}
