@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+$nav-btn-length: 64px;
+
+.header {
+    @apply
+    bg-neutral-400
+    flex
+    flex-none
+    flex-row
+    h-12
+    p-2;
+    @apply dark:bg-neutral-700;
+    min-height: #{$nav-btn-length};
+    @apply lg:min-h-0;
+
+    abbr {
+        @apply
+        italic
+        no-underline;
+    }
+}
+
+.name {
+    @apply
+    mx-2
+    self-center
+    text-2xl;
+    @apply lg:flex-none;
+}
+
+.navigation-button {
+    @apply
+    bg-neutral-400/75
+    fixed
+    right-0
+    top-0;
+    @apply dark:bg-neutral-700/75;
+    @apply lg:hidden;
+    $inner-box-height: 42px;
+    $inner-box-width: 40px;
+    $padding: calc($nav-btn-length - $inner-box-height);
+    $top-padding: calc($padding / 2);
+    $bar-box-height: calc($inner-box-height / 3);
+    $bar-rel-y: calc($bar-box-height / 2 - 1px);
+    @mixin calc-bar-y($nth) {
+        top: calc($top-padding + $bar-box-height * ($nth - 1) + $bar-rel-y);
+    }
+    height: #{$nav-btn-length};
+    width: #{$nav-btn-length};
+    z-index: 9999;
+
+    div {
+        @apply
+        border-b-2
+        border-b-neutral-800
+        h-0
+        rounded;
+        @apply dark:border-b-neutral-200;
+        right: 12px;
+        width: #{$inner-box-width};
+
+        &:nth-child(1) {
+            --tw-rotate: 0deg;
+            --tw-scale-x: 1;
+            --tw-translate-y: 0;
+            @apply
+            fixed
+            transform-gpu
+            transition-transform;
+            @include calc-bar-y(1);
+            transform-origin: left;
+
+            &:is(:root:has(.navigation) *) {
+                --tw-rotate: 45deg;
+                --tw-scale-x: calc(sqrt(2));
+                --tw-translate-y: calc(-1 * #{$bar-rel-y});
+            }
+        }
+
+        &:nth-child(2) {
+            @apply
+            fixed
+            opacity-100
+            transition-opacity;
+            @include calc-bar-y(2);
+
+            &:is(:root:has(.navigation) *) {
+                @apply opacity-0;
+            }
+        }
+
+        &:nth-child(3) {
+            --tw-rotate: 0deg;
+            --tw-scale-x: 1;
+            --tw-translate-y: 0;
+            @apply
+            fixed
+            transform-gpu
+            transition-transform;
+            @include calc-bar-y(3);
+            transform-origin: left;
+
+            &:is(:root:has(.navigation) *) {
+                --tw-rotate: -45deg;
+                --tw-scale-x: calc(sqrt(2));
+                --tw-translate-y: calc(#{$bar-rel-y});
+            }
+        }
+    }
+}
+
+.navigation {
+    @apply
+    fixed
+    flex
+    flex-col
+    gap-3
+    mx-2
+    right-0;
+    @apply
+    lg:flex-auto
+    lg:flex-row
+    lg:justify-end
+    lg:mx-8
+    lg:static
+    lg:w-24;
+    top: #{$nav-btn-length};
+}
+
+.navigation-item {
+    @apply
+    flex
+    h-full
+    px-4
+    self-center;
+
+    .current {
+        @apply text-neutral-500;
+        @apply dark:text-neutral-500;
+    }
+
+    a {
+        @apply
+        py-3
+        text-inherit;
+        @apply
+        lg:-my-2
+        lg:flex
+        lg:items-center
+        lg:py-0;
+
+        &:is(:active, :focus, :hover) {
+            @extend .current;
+            @apply no-underline;
+        }
+    }
+}
+
+.navigation-submenu {
+    @extend .navigation;
+    @apply
+    absolute
+    bg-neutral-400
+    border
+    flex-col
+    gap-0
+    my-0
+    right-24
+    top-0
+    w-auto;
+    @apply dark:bg-neutral-700;
+    @apply
+    lg:right-4
+    lg:top-12;
+
+    .navigation-item {
+        @apply
+        border-b
+        px-4
+        py-3
+        text-center;
+        @apply last:border-b-0;
+
+        &:has(.current) {
+            @apply
+            bg-neutral-500
+            transition-colors;
+            @apply dark:bg-neutral-800;
+        }
+
+        &:is(:active, :focus, :hover) {
+            @extend .current;
+            @apply bg-neutral-500
+            transition-colors;
+            @apply dark:bg-neutral-800;
+        }
+
+        a {
+            @apply
+            -m-2
+            p-2;
+        }
+    }
+}
+
+.navigation-submenu-button {
+    &::before {
+        content: '▼';
+    }
+
+    &:is(.navigation-item:is(:active, :focus, :hover) *) {
+        &::before {
+            content: '▲';
+        }
+    }
+}

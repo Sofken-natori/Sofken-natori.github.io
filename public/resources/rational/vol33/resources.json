@@ -1,0 +1,25 @@
+{
+    "$schema": "https://sofken-natori.github.io/resources/resources.schema.json",
+    "resources": [
+        {
+            "description": "Composer: 機械システム工学科 4年 hysk",
+            "files": [
+                {
+                    "filename": "OverThere_hysk_PM4.mp3",
+                    "mime": "audio/mpeg"
+                }
+            ],
+            "title": "OverThere"
+        },
+        {
+            "description": "Composer: 総合工学科Ⅱ類 1年 yiu",
+            "files": [
+                {
+                    "filename": "手探り_yiu_2類.mp3",
+                    "mime": "audio/mpeg"
+                }
+            ],
+            "title": "手探り"
+        }
+    ]
+}

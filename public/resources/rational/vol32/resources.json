@@ -1,0 +1,25 @@
+{
+    "$schema": "https://sofken-natori.github.io/resources/resources.schema.json",
+    "resources": [
+        {
+            "description": "Composer: 機械システム工学科 3年 木村竜輔",
+            "files": [
+                {
+                    "filename": "Flicker-01.mp3",
+                    "mime": "audio/mpeg"
+                }
+            ],
+            "title": "Flicker"
+        },
+        {
+            "description": "Composer: 機械システム工学科 3年 hysk",
+            "files": [
+                {
+                    "filename": "星海航路.mp3",
+                    "mime": "audio/mpeg"
+                }
+            ],
+            "title": "星海航路"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+$link-active-dark: 220deg, 90%, 50%;
+$link-dark: 220deg, 90%, 60%;
+
+:root {
+    --link: #{$link-dark};
+    --link-active: #{$link-active-dark};
+}
+
+* {
+    @apply
+    box-border
+    m-0
+    p-0;
+}
+
+html {
+    @apply
+    antialiased
+    bg-neutral-200
+    font-normal
+    font-sans
+    text-base
+    text-neutral-800;
+    @apply
+    dark:bg-neutral-800
+    dark:text-neutral-200;
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+html, body, #root {
+    @apply
+    max-w-[100dvw]
+    min-h-dvh
+    min-w-[100dvw]
+    overflow-x-hidden
+    place-items-center;
+}
+
+h1 {
+    @apply
+    font-bold
+    my-4
+    text-4xl;
+}
+
+p {
+    @apply mb-3;
+}
+
+a {
+    @apply
+    font-medium
+    no-underline
+    text-blue-600;
+    @apply
+    dark:text-blue-400;
+
+    &:is(:active, :focus, :hover) {
+        @apply
+        text-blue-800
+        transition-colors
+        underline;
+        @apply
+        dark:text-blue-600;
+    }
+}

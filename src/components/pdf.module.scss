@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.container {
+    @apply
+    border
+    border-black/30;
+    @apply
+    md:-mx-16
+    md:w-160;
+    @apply lg:w-192;
+    @apply 2xl:w-208;
+    @mixin height-from-sqrt-width($class-number) {
+        height: calc(sqrt(2) * $class-number / 4 * 1rem);
+    }
+    @media (screen(md)) {
+        @include height-from-sqrt-width(160);
+    }
+    @media (screen(lg)) {
+        @include height-from-sqrt-width(192);
+    }
+    @media (screen(2xl)) {
+        @include height-from-sqrt-width(208);
+    }
+}
+
+.progress {
+}
