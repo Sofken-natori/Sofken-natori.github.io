@@ -6,16 +6,16 @@
             content="nofollow,noindex"
             name="robots"
         />
-        <title>404 - ソフトウェア研究部会</title>
+        <title>ソフトウェア研究部会</title>
         <script>
             (() => {
                 'use strict';
                 const SEGMENT_COUNT = 0;
-                const origin = location.origin;
-                const segments = location.href.slice(origin.length + 1).split('/');
+                const origin = window.location.origin;
+                const segments = window.location.href.slice(origin.length + 1).split('/');
                 const repo = segments.slice(0, SEGMENT_COUNT).join('/');
                 const param = segments.slice(SEGMENT_COUNT).join('/');
-                location.replace(`${origin}/${repo}?p=${encodeURIComponent(param)}`);
+                window.history.replaceState(window.history.state, null, `${origin}/${repo}?p=${encodeURIComponent(param)}`);
             })();
         </script>
     </head>
