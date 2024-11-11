@@ -1,6 +1,7 @@
 'use strict';
 
 import styles from './modal.module.scss';
+import { useScrollLock } from '@/src/scroll-lock.ts';
 import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import {
     ForwardRefExoticComponent,
@@ -27,6 +28,7 @@ export type UseModalResult = {
 
 export function useModal(): UseModalResult {
     const [doesShow, setDoesShow] = useState(false);
+    useScrollLock(doesShow);
 
     function openModal() {
         setDoesShow(true);

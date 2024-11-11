@@ -2,7 +2,7 @@
 
 import styles from './footer.module.scss';
 
-export function Footer() {
+export default function Footer() {
     const currentYear = new Date().getFullYear();
     return (
         <footer className={styles['footer']}>

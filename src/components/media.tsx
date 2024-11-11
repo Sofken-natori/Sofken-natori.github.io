@@ -9,7 +9,7 @@ export type MediaProps = {
     path: string
 };
 
-export function Media({ alt, files, mediaType, path }: MediaProps) {
+export default function Media({ alt, files, mediaType, path }: MediaProps) {
     if(files.length === 0) {
         return undefined;
     }

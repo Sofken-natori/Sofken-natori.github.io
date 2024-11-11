@@ -2,7 +2,7 @@
 
 import { Link } from 'react-router-dom';
 
-export function NotFound() {
+export default function NotFound() {
     return (
         <>
             <h1>ページが見つかりませんでした</h1>

@@ -6,7 +6,7 @@ import { ProgressBar, Viewer, ViewerProps } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
-import { GetFilePluginProps } from '@react-pdf-viewer/get-file';
+import type { GetFilePluginProps } from '@react-pdf-viewer/get-file';
 import { MoreActionsPopover } from '@react-pdf-viewer/toolbar';
 
 export type PdfViewerProps = {
@@ -14,7 +14,7 @@ export type PdfViewerProps = {
     url: ViewerProps['fileUrl']
 };
 
-export function PdfViewer({ fileNameGenerator, url }: PdfViewerProps) {
+export default function PdfViewer({ fileNameGenerator, url }: PdfViewerProps) {
     const defaultLayoutPluginInstance = defaultLayoutPlugin({
         renderToolbar: Toolbar => (
             <Toolbar

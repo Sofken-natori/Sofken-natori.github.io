@@ -17,7 +17,7 @@ import {
 } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export function Header() {
+export default function Header() {
     return (
         <header className={styles['header']}>
             <div className={styles['name']}>
