@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-import styles from './header.module.scss';
-import { useModal } from '@/src/components/modal';
-import { ScreenMinWidth } from '@/src/constants';
-import type { Resources } from '@/src/resources';
-import { useWindowSize } from '@/src/window-size';
+import styles from "./header.module.scss";
+import { useModal } from "@/src/components/modal";
+import { ScreenMinWidth } from "@/src/constants";
+import type { Resources } from "@/src/resources";
+import { useWindowSize } from "@/src/window-size";
 import {
     DetailedHTMLProps,
     HTMLProps,
@@ -13,15 +13,18 @@ import {
     forwardRef,
     useEffect,
     useRef,
-    useState
-} from 'react';
-import { NavLink } from 'react-router-dom';
+    useState,
+} from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
     return (
-        <header className={styles['header']}>
-            <div className={styles['name']}>
-                <abbr title="Software Research and Development Group">S.R.D.G.</abbr> ソフトウェア研究部会
+        <header className={styles["header"]}>
+            <div className={styles["name"]}>
+                <abbr title="Software Research and Development Group">
+                    S.R.D.G.
+                </abbr>{" "}
+                ソフトウェア研究部会
             </div>
             <Navigation />
         </header>
@@ -31,33 +34,34 @@ export default function Header() {
 function Navigation() {
     const [width] = useWindowSize();
     const isMobile = width < ScreenMinWidth.LG;
-    const [rationalManifest, setRationalManifest] = useState<Resources>();
-    const [isRationalMenuButtonHovered, setIsRationalMenuButtonHovered] = useState(false);
-    const [isRationalMenuHovered, setIsRationalMenuHovered] = useState(false);
+    const [rationaleManifest, setRationaleManifest] = useState<Resources>();
+    const [isRationaleMenuButtonHovered, setIsRationaleMenuButtonHovered] =
+        useState(false);
+    const [isRationaleMenuHovered, setIsRationaleMenuHovered] = useState(false);
     const navigationRef = useRef<HTMLDivElement>(null);
     const navigationButtonRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        (async() => {
-            const res = await fetch('/resources/rational/resources.json');
+        (async () => {
+            const res = await fetch("/resources/rationale/resources.json");
             const data: Resources = await res.json();
-            setRationalManifest(data);
+            setRationaleManifest(data);
         })();
     }, []);
 
-    function handleRationalMenuButtonHovered() {
-        setIsRationalMenuButtonHovered(true);
+    function handleRationaleMenuButtonHovered() {
+        setIsRationaleMenuButtonHovered(true);
     }
 
-    function handleRationalMenuButtonUnHovered() {
-        setIsRationalMenuButtonHovered(false);
+    function handleRationaleMenuButtonUnHovered() {
+        setIsRationaleMenuButtonHovered(false);
     }
 
-    function handleRationalMenuHovered() {
-        setIsRationalMenuHovered(true);
+    function handleRationaleMenuHovered() {
+        setIsRationaleMenuHovered(true);
     }
 
-    function handleRationalMenuUnHovered() {
-        setIsRationalMenuHovered(false);
+    function handleRationaleMenuUnHovered() {
+        setIsRationaleMenuHovered(false);
     }
 
     return (
@@ -69,53 +73,78 @@ function Navigation() {
                 ref={isMobile ? navigationRef : undefined}
             >
                 <nav
-                    className={styles['navigation']}
+                    className={styles["navigation"]}
                     ref={isMobile ? undefined : navigationRef}
                 >
-                    <div className={styles['navigation-item']}>
+                    <div className={styles["navigation-item"]}>
                         <NavLink
-                            className={({ isActive }) => isActive ? styles['current'] : ''}
+                            className={({ isActive }) =>
+                                isActive ? styles["current"] : ""
+                            }
                             to="/"
                         >
                             Home
                         </NavLink>
                     </div>
-                    <div className={styles['navigation-item']}>
+                    <div className={styles["navigation-item"]}>
                         <NavLink
-                            className={({ isActive }) => `${styles['navigation-submenu-button']} ${isActive ? styles['current'] : ''}`}
-                            onMouseEnter={handleRationalMenuButtonHovered}
-                            onMouseLeave={handleRationalMenuButtonUnHovered}
-                            to="/rational"
+                            className={({ isActive }) =>
+                                `${styles["navigation-submenu-button"]} ${isActive ? styles["current"] : ""}`
+                            }
+                            onMouseEnter={handleRationaleMenuButtonHovered}
+                            onMouseLeave={handleRationaleMenuButtonUnHovered}
+                            to="/rationale"
                         >
-                            Rational
+                            Rationale
                         </NavLink>
-                        {rationalManifest && (
+                        {rationaleManifest && (
                             <div
-                                className={styles['navigation-submenu']}
-                                onMouseEnter={handleRationalMenuHovered}
-                                onMouseLeave={handleRationalMenuUnHovered}
+                                className={styles["navigation-submenu"]}
+                                onMouseEnter={handleRationaleMenuHovered}
+                                onMouseLeave={handleRationaleMenuUnHovered}
                                 style={{
-                                    display: isRationalMenuButtonHovered || isRationalMenuHovered ? 'flex' : 'none'
+                                    display:
+                                        isRationaleMenuButtonHovered ||
+                                        isRationaleMenuHovered
+                                            ? "flex"
+                                            : "none",
                                 }}
                             >
-                                {rationalManifest.resources.map((rational, i) => {
-                                    const filename = rational.files[0].filename;
-                                    const vol = parseInt(filename.substring(3, filename.length - 4), 10);
-                                    const year = vol - 32 + 2018; // Web版掲載開始: Vol.32, Vol.32発行年: 2018年 これらを基準に変換
-                                    return (
-                                        <div
-                                            className={styles['navigation-item']}
-                                            key={i}
-                                        >
-                                            <NavLink
-                                                className={({ isActive }) => isActive ? styles['current'] : ''}
-                                                to={`/rational/${vol}`}
+                                {rationaleManifest.resources.map(
+                                    (rationale, i) => {
+                                        const filename =
+                                            rationale.files[0].filename;
+                                        const vol = parseInt(
+                                            filename.substring(
+                                                3,
+                                                filename.length - 4,
+                                            ),
+                                            10,
+                                        );
+                                        const year = vol - 32 + 2018; // Web版掲載開始: Vol.32, Vol.32発行年: 2018年 これらを基準に変換
+                                        return (
+                                            <div
+                                                className={
+                                                    styles["navigation-item"]
+                                                }
+                                                key={i}
                                             >
-                                                Vol.{vol} ({year})
-                                            </NavLink>
-                                        </div>
-                                    );
-                                })}
+                                                <NavLink
+                                                    className={({
+                                                        isActive,
+                                                    }) =>
+                                                        isActive
+                                                            ? styles["current"]
+                                                            : ""
+                                                    }
+                                                    to={`/rationale/${vol}`}
+                                                >
+                                                    Vol.{vol} ({year})
+                                                </NavLink>
+                                            </div>
+                                        );
+                                    },
+                                )}
                             </div>
                         )}
                     </div>
@@ -126,60 +155,58 @@ function Navigation() {
 }
 
 type NavigationButtonProps = {
-    onClick?: DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement>['onClick']
-    style?: DetailedHTMLProps<HTMLProps<HTMLDivElement>, HTMLDivElement>['style']
+    onClick?: DetailedHTMLProps<
+        HTMLProps<HTMLDivElement>,
+        HTMLDivElement
+    >["onClick"];
+    style?: DetailedHTMLProps<
+        HTMLProps<HTMLDivElement>,
+        HTMLDivElement
+    >["style"];
 };
 
-const NavigationButton = forwardRef<HTMLDivElement, NavigationButtonProps>(function NavigationButton({
-    onClick,
-    style
-}, ref) {
-    return (
-        <div
-            className={styles['navigation-button']}
-            onClick={onClick}
-            ref={ref}
-            style={style}
-        >
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    );
-});
+const NavigationButton = forwardRef<HTMLDivElement, NavigationButtonProps>(
+    function NavigationButton({ onClick, style }, ref) {
+        return (
+            <div
+                className={styles["navigation-button"]}
+                onClick={onClick}
+                ref={ref}
+                style={style}
+            >
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        );
+    },
+);
 
 type NavigationModalProps = PropsWithChildren<{
-    isMobile: boolean,
-    navigationButtonRef: RefObject<HTMLDivElement>
+    isMobile: boolean;
+    navigationButtonRef: RefObject<HTMLDivElement>;
 }>;
 
-const NavigationModal = forwardRef<HTMLDivElement, NavigationModalProps>(function NavigationModal({
-    children,
-    isMobile,
-    navigationButtonRef
-}, ref) {
-    const {
-        Modal,
-        doesShow,
-        toggleModal
-    } = useModal();
-    useEffect(() => {
-        const navigationButton = navigationButtonRef.current;
-        navigationButton?.addEventListener('click', toggleModal);
-        return () => {
-            navigationButton?.removeEventListener('click', toggleModal);
-        };
-    }, [navigationButtonRef, toggleModal]);
-    return (
-        <>
-            {isMobile ? (
-                <Modal
-                    doesShow={doesShow}
-                    ref={ref}
-                >
-                    {children}
-                </Modal>
-            ) : children}
-        </>
-    );
-});
+const NavigationModal = forwardRef<HTMLDivElement, NavigationModalProps>(
+    function NavigationModal({ children, isMobile, navigationButtonRef }, ref) {
+        const { Modal, doesShow, toggleModal } = useModal();
+        useEffect(() => {
+            const navigationButton = navigationButtonRef.current;
+            navigationButton?.addEventListener("click", toggleModal);
+            return () => {
+                navigationButton?.removeEventListener("click", toggleModal);
+            };
+        }, [navigationButtonRef, toggleModal]);
+        return (
+            <>
+                {isMobile ? (
+                    <Modal doesShow={doesShow} ref={ref}>
+                        {children}
+                    </Modal>
+                ) : (
+                    children
+                )}
+            </>
+        );
+    },
+);

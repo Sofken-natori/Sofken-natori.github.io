@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-.rational-list {
-    @apply
-    gap-4
+.rationale-list {
+    @apply gap-4
     grid
     grid-cols-3
     mx-auto
@@ -16,16 +15,14 @@
     }
 
     dd {
-        @apply
-        pb-4
+        @apply pb-4
         px-2
         text-right;
     }
 }
 
 .extra-contents-container {
-    @apply
-    flex
+    @apply flex
     flex-col
     items-center;
 }
