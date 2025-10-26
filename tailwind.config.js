@@ -9,6 +9,9 @@ export default {
     plugins: [],
     theme: {
         extend: {
+            aspectRatio: {
+                'copy-paper': '1 / calc(sqrt(2))'
+            },
             minWidth: {
                 'dvw': '100dvw'
             },
@@ -16,6 +19,10 @@ export default {
                 '160': '40rem',
                 '192': '48rem',
                 '208': '52rem'
+            },
+            width: {
+                '128': '32rem',
+                '168': '42rem'
             }
         },
         fontFamily: {

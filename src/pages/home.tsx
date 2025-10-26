@@ -1,8 +1,11 @@
 "use strict";
 
+import Spinner from '@/src/components/spinner.tsx';
+
 export default function Home() {
     return (
         <>
+            <Spinner className="w-64" />
             <h1>ソフトウェア研究部会とは</h1>
             <p>
                 ソフトウェア研究部会とは、主に高専プロコンへの出場、ゲーム制作、イラスト制作、楽曲制作などPCを利用した創作活動を行っている、

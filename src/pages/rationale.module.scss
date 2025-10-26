@@ -21,8 +21,25 @@
     }
 }
 
+.rationale-viewer {
+    @apply aspect-copy-paper
+    border-2
+    border-neutral-800
+    h-svh
+    overflow-y-scroll;
+    @apply dark:border-neutral-200;
+}
+
 .extra-contents-container {
     @apply flex
     flex-col
     items-center;
+}
+
+.page-spinner {
+    @apply w-24;
+}
+
+.extra-spinner {
+    @apply w-16;
 }

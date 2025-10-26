@@ -4,6 +4,17 @@
     "additionalProperties": false,
     "description": "An information of containing resources",
     "properties": {
+        "$schema": {
+            "description": "A schema that is this",
+            "readOnly": true,
+            "type": "string"
+        },
+        "meta": {
+            "additionalProperties": true,
+            "description": "A meta data of resources",
+            "readOnly": true,
+            "type": "object"
+        },
         "resources": {
             "description": "A list of containing resources",
             "items": {
@@ -32,10 +43,7 @@
                                 }
                             },
                             "readOnly": true,
-                            "required": [
-                                "filename",
-                                "mime"
-                            ],
+                            "required": ["filename", "mime"],
                             "type": "object"
                         },
                         "minItems": 1,
@@ -47,12 +55,15 @@
                         "description": "A display name of resource",
                         "readOnly": true,
                         "type": "string"
+                    },
+                    "type": {
+                        "description": "A media type",
+                        "enum": ["image", "music", "svg", "unknown", "video"],
+                        "readOnly": true
                     }
                 },
                 "readOnly": true,
-                "required": [
-                    "files"
-                ],
+                "required": ["files", "type"],
                 "type": "object"
             },
             "readOnly": true,
@@ -61,9 +72,7 @@
         }
     },
     "readOnly": true,
-    "required": [
-        "resources"
-    ],
+    "required": ["resources"],
     "title": "Resources",
     "type": "object"
 }
