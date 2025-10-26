@@ -1,0 +1,634 @@
+{
+    "$schema": "https://sofken-natori.github.io/resources/resources.schema.json",
+    "meta": {
+        "total-pages": 34
+    },
+    "resources": [
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-01.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-01.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-01.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 01 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-02.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-02.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-02.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 02 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-03.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-03.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-03.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 03 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-04.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-04.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-04.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 04 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-05.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-05.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-05.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 05 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-06.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-06.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-06.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 06 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-07.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-07.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-07.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 07 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-08.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-08.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-08.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 08 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-09.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-09.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-09.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 09 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-10.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-10.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-10.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 10 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-11.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-11.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-11.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 11 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-12.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-12.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-12.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 12 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-13.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-13.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-13.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 13 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-14.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-14.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-14.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 14 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-15.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-15.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-15.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 15 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-16.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-16.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-16.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 16 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-17.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-17.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-17.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 17 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-18.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-18.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-18.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 18 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-19.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-19.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-19.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 19 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-20.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-20.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-20.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 20 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-21.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-21.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-21.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 21 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-22.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-22.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-22.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 22 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-23.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-23.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-23.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 23 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-24.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-24.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-24.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 24 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-25.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-25.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-25.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 25 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-26.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-26.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-26.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 26 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-27.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-27.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-27.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 27 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-28.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-28.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-28.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 28 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-29.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-29.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-29.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 29 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-30.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-30.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-30.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 30 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-31.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-31.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-31.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 31 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-32.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-32.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-32.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 32 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-33.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-33.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-33.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 33 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-34.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-34.webp",
+                    "mime": "image/webp"
+                },
+                {
+                    "filename": "vol32-34.png",
+                    "mime": "image/png"
+                }
+            ],
+            "title": "Page 34 of 34"
+        },
+        {
+            "description": "",
+            "files": [
+                {
+                    "filename": "vol32-35.avif",
+                    "mime": "image/avif"
+                },
+                {
+                    "filename": "vol32-35.webp",
+                    "mime": "image/webp"
+                }
+            ],
+            "title": "Page 35 of 34"
+        }
+    ]
+}

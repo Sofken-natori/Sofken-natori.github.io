@@ -70,6 +70,16 @@
                 }
             ],
             "title": "Rationale vol.38"
+        },
+        {
+            "description": "2025/10/24発行",
+            "files": [
+                {
+                    "filename": "vol39.pdf",
+                    "mime": "application/pdf"
+                }
+            ],
+            "title": "Rationale vol.39"
         }
     ]
 }

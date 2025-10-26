@@ -1,12 +1,14 @@
 "use strict";
 
 import styles from "./rationale.module.scss";
-import { Resources, getMediaType } from "@/src/resources.ts";
+import Spinner from "@/src/components/spinner.tsx";
+import type { Resources } from "@/src/resources.ts";
 import { Suspense, lazy, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function Rationale() {
     const params = useParams();
+    const vol = params["vol"];
     const [resourceManifest, setResourceManifest] = useState<Resources>();
     useEffect(() => {
         (async () => {
@@ -15,13 +17,15 @@ export default function Rationale() {
             setResourceManifest(data);
         })();
     }, []);
-    if (params["vol"] === undefined) {
+    if (vol === undefined) {
         throw new Error("Reached unreachable code.");
     }
     if (!resourceManifest) {
         return <h1>Rationale 読み込み中...</h1>;
     }
-    const manifest = resourceManifest.resources.find((res) => res.title === `Rationale vol.${params["vol"]}`);
+    const manifest = resourceManifest.resources.find(
+        (res) => res.title === `Rationale vol.${vol}`,
+    );
     if (!manifest) {
         return (
             <>
@@ -34,22 +38,49 @@ export default function Rationale() {
         <>
             <h1>{manifest.title}</h1>
             <p>{manifest.description}</p>
-            <RationaleViewer filename={manifest.files[0].filename} />
-            <RationaleExtra vol={params["vol"]} />
+            <RationaleViewer vol={vol} />
+            <RationaleExtra vol={vol} />
         </>
     );
 }
 
 type RationaleViewerProps = {
-    filename: string;
+    vol: string;
 };
 
-function RationaleViewer({ filename }: RationaleViewerProps) {
-    const PdfViewer = lazy(() => import("../components/pdf.tsx"));
+function RationaleViewer({ vol }: RationaleViewerProps) {
+    const Media = lazy(() => import("../components/media.tsx"));
+    const [manifest, setManifest] = useState<Resources>();
+    useEffect(() => {
+        const res = fetch(
+            `/resources/rationale/vol${vol}/pages/resources.json`,
+        );
+        res.then((res) => res.json()).then((manifest) => setManifest(manifest));
+    }, [vol]);
+    if (!manifest?.meta) {
+        return undefined;
+    }
+    const totalPages = manifest.meta["total-pages"] as number;
     return (
-        <Suspense>
-            <PdfViewer fileNameGenerator={() => `rationale-${filename}`} url={`/resources/rationale/${filename}`} />
-        </Suspense>
+        <div className={styles["rationale-viewer"]}>
+            <Suspense fallback={<Spinner className={styles["page-spinner"]} />}>
+                {(() => {
+                    const pages = [];
+                    for (let i = 0; i < totalPages; i++) {
+                        const { files } = manifest.resources[i];
+                        pages.push(
+                            <Media
+                                files={files}
+                                key={i}
+                                mediaType="image"
+                                path={`/resources/rationale/vol${vol}/pages`}
+                            />,
+                        );
+                    }
+                    return pages;
+                })()}
+            </Suspense>
+        </div>
     );
 }
 
@@ -58,10 +89,13 @@ type RationaleExtraProps = {
 };
 
 function RationaleExtra({ vol }: RationaleExtraProps) {
-    const [extraResourceManifest, setExtraResourceManifest] = useState<Resources>();
+    const [extraResourceManifest, setExtraResourceManifest] =
+        useState<Resources>();
     useEffect(() => {
         (async () => {
-            const res = await fetch(`/resources/rationale/vol${vol}/resources.json`);
+            const res = await fetch(
+                `/resources/rationale/vol${vol}/resources.json`,
+            );
             const data: Resources = await res.json();
             setExtraResourceManifest(data);
         })();
@@ -80,13 +114,17 @@ function RationaleExtra({ vol }: RationaleExtraProps) {
             {resources.map((manifest, i) => (
                 <figure className={styles["extra-contents-container"]} key={i}>
                     <figcaption>
-                        <h2>{manifest.title}</h2>
+                        <h2>{manifest.title ?? manifest.files[0].filename}</h2>
                         <p>{manifest.description}</p>
                     </figcaption>
-                    <Suspense>
+                    <Suspense
+                        fallback={
+                            <Spinner className={styles["extra-spinner"]} />
+                        }
+                    >
                         <Media
                             files={manifest.files}
-                            mediaType={getMediaType(manifest.files[0].mime)}
+                            mediaType={manifest.type}
                             path={`/resources/rationale/vol${vol}`}
                         />
                     </Suspense>

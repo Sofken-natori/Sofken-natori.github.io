@@ -1,6 +1,6 @@
 'use strict';
 
-import { FileRecord, MediaType } from '@/src/resources.ts';
+import type { FileRecord, MediaType } from '@/src/resources.ts';
 
 export type MediaProps = {
     alt?: string,
@@ -14,7 +14,7 @@ export default function Media({ alt, files, mediaType, path }: MediaProps) {
         return undefined;
     }
     switch(mediaType) {
-        case MediaType.Image: {
+        case 'image': {
             const files1 = files.slice(0, files.length - 1);
             const fallback = files[files.length - 1];
             return (
@@ -35,7 +35,7 @@ export default function Media({ alt, files, mediaType, path }: MediaProps) {
                 </picture>
             );
         }
-        case MediaType.Music:
+        case 'music':
             return (
                 <audio controls>
                     {files.map((file, i) => (
@@ -48,7 +48,7 @@ export default function Media({ alt, files, mediaType, path }: MediaProps) {
                     ))}
                 </audio>
             );
-        case MediaType.Svg:
+        case 'svg':
             return (
                 <>
                     {files.map((file, i) => (
@@ -59,7 +59,7 @@ export default function Media({ alt, files, mediaType, path }: MediaProps) {
                     ))}
                 </>
             );
-        case MediaType.Video:
+        case 'video':
             return (
                 <video controls>
                     {files.map((file, i) => (
