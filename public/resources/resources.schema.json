@@ -43,7 +43,10 @@
                                 }
                             },
                             "readOnly": true,
-                            "required": ["filename", "mime"],
+                            "required": [
+                                "filename",
+                                "mime"
+                            ],
                             "type": "object"
                         },
                         "minItems": 1,
@@ -58,12 +61,21 @@
                     },
                     "type": {
                         "description": "A media type",
-                        "enum": ["image", "music", "svg", "unknown", "video"],
+                        "enum": [
+                            "image",
+                            "music",
+                            "svg",
+                            "unknown",
+                            "video"
+                        ],
                         "readOnly": true
                     }
                 },
                 "readOnly": true,
-                "required": ["files", "type"],
+                "required": [
+                    "files",
+                    "type"
+                ],
                 "type": "object"
             },
             "readOnly": true,
@@ -72,7 +84,9 @@
         }
     },
     "readOnly": true,
-    "required": ["resources"],
+    "required": [
+        "resources"
+    ],
     "title": "Resources",
     "type": "object"
 }

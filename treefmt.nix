@@ -83,6 +83,7 @@
           };
           shellcheck.excludes = [
             ".envrc"
+            "generate-pages.sh"
           ];
         };
       };

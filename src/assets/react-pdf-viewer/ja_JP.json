@@ -11,11 +11,11 @@
             "requirePasswordToOpen": "この文書を開くには、パスワードが必要です",
             "submit": "送信"
         },
+        "pageLabel": "{{pageIndex}} ページ目",
         "wrongPassword": {
             "submit": "送信",
             "tryAgain": "パスワードが間違っています。 もう一度やり直してください"
-        },
-        "pageLabel": "{{pageIndex}} ページ目"
+        }
     },
     "defaultLayout": {
         "attachment": "添付ファイル",
