@@ -1,24 +1,48 @@
-'use strict';
-
 /** @type {import('stylelint').Config} */
 const config = {
-    extends: [
-        'stylelint-config-standard',
-        'stylelint-config-standard-scss'
-        // 'stylelint-a11y/recommended'
-    ],
+    extends: ['stylelint-config-standard'],
     plugins: [
-        // 'stylelint-a11y',
-        'stylelint-order',
-        'stylelint-declaration-block-no-ignored-properties'
+        'stylelint-declaration-block-no-ignored-properties',
+        'stylelint-order'
     ],
     rules: {
-        // 'a11y/font-size-is-readable': true,
-        // 'a11y/no-obsolete-attribute': true,
-        // 'a11y/no-obsolete-element': true,
         'alpha-value-notation': 'number',
+        'at-rule-no-deprecated': [
+            true,
+            {
+                ignoreAtRules: ['apply']
+            }
+        ],
+        'at-rule-no-unknown': [
+            true,
+            {
+                ignoreAtRules: [
+                    'apply',
+                    'config',
+                    'custom-variant',
+                    'layer',
+                    'plugin',
+                    'reference',
+                    'responsive',
+                    'screen',
+                    'source',
+                    'tailwind',
+                    'theme',
+                    'utility',
+                    'variant',
+                    'variants'
+                ]
+            }
+        ],
         'color-hex-length': 'short',
+        'function-no-unknown': [
+            true,
+            {
+                ignoreFunctions: ['theme']
+            }
+        ],
         'length-zero-no-unit': true,
+        'no-descending-specificity': false,
         'order/order': [
             'dollar-variables',
             'custom-properties',

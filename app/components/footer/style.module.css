@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@reference "../../app.css";
+
+@layer components {
+    .footer {
+        @apply flex flex-col flex-none;
+        @apply bg-neutral-400;
+        @apply dark:bg-neutral-700;
+    }
+
+    .info-container {
+        @apply flex flex-auto flex-row justify-around pb-6 px-10 text-center;
+    }
+
+    /*
+    .info-item {
+    }
+    */
+
+    .copyright {
+        @apply flex-none inline-block px-2 py-1;
+        @apply bg-neutral-900 text-neutral-200;
+    }
+}

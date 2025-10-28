@@ -1,32 +1,35 @@
 {
     "compilerOptions": {
-        "allowImportingTsExtensions": true,
-        "isolatedModules": true,
+        "baseUrl": ".",
+        "composite": true,
         "jsx": "react-jsx",
         "lib": [
             "DOM",
             "DOM.Iterable",
-            "ES2020"
+            "ESNext"
         ],
-        "module": "ESNext",
-        "moduleDetection": "force",
-        "moduleResolution": "Bundler",
         "noEmit": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUncheckedSideEffectImports": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
         "paths": {
-            "@/*": [
-                "./*"
+            "~/*": [
+                "./app/*"
             ]
         },
-        "skipLibCheck": true,
-        "strict": true,
-        "target": "ES2020",
-        "useDefineForClassFields": true
+        "rootDirs": [
+            ".",
+            "./.react-router/types"
+        ],
+        "target": "ES2022",
+        "types": [
+            "node",
+            "react",
+            "react-dom",
+            "vite/client"
+        ]
     },
+    "extends": "./tsconfig.json",
     "include": [
-        "src"
+        ".react-router/types/**/*",
+        "app/**/*.ts",
+        "app/**/*.tsx"
     ]
 }

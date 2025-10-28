@@ -29,8 +29,8 @@
     inputs@{ flake-parts, systems, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        ./treefmt.nix
-        ./git-hooks.nix
+        ./nix/treefmt.nix
+        ./nix/git-hooks.nix
       ];
       perSystem =
         {
@@ -43,8 +43,11 @@
         {
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
-              nodePackages.yarn
-              nodejs-slim
+              (yarn-berry.override {
+                nodejs = nodejs_latest;
+              })
+              nodejs-slim_latest
+              pixman
               pkg-config
             ];
             shellHook = ''

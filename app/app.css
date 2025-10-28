@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* stylelint-disable import-notation */
+@import "tailwindcss";
+
+@theme {
+    --color-bg: var(--color-neutral-200);
+    --color-bg-dark: var(--color-neutral-800);
+    --color-link: var(--color-blue-600);
+    --color-link-dark: var(--color-blue-400);
+    --color-link-hover: var(--color-blue-800);
+    --color-link-hover-dark: var(--color-blue-600);
+    --color-text: var(--color-neutral-800);
+    --color-text-dark: var(--color-neutral-200);
+    --font-sans:
+        "Noto Sans JP", "Noto Sans CJK JP", "Helvetica Neue", helvetica, arial,
+        "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", meiryo,
+        ui-sans-serif, system-ui, sans-serif, "Noto Color Emoji",
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@layer base {
+    html,
+    body {
+        @apply font-sans;
+        @apply bg-bg text-text;
+        @apply dark:bg-bg-dark dark:text-text-dark;
+
+        @media (prefers-color-scheme: dark) {
+            color-scheme: dark;
+        }
+    }
+
+    body {
+        @apply flex flex-col min-h-screen;
+    }
+
+    a {
+        @apply no-underline;
+        @apply hover:underline;
+        @apply text-link;
+        @apply hover:text-link-hover;
+        @apply dark:text-link-dark;
+        @apply dark:hover:text-link-hover-dark;
+    }
+
+    p {
+        @apply mb-2;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold;
+    }
+
+    h1 {
+        @apply mb-4 text-5xl;
+    }
+
+    h2 {
+        @apply mb-3 text-4xl;
+    }
+
+    h3 {
+        @apply mb-2 text-2xl;
+    }
+
+    input {
+        @apply border-2 px-2 py-1 rounded-md;
+        @apply border-text;
+        @apply dark:border-text-dark;
+    }
+}

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+@reference "../../app.css";
+
+@layer components {
+    :root {
+        --nav-btn-len: 64px;
+    }
+
+    .header {
+        @apply flex flex-none flex-row h-12 min-h-(--nav-btn-len) p-2;
+        @apply bg-neutral-400;
+        @apply dark:bg-neutral-700;
+        @apply lg:min-h-0;
+
+        & abbr {
+            @apply italic no-underline;
+        }
+    }
+
+    .name {
+        @apply mx-2 self-center text-2xl;
+        @apply lg:flex-none;
+    }
+
+    .nav-btn {
+        --inner-box-height: 42px;
+        --inner-box-width: 40px;
+        --padding: calc(var(--nav-btn-len) - var(--inner-box-height));
+        --top-padding: calc(var(--padding) / 2);
+        --bar-box-height: calc(var(--inner-box-height) / 3);
+        --bar-rel-y: calc(var(--bar-box-height) / 2 - 1px);
+
+        @apply fixed h-(--nav-btn-len) right-0 top-0 w-(--nav-btn-len) z-9999;
+        @apply bg-neutral-400/75;
+        @apply dark:bg-neutral-700/75;
+        @apply lg:hidden;
+
+        & div {
+            @apply border-b-2 h-0 right-3 rounded w-(--inner-box-width);
+            @apply border-b-neutral-800;
+            @apply dark:border-b-neutral-200;
+
+            &:nth-child(1) {
+                --top: calc(var(--top-padding) + var(--bar-box-height) * (1 - 1) + var(--bar-rel-y));
+                --tw-rotate: 0deg;
+                --tw-scale-x: 1;
+                --tw-translate-y: 0;
+
+                @apply fixed origin-left top-(--top) transform-gpu transition-transform;
+
+                &:is(:root:has(.nav) *) {
+                    --tw-rotate: 45deg;
+                    --tw-scale-x: calc(sqrt(2));
+                    --tw-translate-y: calc(-1 * var(--bar-rel-y));
+                }
+            }
+
+            &:nth-child(2) {
+                --top: calc(var(--top-padding) + var(--bar-box-height) * (2 - 1) + var(--bar-rel-y));
+
+                @apply fixed opacity-100 transition-opacity;
+
+                &:is(:root:has(.nav) *) {
+                    @apply opacity-0;
+                }
+            }
+
+            &:nth-child(3) {
+                --top: calc(var(--top-padding) + var(--bar-box-height) * (3 - 1) + var(--bar-rel-y));
+                --tw-rotate: 0deg;
+                --tw-scale-x: 1;
+                --tw-translate-y: 0;
+
+                @apply fixed origin-left top-(--top) transform-gpu transition-transform;
+
+                &:is(:root:has(.nav) *) {
+                    --tw-rotate: 45deg;
+                    --tw-scale-x: calc(sqrt(2));
+                    --tw-translate-y: var(--bar-rel-y);
+                }
+            }
+        }
+    }
+
+    .nav {
+        @apply fixed flex flex-col gap-3 mx-2 right-0 top-(--nav-btn-len);
+        @apply lg:flex-auto lg:flex-row lg:justify-end lg:mx-8 lg:static lg:w-24;
+    }
+
+    .nav-item {
+        @apply flex h-full px-4 self-center;
+
+        & .current {
+            @apply text-neutral-500;
+        }
+
+        & a {
+            @apply py-3 text-inherit;
+            @apply lg:-my-2 lg:flex lg:items-center lg:py-0;
+
+            &:is(:active, :focus, :hover) {
+                @apply no-underline;
+                @apply text-neutral-500;
+            }
+        }
+    }
+
+    .nav-submenu {
+        /* .nav */
+
+        @apply fixed flex flex-col gap-3 mx-2 right-0 top-(--nav-btn-length);
+        @apply lg:flex-auto lg:flex-row lg:justify-end lg:mx-8 lg:static lg:w-24;
+
+        /* .nav */
+
+        @apply absolute border flex-col gap-0 my-0 right-24 top-0 w-auto;
+        @apply bg-neutral-400;
+        @apply dark:bg-neutral-700;
+        @apply lg:right-4 lg:top-12;
+
+        & .nav-item {
+            @apply border-b px-4 py-3 text-center;
+            @apply last:border-b-0;
+
+            &:has(.current),
+            &:is(:active, :focus, :hover) {
+                @apply transition-colors;
+                @apply bg-neutral-500;
+                @apply dark:bg-neutral-800;
+            }
+
+            & a {
+                @apply -m-2 p-2;
+            }
+        }
+    }
+
+    .nav-submenu-btn {
+        &::before {
+            content: "▼";
+        }
+
+        &:is(.nav-item:is(:active, :focus, :hover) *) {
+            &::before {
+                content: "▲";
+            }
+        }
+    }
+}

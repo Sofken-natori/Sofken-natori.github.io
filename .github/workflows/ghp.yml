@@ -1,22 +1,25 @@
+concurrency:
+  cancel-in-progress: false
+  group: pages
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           cache: yarn
           node-version: latest
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile --no-node-version-check --non-interactive
+        run: yarn install --immutable
       - name: Build
-        run: yarn build --minify
+        run: yarn build
       - name: Upload
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: ./build/client
   deploy:
     environment:
       name: github-pages
