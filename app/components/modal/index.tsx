@@ -79,7 +79,7 @@ function Modal({
                     {children}
                 </div>
             </div>,
-            document.getElementById('root')!
+            document.body
         );
     }
     return <></>;
