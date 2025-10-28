@@ -22,7 +22,7 @@ for v in "${VOLUMES[@]}"; do
     mkdir -p "$pages_dir"
     echo "  Convert pdf to avif/webp/png..."
     for t in "${FILE_TYPES[@]}"; do
-        magick -density 300 "$RATIONALE_DIR/vol$v.pdf" -alpha off "$pages_dir/vol$v-%02d.$t" &
+        magick -density 300 "$RATIONALE_DIR/vol$v.pdf" -alpha remove "$pages_dir/vol$v-%02d.$t" &
     done
     wait
     echo "  Fix page numbers..."
