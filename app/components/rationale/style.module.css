@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@reference "../../app.css";
+
+@layer components {
+    .list {
+        @apply gap-4 grid grid-cols-3 mx-auto mt-12;
+        @apply lg:grid-cols-4;
+        @apply xl:grid-cols-5;
+        @apply 2xl:grid-cols-7;
+
+        & dt {
+            @apply text-left;
+        }
+
+        & dd {
+            @apply pb-4 px-2 text-right;
+        }
+    }
+
+    .viewer {
+        --copy-paper-ratio: 1 / calc(sqrt(2));
+
+        @apply aspect-(--copy-paper-ratio) border-2 h-svh overflow-y-scroll;
+        @apply border-neutral-800;
+        @apply dark:border-neutral-200;
+    }
+
+    .ex-container {
+        @apply flex flex-col items-center;
+    }
+}

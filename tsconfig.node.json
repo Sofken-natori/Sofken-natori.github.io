@@ -1,26 +1,17 @@
 {
     "compilerOptions": {
-        "allowImportingTsExtensions": true,
-        "baseUrl": "types",
-        "isolatedModules": true,
-        "lib": [
-            "ESNext"
-        ],
-        "module": "ESNext",
-        "moduleDetection": "force",
-        "moduleResolution": "Bundler",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "checkJs": true,
+        "composite": true,
         "noEmit": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUncheckedSideEffectImports": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "skipLibCheck": true,
-        "strict": true,
         "target": "ESNext"
     },
+    "extends": "./tsconfig.json",
     "include": [
         "eslint.config.ts",
-        "types/eslint-plugin-import/index.d.ts",
+        "react-router.config.ts",
+        "stylelint.config.mjs",
         "vite.config.ts"
     ]
 }

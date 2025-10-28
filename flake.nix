@@ -29,8 +29,8 @@
     inputs@{ flake-parts, systems, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        ./treefmt.nix
-        ./git-hooks.nix
+        ./nix/treefmt.nix
+        ./nix/git-hooks.nix
       ];
       perSystem =
         {
