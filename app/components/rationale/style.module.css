@@ -21,9 +21,10 @@
     .viewer {
         --copy-paper-ratio: 1 / calc(sqrt(2));
 
-        @apply aspect-(--copy-paper-ratio) border-2 h-svh overflow-y-scroll;
+        @apply aspect-(--copy-paper-ratio) border-2 overflow-y-scroll w-full;
         @apply border-neutral-800;
         @apply dark:border-neutral-200;
+        @apply md:h-svh md:w-auto;
     }
 
     .ex-container {

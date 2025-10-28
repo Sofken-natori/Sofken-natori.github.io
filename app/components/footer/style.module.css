@@ -7,10 +7,16 @@
         @apply flex flex-col flex-none;
         @apply bg-neutral-400;
         @apply dark:bg-neutral-700;
+
+        & h1 {
+            @apply text-3xl;
+            @apply md:text-4xl;
+        }
     }
 
     .info-container {
-        @apply flex flex-auto flex-row justify-around pb-6 px-10 text-center;
+        @apply flex flex-auto flex-col justify-around pb-6 px-10 text-center;
+        @apply md:flex-row;
     }
 
     /*

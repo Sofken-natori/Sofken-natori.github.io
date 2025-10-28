@@ -43,23 +43,18 @@
 
             &:nth-child(1) {
                 --top: calc(var(--top-padding) + var(--bar-box-height) * (1 - 1) + var(--bar-rel-y));
-                --tw-rotate: 0deg;
-                --tw-scale-x: 1;
-                --tw-translate-y: 0;
 
-                @apply fixed origin-left top-(--top) transform-gpu transition-transform;
+                @apply fixed origin-left rotate-0 scale-x-100 top-(--top) transform-gpu transition-transform translate-y-0;
 
                 &:is(:root:has(.nav) *) {
-                    --tw-rotate: 45deg;
-                    --tw-scale-x: calc(sqrt(2));
-                    --tw-translate-y: calc(-1 * var(--bar-rel-y));
+                    @apply -translate-y-(--bar-rel-y) rotate-45 scale-x-[calc(sqrt(2))];
                 }
             }
 
             &:nth-child(2) {
                 --top: calc(var(--top-padding) + var(--bar-box-height) * (2 - 1) + var(--bar-rel-y));
 
-                @apply fixed opacity-100 transition-opacity;
+                @apply fixed opacity-100 top-(--top) transition-opacity;
 
                 &:is(:root:has(.nav) *) {
                     @apply opacity-0;
@@ -68,16 +63,11 @@
 
             &:nth-child(3) {
                 --top: calc(var(--top-padding) + var(--bar-box-height) * (3 - 1) + var(--bar-rel-y));
-                --tw-rotate: 0deg;
-                --tw-scale-x: 1;
-                --tw-translate-y: 0;
 
-                @apply fixed origin-left top-(--top) transform-gpu transition-transform;
+                @apply fixed origin-left rotate-0 scale-x-100 top-(--top) transform-gpu transition-transform translate-y-0;
 
                 &:is(:root:has(.nav) *) {
-                    --tw-rotate: 45deg;
-                    --tw-scale-x: calc(sqrt(2));
-                    --tw-translate-y: var(--bar-rel-y);
+                    @apply -rotate-45 scale-x-[calc(sqrt(2))] translate-y-(--bar-rel-y);
                 }
             }
         }

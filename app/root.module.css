@@ -8,9 +8,10 @@
     }
 
     .contents-container {
-        @apply basis-auto flex flex-col flex-grow flex-shrink-0 items-center px-16 py-4 text-center;
-        @apply md:px-32;
-        @apply lg:px-48;
+        @apply basis-auto flex flex-col flex-grow flex-shrink-0 items-center px-8 py-8 text-center;
+        @apply sm:px-16;
+        @apply md:pb-12 md:px-32;
+        @apply lg:pb-16 lg:px-48;
         @apply xl:px-64;
     }
 }
