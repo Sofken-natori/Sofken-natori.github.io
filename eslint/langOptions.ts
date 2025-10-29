@@ -14,8 +14,7 @@ export const langOptions: ESLintConfigParts = _ => [
     },
     {
         files: [
-            'app/**/*.{js,jsx,ts,tsx}',
-            'functions/[[path]].ts'
+            'app/**/*.{js,jsx,ts,tsx}'
         ],
         languageOptions: {
             ecmaVersion: 'latest',

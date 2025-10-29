@@ -10,6 +10,7 @@
     "extends": "./tsconfig.json",
     "include": [
         "eslint.config.ts",
+        "eslint/*.ts",
         "react-router.config.ts",
         "stylelint.config.mjs",
         "vite.config.ts"

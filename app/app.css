@@ -12,11 +12,10 @@
     --color-link-hover-dark: var(--color-blue-600);
     --color-text: var(--color-neutral-800);
     --color-text-dark: var(--color-neutral-200);
-    --font-sans:
-        "Noto Sans JP", "Noto Sans CJK JP", "Helvetica Neue", helvetica, arial,
-        "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", meiryo,
-        ui-sans-serif, system-ui, sans-serif, "Noto Color Emoji",
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-sans: "Noto Sans JP", "Noto Sans CJK JP", "Helvetica Neue", helvetica, arial,
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", meiryo,
+    ui-sans-serif, system-ui, sans-serif, "Noto Color Emoji",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 @layer base {
@@ -45,7 +44,8 @@
     }
 
     p {
-        @apply mb-2;
+        @apply break-all mb-2;
+        @apply sm:break-keep;
     }
 
     h1,

@@ -3,8 +3,10 @@ import {
 } from 'react';
 
 export function useWindowSize() {
-    const [size, setSize] = useState([0,
-        0] satisfies [number, number]);
+    const [size, setSize] = useState([
+        0,
+        0
+    ] satisfies [ number, number ]);
     useLayoutEffect(() => {
         function updateSize() {
             setSize([

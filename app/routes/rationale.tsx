@@ -1,20 +1,31 @@
 import {
     Suspense, lazy, useEffect, useState
 } from 'react';
-import { useParams } from 'react-router';
+import { P } from '~/components/p';
 import styles from '~/components/rationale/style.module.css';
+import type { Route } from './+types/rationale';
 import type { Resources } from '~/lib/resources.ts';
 
-export default function Rationale() {
-    const params = useParams();
-    const vol = params['vol'];
+export const meta: Route.MetaFunction = ({ params: { vol } }) => [
+    {
+        title: `Rationale Vol.${vol} - ソフトウェア研究部会`
+    },
+    {
+        content: 'ソフトウェア研究部会の部誌『Rationale』Web版です。',
+        name: 'description'
+    }
+];
+
+export default function Rationale({ params: { vol } }: Route.ComponentProps) {
     const [resourceManifest, setResourceManifest] = useState<Resources>();
     useEffect(() => {
-        (async () => {
-            const res = await fetch('/resources/rationale/resources.json');
-            const data: Resources = await res.json();
-            setResourceManifest(data);
-        })();
+        (
+            async () => {
+                const res = await fetch('/resources/rationale/resources.json');
+                const data: Resources = await res.json();
+                setResourceManifest(data);
+            }
+        )();
     }, []);
     if(vol === undefined) {
         throw new Error('Reached unreachable code.');
@@ -29,14 +40,14 @@ export default function Rationale() {
         return (
             <>
                 <h1>Rationale 読み込みエラー</h1>
-                <p>Rationaleの詳細を取得できませんでした。</p>
+                <P>Rationaleの詳細を取得できませんでした。</P>
             </>
         );
     }
     return (
         <>
             <h1>{manifest.title}</h1>
-            <p>{manifest.description}</p>
+            <P>{manifest.description}</P>
             <RationaleViewer vol={vol} />
             <RationaleExtra vol={vol} />
         </>
@@ -63,21 +74,23 @@ function RationaleViewer({ vol }: RationaleViewerProps) {
     return (
         <div className={styles['viewer']}>
             <Suspense>
-                {(() => {
-                    const pages = [];
-                    for(let i = 0; i < totalPages; i++) {
-                        const { files } = manifest.resources[i]!;
-                        pages.push(
-                            <Media
-                                files={files}
-                                key={i}
-                                mediaType="image"
-                                path={`/resources/rationale/vol${vol}/pages`}
-                            />
-                        );
+                {(
+                    () => {
+                        const pages = [];
+                        for(let i = 0; i < totalPages; i++) {
+                            const { files } = manifest.resources[i]!;
+                            pages.push(
+                                <Media
+                                    files={files}
+                                    key={i}
+                                    mediaType="image"
+                                    path={`/resources/rationale/vol${vol}/pages`}
+                                />
+                            );
+                        }
+                        return pages;
                     }
-                    return pages;
-                })()}
+                )()}
             </Suspense>
         </div>
     );
@@ -91,13 +104,15 @@ function RationaleExtra({ vol }: RationaleExtraProps) {
     const [extraResourceManifest, setExtraResourceManifest]
         = useState<Resources>();
     useEffect(() => {
-        (async () => {
-            const res = await fetch(
-                `/resources/rationale/vol${vol}/resources.json`
-            );
-            const data: Resources = await res.json();
-            setExtraResourceManifest(data);
-        })();
+        (
+            async () => {
+                const res = await fetch(
+                    `/resources/rationale/vol${vol}/resources.json`
+                );
+                const data: Resources = await res.json();
+                setExtraResourceManifest(data);
+            }
+        )();
     }, [vol]);
     if(!extraResourceManifest) {
         return <h1>Extra Contents 読み込み中...</h1>;
@@ -114,7 +129,7 @@ function RationaleExtra({ vol }: RationaleExtraProps) {
                 <figure className={styles['ex-container']} key={i}>
                     <figcaption>
                         <h2>{manifest.title ?? manifest.files[0]!.filename}</h2>
-                        <p>{manifest.description}</p>
+                        <P>{manifest.description}</P>
                     </figcaption>
                     <Suspense>
                         <Media

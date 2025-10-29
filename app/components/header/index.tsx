@@ -7,11 +7,7 @@ import { useModal } from '~/components/modal';
 import { useWindowSize } from '~/hooks/window-size';
 import { ScreenMinWidth } from '~/lib/constants';
 import type {
-    DetailedHTMLProps,
-    HTMLAttributes,
-    PropsWithChildren,
-    Ref,
-    RefObject
+    DetailedHTMLProps, HTMLAttributes, PropsWithChildren, Ref, RefObject
 } from 'react';
 import type { Resources } from '~/lib/resources';
 
@@ -22,7 +18,7 @@ export default function Header() {
                 <abbr title="Software Research and Development Group">
                     S.R.D.G.
                 </abbr>
-                {' '}
+                <wbr />
                 ソフトウェア研究部会
             </div>
             <Navigation />
@@ -95,7 +91,8 @@ function Navigation() {
                         {rationaleManifest && (
                             // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                             <div
-                                className={`${styles['nav-submenu']} ${isRationaleMenuBtnHovered || isRationaleMenuHovered ? 'flex' : 'hidden'}`}
+                                className={`${styles['nav-submenu']} ${isRationaleMenuBtnHovered
+                                || isRationaleMenuHovered ? 'flex' : 'hidden'}`}
                                 onMouseEnter={handleRationaleMenuHovered}
                                 onMouseLeave={handleRationaleMenuUnHovered}
                             >
@@ -176,8 +173,10 @@ function NavModal({
         return () => {
             navBtn?.removeEventListener('click', toggle);
         };
-    }, [navBtnRef,
-        toggle]);
+    }, [
+        navBtnRef,
+        toggle
+    ]);
     return (
         <>
             {isMobile ? (

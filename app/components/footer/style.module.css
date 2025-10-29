@@ -23,7 +23,6 @@
     .info-item {
     }
     */
-
     .copyright {
         @apply flex-none inline-block px-2 py-1;
         @apply bg-neutral-900 text-neutral-200;

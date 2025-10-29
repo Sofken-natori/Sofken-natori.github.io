@@ -4,12 +4,13 @@ import { langOptions } from './langOptions';
 import { plugins } from './plugins';
 import { rules } from './rules';
 import { settings } from './settings';
-import tsESLint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 import type { FlatCompat } from '@eslint/eslintrc';
-import type { InfiniteDepthConfigWithExtends } from 'typescript-eslint';
+import type { Config } from 'eslint/config';
+import type { ConfigWithExtends } from 'typescript-eslint';
 
-export default function ESLintConfig(compat: FlatCompat, ...extraConfigs: InfiniteDepthConfigWithExtends[]): InfiniteDepthConfigWithExtends[] {
-    return tsESLint.config([
+export default function ESLintConfig(compat: FlatCompat, ...extraConfigs: ConfigWithExtends[]): Config[] {
+    return defineConfig([
         ...ignores(compat),
         ...langOptions(compat),
         ...plugins(compat),
