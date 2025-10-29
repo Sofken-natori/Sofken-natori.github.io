@@ -4,7 +4,7 @@ import type { Config } from '@react-router/dev/config';
 
 export default {
     buildEnd: async ({ viteConfig }) => {
-        if (!viteConfig.isProduction) {
+        if(!viteConfig.isProduction) {
             return;
         }
         const buildPath = viteConfig.build.outDir;

@@ -19,7 +19,7 @@
     }
 
     .name {
-        @apply mx-2 self-center text-2xl;
+        @apply break-keep mx-2 self-center text-2xl;
         @apply lg:flex-none;
     }
 

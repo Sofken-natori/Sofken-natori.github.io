@@ -1,8 +1,6 @@
 import styles from './style.module.css';
 import {
-    clearAllBodyScrollLocks,
-    disableBodyScroll,
-    enableBodyScroll
+    clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll
 } from 'body-scroll-lock';
 import {
     useEffect, useRef, useState
@@ -10,9 +8,7 @@ import {
 import { createPortal } from 'react-dom';
 import { useScrollLock } from '~/hooks/scroll-lock';
 import type {
-    FC,
-    PropsWithChildren,
-    Ref
+    FC, PropsWithChildren, Ref
 } from 'react';
 
 export type UseModalResult = {

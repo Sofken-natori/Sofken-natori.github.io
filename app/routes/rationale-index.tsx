@@ -4,7 +4,18 @@ import {
 } from 'react';
 import { Link } from 'react-router';
 import styles from '~/components/rationale/style.module.css';
+import type { Route } from './+types/rationale-index';
 import type { Resources } from '~/lib/resources';
+
+export const meta: Route.MetaFunction = () => [
+    {
+        title: 'Rationale - ソフトウェア研究部会'
+    },
+    {
+        content: 'ソフトウェア研究部会の部誌『Rationale』Web版です。',
+        name: 'description'
+    }
+];
 
 export default function RationaleIndex() {
     const [resourceManifest, setResourceManifest] = useState<Resources>();

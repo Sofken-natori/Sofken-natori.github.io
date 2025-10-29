@@ -2,11 +2,7 @@ import './app.css';
 import styles from './root.module.css';
 import { Suspense } from 'react';
 import {
-    Links,
-    Meta,
-    Outlet,
-    Scripts,
-    ScrollRestoration
+    Links, Meta, Outlet, Scripts, ScrollRestoration
 } from 'react-router';
 import Footer from '~/components/footer';
 import Header from '~/components/header';
@@ -38,7 +34,7 @@ export const links: Route.LinksFunction = () => [
     }
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ children}: { children: React.ReactNode }) {
     return (
         <html lang="ja">
             <head>

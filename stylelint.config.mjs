@@ -42,7 +42,7 @@ const config = {
             }
         ],
         'length-zero-no-unit': true,
-        'no-descending-specificity': false,
+        'no-descending-specificity': null,
         'order/order': [
             'dollar-variables',
             'custom-properties',
