@@ -4,7 +4,7 @@
 
 @layer components {
     .app-container {
-        @apply flex flex-col min-h-dvh min-w-dvw;
+        @apply flex flex-col h-full min-h-dvh w-full;
     }
 
     .contents-container {
