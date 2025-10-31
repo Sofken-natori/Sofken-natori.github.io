@@ -24,7 +24,7 @@
         @apply aspect-(--copy-paper-ratio) border-2 overflow-y-scroll w-full;
         @apply border-neutral-800;
         @apply dark:border-neutral-200;
-        @apply md:h-svh md:w-auto;
+        @apply md:max-h-svh md:max-w-full md:w-auto;
     }
 
     .ex-container {
